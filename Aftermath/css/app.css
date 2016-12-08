@@ -1,0 +1,80 @@
+html{
+	height: 100vh;
+	}
+
+body{
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 5vh;
+}
+
+.error{
+	color: red;
+	text-align: center;
+	font-size: 18px;
+}
+
+.ceiling{
+	background-color: #DDD;
+}
+
+.banner{
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 15vh;
+}
+
+.content{
+	background-color: #DDD;
+}
+
+.contentbox{
+	background-color: white;
+	border: solid 5px black;
+	height: 67vh;
+	overflow-y: scroll;
+}
+
+.userbox{
+	background-color: white;
+	border: solid 5px black;
+	height: 5vh;
+}
+
+.campaignbox{
+	background-color: white;
+	border: solid 5px black;
+	height: 15vh;
+}
+
+.box{
+	background-color: white;
+	border: solid 5px black;
+	height: 15vh;
+	overflow-y: scroll;
+}
+
+.footer{
+	background-color: black;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 5vh;
+}
+
+img{
+	display: block;
+}
+
+.button{
+	min-width: 100%;
+	margin: auto auto;
+	height: 6.5vh;
+	font-family: impact;
+	font-size-adjust: 0.85;
+	background-color: orange;
+	color: black;
+}
+
