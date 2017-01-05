@@ -18,12 +18,16 @@
 <!--ceiling--> 
 <div class="row ceiling">
 <div class="large-2 columns"><a href="login.php" class="button">LOGIN</a></div>
-<div class="large-2 columns"><form action="inc/logout.php" method="post" class="button">SIGN OUT</form></div>
+<form id="logout" action="inc/logout.php" method="post">
+<div class="large-2 columns"><input type="submit" value="LOG OUT" class="button" style="font-family: impact;" /></div>
+</form>
+
 <div class="large-6 columns">
 <?php
     $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     if (strpos($url, 'logged')){
-    echo "<p class='error'>YOU ARE LOGGED IN</p>";
+    $username = $_SESSION['username'];
+    echo "<p class='error'>Currently logged in as:  " .$username ."</p>";
   }
 ?>
 </div>
@@ -152,15 +156,6 @@ Ac vitae eu. Magna omnis laoreet nec tellus cras eget ligula in. Pellentesque ph
 <!--online status box-->
 <div class="large-3 columns">
 <div class="row contentbox">
-
-<?php
-$online = null;
-foreach ((scandir(session_save_path())) AS $online ){
-  print $online ."<br>";
-}
-
-?>
-
 </div>
 </div>
 

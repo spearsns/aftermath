@@ -21,8 +21,9 @@
 <!--ceiling--> 
 <div class="row ceiling">
 <div class="large-2 columns"><a href="login.php" class="button">LOGIN</a></div>
-<div class="large-2 columns"><a href="inc/logout.php" class="button">SIGN OUT</a></div>
-<div class="large-6 columns">&nbsp;</div>
+<form id="logout" action="inc/logout.php" method="post">
+<div class="large-2 columns"><input type="submit" value="LOG OUT" class="button" style="font-family: impact;" /></div>
+</form>
 <div class="large-2 columns"><a href="signup.php" class="button">JOIN</a></div>
 </div>
 
@@ -43,8 +44,8 @@
 <label style="font-family: impact;">PASSWORD:<input type="password" name="password" placeholder="ENTER PASSWORD" /></label> 
 </div>
 
-<div class="large-3 columns">&nbsp;</div>
-<div class="large-1 column"><br><input type="submit" value="SUBMIT" style="font-family: impact;" />
+<div class="large-2 columns">&nbsp;</div>
+<div class="large-2 columns"><br><input type="submit" value="SUBMIT" class="button"/>
 </div>
 
 </div>
