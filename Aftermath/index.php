@@ -1,7 +1,7 @@
 
 <?php
-   include("inc/config.php");
-  session_start();
+    include("inc/config.php");
+    session_start();
 ?>
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
@@ -24,11 +24,13 @@
 
 <div class="large-6 columns">
 <?php
+    if (isset($_SESSION['id']) == true){
     $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    if (strpos($url, 'logged')){
     $username = $_SESSION['username'];
     echo "<p class='error'>Currently logged in as:  " .$username ."</p>";
-  }
+    } else {
+      echo "<p class='error'>Please sign in to continue</p>";
+    }
 ?>
 </div>
 <div class="large-2 columns"><a href="signup.php" class="button">JOIN</a></div>
@@ -40,127 +42,81 @@
 </div>
 
 <!--content nav-->
-<div class="row content">
+<div class="row ceiling">
 <div class="large-1 columns">&nbsp;</div>
 <!--container nav-->
-<div class="large-8 columns">
+<div class="large-10 columns">
 <div class="row">
-	<div class="large-3 columns"><a href="#" class="button" visited="true">CAMPAIGNS</a></div>
-	<div class="large-3 columns"><a href="#" class="button">CHARACTER MGMT</a></div>
-	<div class="large-3 columns"><a href="createChar.php" class="button">NEW CHARACTER</a></div>
+	<div class="large-3 columns"><a href="newcampaign.php" class="button" visited="true">NEW CAMPAIGN</a></div>
+	<div class="large-3 columns"><a href="newChar.php" class="button">NEW CHARACTER</a></div>
+  <div class="large-3 columns"><a href="charSelect.php" class="button">CHARACTER MGMT</a></div>
 	<div class="large-3 columns"><a href="#" class="button">DOCUMENTS</a></div>
 </div>
 </div>
-<!--online status box header-->
-<div class="large-3 columns">
-<div class="row">
-<h4 style="text-align: center; font-family: impact;">CURRENTLY ONLINE:</h4>
-</div>
-</div>
+
+<div class="large-1 columns">&nbsp;</div>
+
 </div>
 
 <!--content-->
 <div class="row content">
-<div class="large-1 columns">&nbsp;</div>
 <!--container-->
-<div class="large-8 columns">
+<div class="large-10 columns" style="background-color: black;">
 <div class="row contentbox">
-<div class="large-3 columns campaignbox">
-<p>CAMPAIGN I<br>
-<a href="#" class="button">ENTER</a>
-</p>
+
+<div class="row content">
+<div class="large-2 columns" style="border: 2px solid;">&nbsp;</div>
+<div class="large-2 columns" style="text-align: center; font-weight: bold; border: 2px solid;">CAMPAIGN</div>
+<div class="large-6 columns" style="text-align: center; font-weight: bold; border: 2px solid;">DESCRIPTION</div>
+<div class="large-2 columns" style="border: 2px solid;">&nbsp;</div>
 </div>
 
-<div class="large-9 columns box">
-<p>Lorem ipsum dolor. Sit amet vestibulum orci mus tellus. Dictum cras scelerisque vestibulum sed et a iaculis vulputate viverra scelerisque aenean arcu fermentum in ut duis lorem at ipsum et viverra ipsum nascetur. Ac interdum rutrum. Cras consequat sapien enim venenatis id. Quisque tristique ultrices. Mi porta consequat egestas sit non. Pharetra ipsum risus. Donec justo integer. Et augue interdum.
-<br>
-<br>
-Arcu odio magna eu ut odio. Non sapien augue mauris a pellentesque. Tortor et litora vel velit mattis justo tempus magna. Dapibus netus ipsum. Urna auctor nec ac pede ac.
-<br>
-<br>
-Ac vitae eu. Magna omnis laoreet nec tellus cras eget ligula in. Pellentesque pharetra malesuada. Tellus neque hac lacinia ante fermentum. Diam eros aliquam. In urna eu in in id volutpat faucibus cras. Magna neque aliquet. Cras vitae consectetuer. Metus mollis aliquet sapien eu facilisis. Sapien lectus porta feugiat potenti curabitur ut quam penatibus nulla vitae ut vitae sit nec donec est nunc ex quis praesent. Justo ad viverra ac ut in in ea rutrum nisl consequat arcu. Temporibus sed fringilla. Enim consectetuer est. Diam curabitur ipsum ligula amet semper id curabitur dignissim. Fames eros auctor. Porttitor eu nibh. Vestibulum amet nec. Nulla ac massa dolor maecenas nunc quibusdam accumsan luctus. Sodales quam facilisis nulla fermentum feugiat vestibulum cras egestas. Ut imperdiet massa odio velit aliquet metus rhoncus massa lacus consequat massa quisque nisl posuere. Molestie sodales suscipit. Tellus wisi ac. Rhoncus arcu elit arcu sapien tristique. Luctus commodo turpis. Libero eleifend id. Ut aliquam eget. Vitae amet erat vestibulum ut duis luctus gravida blandit in vitae vel nisl porttitor tempor. Facilisi gravida urna. Non viverra pretium laoreet aliquam erat. Nibh adipiscing arcu nulla consectetuer quam. A integer ante. Ipsum arcu tellus adipiscing dolor tincidunt. Dui at neque dui aliquam nec vestibulum ut cras. In ad id. Natoque aliquam amet.
-</p>
-</div>
+                <div class="row">
+                <div class='large-2 columns'><a href='charChoice.php?play'><button class='button'>PLAY</button></a></div>
+                <div class='large-2 columns'><input type='text' value='WORKS' style='margin-top: 0.5vh; border: solid 2px;' readonly /></div>
+                <div class='large-6 columns'><input type='text' value='WORKS' style='margin-top: 0.5vh; border: solid 2px;' readonly /></div>
+                <div class='large-2 columns hotbox'><a href='leadLog.php?lead'><button class='button'>LEAD</button></a></div>
+                </div>
+<?php
+            $sql = "SELECT * FROM campaigns WHERE FATE != ''";
+            $result = $conn->query($sql);
 
-<div class="large-3 columns campaignbox">
-<p>CAMPAIGN II<br>
-<a href="#" class="button">ENTER</a>
-</p>
-</div>
-
-<div class="large-9 columns box">
-<p>Lorem ipsum dolor. Sit amet vestibulum orci mus tellus. Dictum cras scelerisque vestibulum sed et a iaculis vulputate viverra scelerisque aenean arcu fermentum in ut duis lorem at ipsum et viverra ipsum nascetur. Ac interdum rutrum. Cras consequat sapien enim venenatis id. Quisque tristique ultrices. Mi porta consequat egestas sit non. Pharetra ipsum risus. Donec justo integer. Et augue interdum.
-<br>
-<br>
-Arcu odio magna eu ut odio. Non sapien augue mauris a pellentesque. Tortor et litora vel velit mattis justo tempus magna. Dapibus netus ipsum. Urna auctor nec ac pede ac.
-<br>
-<br>
-Ac vitae eu. Magna omnis laoreet nec tellus cras eget ligula in. Pellentesque pharetra malesuada. Tellus neque hac lacinia ante fermentum. Diam eros aliquam. In urna eu in in id volutpat faucibus cras. Magna neque aliquet. Cras vitae consectetuer. Metus mollis aliquet sapien eu facilisis. Sapien lectus porta feugiat potenti curabitur ut quam penatibus nulla vitae ut vitae sit nec donec est nunc ex quis praesent. Justo ad viverra ac ut in in ea rutrum nisl consequat arcu. Temporibus sed fringilla. Enim consectetuer est. Diam curabitur ipsum ligula amet semper id curabitur dignissim. Fames eros auctor. Porttitor eu nibh. Vestibulum amet nec. Nulla ac massa dolor maecenas nunc quibusdam accumsan luctus. Sodales quam facilisis nulla fermentum feugiat vestibulum cras egestas. Ut imperdiet massa odio velit aliquet metus rhoncus massa lacus consequat massa quisque nisl posuere. Molestie sodales suscipit. Tellus wisi ac. Rhoncus arcu elit arcu sapien tristique. Luctus commodo turpis. Libero eleifend id. Ut aliquam eget. Vitae amet erat vestibulum ut duis luctus gravida blandit in vitae vel nisl porttitor tempor. Facilisi gravida urna. Non viverra pretium laoreet aliquam erat. Nibh adipiscing arcu nulla consectetuer quam. A integer ante. Ipsum arcu tellus adipiscing dolor tincidunt. Dui at neque dui aliquam nec vestibulum ut cras. In ad id. Natoque aliquam amet.
-</p>
-</div>
-
-<div class="large-3 columns campaignbox">
-<p>CAMPAIGN III<br>
-<a href="#" class="button">ENTER</a>
-</p>
-</div>
-
-<div class="large-9 columns box">
-<p>Lorem ipsum dolor. Sit amet vestibulum orci mus tellus. Dictum cras scelerisque vestibulum sed et a iaculis vulputate viverra scelerisque aenean arcu fermentum in ut duis lorem at ipsum et viverra ipsum nascetur. Ac interdum rutrum. Cras consequat sapien enim venenatis id. Quisque tristique ultrices. Mi porta consequat egestas sit non. Pharetra ipsum risus. Donec justo integer. Et augue interdum.
-<br>
-<br>
-Arcu odio magna eu ut odio. Non sapien augue mauris a pellentesque. Tortor et litora vel velit mattis justo tempus magna. Dapibus netus ipsum. Urna auctor nec ac pede ac.
-<br>
-<br>
-Ac vitae eu. Magna omnis laoreet nec tellus cras eget ligula in. Pellentesque pharetra malesuada. Tellus neque hac lacinia ante fermentum. Diam eros aliquam. In urna eu in in id volutpat faucibus cras. Magna neque aliquet. Cras vitae consectetuer. Metus mollis aliquet sapien eu facilisis. Sapien lectus porta feugiat potenti curabitur ut quam penatibus nulla vitae ut vitae sit nec donec est nunc ex quis praesent. Justo ad viverra ac ut in in ea rutrum nisl consequat arcu. Temporibus sed fringilla. Enim consectetuer est. Diam curabitur ipsum ligula amet semper id curabitur dignissim. Fames eros auctor. Porttitor eu nibh. Vestibulum amet nec. Nulla ac massa dolor maecenas nunc quibusdam accumsan luctus. Sodales quam facilisis nulla fermentum feugiat vestibulum cras egestas. Ut imperdiet massa odio velit aliquet metus rhoncus massa lacus consequat massa quisque nisl posuere. Molestie sodales suscipit. Tellus wisi ac. Rhoncus arcu elit arcu sapien tristique. Luctus commodo turpis. Libero eleifend id. Ut aliquam eget. Vitae amet erat vestibulum ut duis luctus gravida blandit in vitae vel nisl porttitor tempor. Facilisi gravida urna. Non viverra pretium laoreet aliquam erat. Nibh adipiscing arcu nulla consectetuer quam. A integer ante. Ipsum arcu tellus adipiscing dolor tincidunt. Dui at neque dui aliquam nec vestibulum ut cras. In ad id. Natoque aliquam amet.
-</p>
-</div>
-
-<div class="large-3 columns campaignbox">
-<p>CAMPAIGN IV<br>
-<a href="#" class="button">ENTER</a>
-</p>
-</div>
-
-<div class="large-9 columns box">
-<p>Lorem ipsum dolor. Sit amet vestibulum orci mus tellus. Dictum cras scelerisque vestibulum sed et a iaculis vulputate viverra scelerisque aenean arcu fermentum in ut duis lorem at ipsum et viverra ipsum nascetur. Ac interdum rutrum. Cras consequat sapien enim venenatis id. Quisque tristique ultrices. Mi porta consequat egestas sit non. Pharetra ipsum risus. Donec justo integer. Et augue interdum.
-<br>
-<br>
-Arcu odio magna eu ut odio. Non sapien augue mauris a pellentesque. Tortor et litora vel velit mattis justo tempus magna. Dapibus netus ipsum. Urna auctor nec ac pede ac.
-<br>
-<br>
-Ac vitae eu. Magna omnis laoreet nec tellus cras eget ligula in. Pellentesque pharetra malesuada. Tellus neque hac lacinia ante fermentum. Diam eros aliquam. In urna eu in in id volutpat faucibus cras. Magna neque aliquet. Cras vitae consectetuer. Metus mollis aliquet sapien eu facilisis. Sapien lectus porta feugiat potenti curabitur ut quam penatibus nulla vitae ut vitae sit nec donec est nunc ex quis praesent. Justo ad viverra ac ut in in ea rutrum nisl consequat arcu. Temporibus sed fringilla. Enim consectetuer est. Diam curabitur ipsum ligula amet semper id curabitur dignissim. Fames eros auctor. Porttitor eu nibh. Vestibulum amet nec. Nulla ac massa dolor maecenas nunc quibusdam accumsan luctus. Sodales quam facilisis nulla fermentum feugiat vestibulum cras egestas. Ut imperdiet massa odio velit aliquet metus rhoncus massa lacus consequat massa quisque nisl posuere. Molestie sodales suscipit. Tellus wisi ac. Rhoncus arcu elit arcu sapien tristique. Luctus commodo turpis. Libero eleifend id. Ut aliquam eget. Vitae amet erat vestibulum ut duis luctus gravida blandit in vitae vel nisl porttitor tempor. Facilisi gravida urna. Non viverra pretium laoreet aliquam erat. Nibh adipiscing arcu nulla consectetuer quam. A integer ante. Ipsum arcu tellus adipiscing dolor tincidunt. Dui at neque dui aliquam nec vestibulum ut cras. In ad id. Natoque aliquam amet.
-</p>
-</div>
-
-<div class="large-3 columns campaignbox">
-<p>CAMPAIGN V<br>
-<a href="#" class="button">ENTER</a>
-</p>
-</div>
-
-<div class="large-9 columns box">
-<p>Lorem ipsum dolor. Sit amet vestibulum orci mus tellus. Dictum cras scelerisque vestibulum sed et a iaculis vulputate viverra scelerisque aenean arcu fermentum in ut duis lorem at ipsum et viverra ipsum nascetur. Ac interdum rutrum. Cras consequat sapien enim venenatis id. Quisque tristique ultrices. Mi porta consequat egestas sit non. Pharetra ipsum risus. Donec justo integer. Et augue interdum.
-<br>
-<br>
-Arcu odio magna eu ut odio. Non sapien augue mauris a pellentesque. Tortor et litora vel velit mattis justo tempus magna. Dapibus netus ipsum. Urna auctor nec ac pede ac.
-<br>
-<br>
-Ac vitae eu. Magna omnis laoreet nec tellus cras eget ligula in. Pellentesque pharetra malesuada. Tellus neque hac lacinia ante fermentum. Diam eros aliquam. In urna eu in in id volutpat faucibus cras. Magna neque aliquet. Cras vitae consectetuer. Metus mollis aliquet sapien eu facilisis. Sapien lectus porta feugiat potenti curabitur ut quam penatibus nulla vitae ut vitae sit nec donec est nunc ex quis praesent. Justo ad viverra ac ut in in ea rutrum nisl consequat arcu. Temporibus sed fringilla. Enim consectetuer est. Diam curabitur ipsum ligula amet semper id curabitur dignissim. Fames eros auctor. Porttitor eu nibh. Vestibulum amet nec. Nulla ac massa dolor maecenas nunc quibusdam accumsan luctus. Sodales quam facilisis nulla fermentum feugiat vestibulum cras egestas. Ut imperdiet massa odio velit aliquet metus rhoncus massa lacus consequat massa quisque nisl posuere. Molestie sodales suscipit. Tellus wisi ac. Rhoncus arcu elit arcu sapien tristique. Luctus commodo turpis. Libero eleifend id. Ut aliquam eget. Vitae amet erat vestibulum ut duis luctus gravida blandit in vitae vel nisl porttitor tempor. Facilisi gravida urna. Non viverra pretium laoreet aliquam erat. Nibh adipiscing arcu nulla consectetuer quam. A integer ante. Ipsum arcu tellus adipiscing dolor tincidunt. Dui at neque dui aliquam nec vestibulum ut cras. In ad id. Natoque aliquam amet.
-</p>
-</div>
-
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                echo "<div class='row'>"
+                . "<div class='large-2 columns'><a href='charChoice.php?" .$row["campaignName"] . "'><button class='button'>PLAY</button></a></div>"
+                . "<div class='large-2 columns'><input type='text' value='" .$row["campaignName"] . "'
+                    style='margin-top: 0.5vh; border: solid 2px;' readonly /></div>"
+                . "<div class='large-6 columns'><input type='text' value='" .$row["description"] . "' 
+                    style='margin-top: 0.5vh; border: solid 2px;' readonly /></div>"
+                . "<div class='large-2 columns hotbox'><a href='leadLog.php?" .$row["campaignName"] . "'><button class='button'>LEAD</button></a></div>"
+                . "</div>";
+                }
+            } else {
+            echo "0 results";
+            }
+      ?>
 </div>
 </div>
 
-<!--online status box-->
-<div class="large-3 columns">
-<div class="row contentbox">
-</div>
-</div>
+<div class="large-2 columns">
+  <div class="row contentbox">
+  <table>
+    <tr><td class="error">ONLINE</td></tr>
+  <?php
+            $sql = "SELECT * FROM users WHERE user_status ='1'";
+            $result = $conn->query($sql);
 
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                echo "<tr><td><button class='button'>". $row["username"] ."</button></td></tr>";
+                }
+            } 
+      ?>
+  </table>
 </div>
-
+</div>
+</div>
 <!--footer-->
 <div class="row footer">
 <div class="large-12 columns">&nbsp;</div>

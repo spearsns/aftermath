@@ -1,10 +1,10 @@
 <?php
 include('config.php');
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-$passwordConfirm = $_POST['passwordConfirm'];
-$email = $_POST['email'];
+$username = htmlentities(strip_tags($_POST['username']));
+$password = htmlentities(strip_tags($_POST['password']));
+$passwordConfirm = htmlentities(strip_tags($_POST['passwordConfirm']));
+$email = htmlentities(strip_tags($_POST['email']));
 
 if (empty($username)){
 	header("Location: ../signup.php?error=empty");
@@ -42,7 +42,7 @@ if (empty($email)){
 		$sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
 		$result = $conn->query($sql);
 
-		header("Location: ../login.php");	
+		header("Location: ../success.php");	
 	}
 }	
 

@@ -2,15 +2,15 @@
 include('config.php');
 session_start();
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = htmlentities(stripslashes($_POST['username']));
+$password = htmlentities(stripslashes($_POST['password']));
 
 $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password' ";
 $result = $conn->query($sql);
 
 if ($row = $result->fetch_assoc()) {
 		$username = $row['username'];
-		$password= $row['password'];
+		$password = $row['password'];
 		$email = $row['email'];
 		$id = $row['id'];
 
@@ -18,6 +18,10 @@ if ($row = $result->fetch_assoc()) {
 		$_SESSION['password'] = $password;
 		$_SESSION['email'] = $email;
 		$_SESSION['id'] = $id;
+		
+		$query = mysqli_query($conn, "UPDATE users
+          SET user_status = '1'
+          WHERE username = '$username';");
 		
 		header("Location: ../index.php?logged");
 } else {

@@ -1,0 +1,743 @@
+<span></span>kk 
+<span></span>55 
+<span></span>555 
+<span></span>55 
+<span></span>fucking functional 
+<span></span>blah 
+<span></span>kk 
+<span></span>lalala 
+<span></span>quack 
+<span></span>55 
+<span></span>5 
+<span>Guest</span>55 
+<span>Guest</span>5 
+<span>Guest</span> : 5 
+<span>Guest</span> : 5 
+<span>Guest</span> : 55 
+<span></span> : 
+<span></span> : 94
+<span></span> : 20
+<span></span> : 25
+<span></span> : 56
+<span></span> : 56
+<span>Guest</span> : 55 
+<span></span> : 34
+<span>Guest</span> : 14
+<span>Guest</span> : 93
+<span>Guest</span> : 93
+<span>Guest</span> : !!CRITICAL!! 33
+<span>Guest</span> : !!CRITICAL!! 33
+<span>Guest</span> : 51
+<span>Guest</span> : 65
+<span>Guest</span> : 29
+<span>Guest</span> : 13
+<span>Guest</span> : 98
+<span>Guest</span> : 12
+<span>Guest</span> : 68
+<span>Guest</span> : 65
+<span>Guest</span> : 39
+<span>Guest</span> : 52
+<span>Guest</span> : 51
+<span>Guest</span> : 51
+<span>Guest</span> : 3
+<span>Guest</span> : 69
+<span>Guest</span> : 16
+<span>Guest</span> : !!CRITICAL!! 11
+<span>Guest</span> : 14
+<span>Guest</span> : 18
+<span>Guest</span> : 6
+<span>Guest</span> : 9
+<span>Guest</span> : 16
+<span>Guest</span> : 12
+<span>Guest</span> : 9
+<span>Guest</span> : LEFT FOREARM
+<span>Guest</span> : MIDSECTION (STOMACH / LOWER BACK)
+<span>Guest</span> : 8
+<span>Guest</span> : 37
+<span>Guest</span> : RIGHT THIGH
+<span>Guest</span> : 67
+<span>Guest</span> : 5
+<span>Guest</span> : RIGHT THIGH
+<span>Overseer</span> : hi 
+<span>Overseer</span> : 6
+<span>Guest</span> : quack 
+<span>Guest</span> : 19
+<span>Guest</span> : 48
+<span>Guest</span> : 7
+<span>Guest</span> : !!CRITICAL!! 22
+<span>Guest</span> : 9
+<span>Guest</span> : 13
+<span>Guest</span> : 10
+<span>Guest</span> : 9
+<span>Guest</span> : RIGHT UPPER ARM
+<span>Guest</span> : RIGHT UPPER BODY (RIBS / SHOULDER)
+<span>Guest</span> : LEFT THIGH
+<span>Guest</span> : RIGHT FOREARM
+<span>Overseer</span> : hello 
+<span>Overseer</span> : 51
+<span>Overseer</span> : 12
+<span>Overseer</span> : RIGHT FOREARM
+<p>Overseer</p> : 5 
+<span>Overseer</span> : 2
+<span>Overseer</span> : 37
+<span>Overseer</span> : !!CRITICAL!! 77
+<span>Overseer</span> : 50
+<span>Overseer</span> : !!CRITICAL!! 44
+<span>Overseer</span> : 90
+<span>Overseer</span> : 20<span>Overseer</span> : 60<span>Overseer</span> : !!CRITICAL!! 55<span>Overseer</span> : 20<span>Overseer</span> : 20<span>Overseer</span> : 97
+<span>Overseer</span> : 46
+<span>Overseer</span> : 30
+<span>Overseer</span> : 10<span>Overseer</span> : 14<span>Overseer</span> : 23<span>Overseer</span> : 5<span>Overseer</span> : 54<span>Overseer</span> : 86
+<span>Overseer</span> : 6
+<span>Overseer</span> : 80
+<span>Overseer</span> : 21
+<span>Overseer</span> : 13
+<span>Overseer</span> : 42
+<span>Overseer</span> : 69
+<span>Overseer</span> : 19
+<span>Overseer</span> : 53
+<span>Overseer</span> : 40
+<span>Overseer</span> : 39
+<span>Overseer</span> : 55
+
+<span>Overseer</span> : 2
+
+<span>Overseer</span> : I would like to set it up so that I can chain attack shots as quickly as humanly possible
+
+<span>Overseer</span> : so how would I do that?
+
+<span>Overseer</span> : LALALAL
+
+<span>Overseer</span> : KAK
+
+<span>Overseer</span> : 8
+<span>Overseer</span> : 16
+<span>Overseer</span> : LEFT FOOT
+<span>Overseer</span> : 15
+<span>Overseer</span> : 14
+<span>Overseer</span> : 12
+<span>Overseer</span> : RIGHT UPPER BODY (RIBS / SHOULDER)
+<span>Overseer</span> : RIGHT UPPER ARM
+<span>Overseer</span> : 5
+
+<span>Guest</span> : RIGHT UPPER BODY (RIBS / SHOULDER)
+<span>Guest</span> : 83
+<span>Guest</span> : 14
+<span>Guest</span> : 29
+<span>Guest</span> : lalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalala
+<span>Guest</span> : lalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalala
+<span>Guest</span> : lalalalala lalalalala lalalalala lalalalala lalalalala lalalalala lalalalalalalalalala lalalalala la
+<span>Guest</span> : lalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalalala
+<span>Guest</span> : 91
+<span>Guest</span> : 5
+<span>Guest</span> : 25
+<span>Guest</span> : 39
+<span>Guest</span> : 13
+<span>Guest</span> : 96
+<span>Guest</span> : 7
+<span>Guest</span> : 12
+<span>Guest</span> : 10
+<span>Guest</span> : 16
+<span>Guest</span> : RIGHT THIGH
+<span>Guest</span> : RIGHT UPPER ARM
+<span>Guest</span> : PELVIS (GROIN / REAR
+<span>Guest</span> : RIGHT CALF
+<span>Guest</span> : LEFT UPPER ARM
+<span>Guest</span> : LEFT UPPER BODY (RIBS[HEART] / SHOULDER)
+<span>Guest</span> : MIDSECTION (STOMACH / LOWER BACK)
+<span>Guest</span> : HEAD
+<span>Guest</span> : LEFT UPPER BODY (RIBS[HEART] / SHOULDER)
+<span>Guest</span> : LEFT HAND
+<span>Guest</span> : RIGHT UPPER ARM
+<span>Guest</span> : RIGHT UPPER BODY (RIBS / SHOULDER)
+<span>Guest</span> : 11
+<span>Guest</span> : 8
+<span>Guest</span> : 4
+<span>Guest</span> : 13
+<span>Guest</span> : 14
+<span>Guest</span> : 5
+<span>Guest</span> : 10
+<span>Guest</span> : 14
+<span>Guest</span> : RIGHT UPPER BODY (RIBS / SHOULDER)
+<span>FATE</span> : 55
+
+<span>STORYTELLER</span> : 55
+
+<span>Tony</span> : 12
+<span>Tony</span> : 85
+<span>Tony</span> : LEFT UPPER BODY (RIBS[HEART] / SHOULDER)
+<span>Guest</span> : lakdjlakfjladsj
+
+<span>Guest</span> : sk
+
+<span>Guest</span> : 15
+<span>Guest</span> : 20
+<span>Guest</span> : RIGHT UPPER ARM
+<span>Guest</span> : LEFT UPPER BODY (RIBS[HEART] / SHOULDER)
+<span>Guest</span> : 56
+<span>Guest</span> : 17
+<span>Tony</span> : lala
+
+<span>STORYTELLER</span> : blah
+
+<span>Guest</span> : blalala
+
+<span>STORYTELLER</span> : 64
+<span>STORYTELLER</span> : 12
+<span>STORYTELLER</span> : LEFT UPPER BODY (RIBS[HEART] / SHOULDER)
+<span>STORYTELLER</span> : 43
+<span>STORYTELLER</span> : 96
+<span>STORYTELLER</span> : 98
+<span>STORYTELLER</span> : 71
+<span>STORYTELLER</span> : 68
+<span>STORYTELLER</span> : 23
+<span>STORYTELLER</span> : 20
+<span>STORYTELLER</span> : 70
+<span>STORYTELLER</span> : 43
+<span>STORYTELLER</span> : 11
+<span>STORYTELLER</span> : LEFT THIGH
+<span>STORYTELLER</span> : 55
+
+<span>STORYTELLER</span> : 3
+<span>STORYTELLER</span> : 12
+<span>STORYTELLER</span> : LEFT FOREARM
+<span>STORYTELLER</span> : its alive!!!!
+
+<span>STORYTELLER</span> : yayayyyayayyayayayayyayayayyayay!!!!!!!
+
+<span>Overseer</span> : test
+
+<span>Overseer</span> : test
+
+<span>STORYTELLER</span> : check
+
+<span>STORYTELLER</span> : 7
+<span>STORYTELLER</span> : !!CRITICAL!! 22
+<span>STORYTELLER</span> : LEFT UPPER BODY (RIBS[HEART] / SHOULDER)
+<span>STORYTELLER</span> : 18
+<span>STORYTELLER</span> : [2D10]:35
+<span>STORYTELLER</span> : [2D10]:16
+<span>STORYTELLER</span> : [2D10] 12
+<span>STORYTELLER</span> : 75
+<span>STORYTELLER</span> : RIGHT UPPER ARM
+<span>STORYTELLER</span> : [%] 7
+<span>STORYTELLER</span> : [2D10] 7
+<span>STORYTELLER</span> : [%] 76
+<span>STORYTELLER</span> : [%] 67
+<span>STORYTELLER</span> : !!CRITICAL!! 44
+<span>STORYTELLER</span> : [%] 12
+<span>STORYTELLER</span> : [%] 97
+<span>STORYTELLER</span> : [%] 93
+<span>STORYTELLER</span> : [%] 80
+<span>STORYTELLER</span> : !!CRITICAL!! 22
+<span>STORYTELLER</span> : RIGHT UPPER BODY (RIBS / SHOULDER)
+<span>STORYTELLER</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 17
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 15
+<span>Overseer</span> : [2D10] 4
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 8
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 10
+<span>STORYTELLER</span> : kkk
+
+<span>STORYTELLER</span> : [%] 37
+<span>STORYTELLER</span> : [%] 14
+<span>STORYTELLER</span> : [%] 41
+<span>STORYTELLER</span> : [%] 12
+<span>STORYTELLER</span> : !!CRITICAL!! 22
+<span>STORYTELLER</span> : !!CRITICAL!! 99
+<span>STORYTELLER</span> : [%] 80
+<span>STORYTELLER</span> : [%] 26
+<span>STORYTELLER</span> : [%] 97
+<span>STORYTELLER</span> : [%] 49
+<span>STORYTELLER</span> : [%] 30
+<span>STORYTELLER</span> : [%] 87
+<span>STORYTELLER</span> : [%] 40
+<span>STORYTELLER</span> : [%] 85
+<span>STORYTELLER</span> : [%] 69
+<span>STORYTELLER</span> : [%] 92
+<span>STORYTELLER</span> : [%] 76
+<span>STORYTELLER</span> : [%] 5
+<span>STORYTELLER</span> : [%] 40
+<span>STORYTELLER</span> : [%] 96
+<span>STORYTELLER</span> : [%] 12
+<span>STORYTELLER</span> : [%] 46
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 14
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 14
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 4
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 8
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 15
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 3
+<span>STORYTELLER</span> : [2D10] 18
+<span>STORYTELLER</span> : [2D10] 7
+<span>STORYTELLER</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 14
+<span>STORYTELLER</span> : [%] 20
+<span>STORYTELLER</span> : [%] 69
+<span>STORYTELLER</span> : [%] 46
+<span>STORYTELLER</span> : [%] 4
+<span>STORYTELLER</span> : [%] 56
+<span>STORYTELLER</span> : [%] 63
+<span>STORYTELLER</span> : [%] 4
+<span>Overseer</span> : [%] 84
+<span>Overseer</span> : !!CRITICAL!! 99
+<span>Overseer</span> : [%] 57
+<span>Overseer</span> : !!CRITICAL!! 88
+<span>Overseer</span> : [%] 85
+<span>STORYTELLER</span> : [%] 42
+<span>STORYTELLER</span> : [%] 37
+<span>STORYTELLER</span> : [%] 78
+<span>STORYTELLER</span> : [%] 93
+<span>STORYTELLER</span> : [%] 76
+<span>STORYTELLER</span> : [%] 51
+<span>STORYTELLER</span> : [%] 71
+<span>STORYTELLER</span> : [%] 16
+<span>STORYTELLER</span> : [%] 36
+<span>STORYTELLER</span> : [%] 63
+<span>STORYTELLER</span> : [%] 31
+<span>STORYTELLER</span> : [%] 60
+<span>STORYTELLER</span> : [%] 27
+<span>STORYTELLER</span> : [%] 85
+<span>STORYTELLER</span> : [%] 37
+<span>STORYTELLER</span> : [%] 98
+<span>STORYTELLER</span> : [%] 96
+<span>STORYTELLER</span> : [%] 58
+<span>STORYTELLER</span> : !!CRITICAL!! 66
+<span>STORYTELLER</span> : [%] 59
+<span>STORYTELLER</span> : [%] 28
+<span>STORYTELLER</span> : [%] 21
+<span>STORYTELLER</span> : [%] 51
+<span>STORYTELLER</span> : [%] 72
+<span>STORYTELLER</span> : !!CRITICAL!! 11
+<span>STORYTELLER</span> : [%] 89
+<span>STORYTELLER</span> : [%] 82
+<span>STORYTELLER</span> : [%] 29
+<span>STORYTELLER</span> : [%] 58
+<span>STORYTELLER</span> : !!CRITICAL!! 33
+<span>STORYTELLER</span> : [%] 76
+<span>STORYTELLER</span> : [%] 35
+<span>STORYTELLER</span> : [%] 79
+<span>STORYTELLER</span> : [%] 76
+<span>STORYTELLER</span> : [%] 67
+<span>STORYTELLER</span> : [%] 47
+<span>STORYTELLER</span> : !!CRITICAL!! 44
+<span>STORYTELLER</span> : [%] 12
+<span>STORYTELLER</span> : [%] 45
+<span>STORYTELLER</span> : [%] 10
+<span>STORYTELLER</span> : [%] 43
+<span>STORYTELLER</span> : [%] 6
+<span>STORYTELLER</span> : [%] 47
+<span>STORYTELLER</span> : [%] 53
+<span>STORYTELLER</span> : [%] 24
+<span>STORYTELLER</span> : [%] 31
+<span>STORYTELLER</span> : [%] 56
+<span>STORYTELLER</span> : [%] 8
+<span>STORYTELLER</span> : [%] 96
+<span>Overseer</span> : 55
+
+<span>Overseer</span> : [%] 24
+<span>Overseer</span> : [%] 30
+<span>Overseer</span> : [%] 39
+<span>Overseer</span> : !!CRITICAL!! 99
+<span>Overseer</span> : [%] 76
+<span>Overseer</span> : !!CRITICAL!! 22
+<span>Overseer</span> : [%] 15
+<span>Overseer</span> : [%] 36
+<span>Overseer</span> : [%] 47
+<span>Overseer</span> : !!CRITICAL!! 99
+<span>Overseer</span> : [%] 42
+<span>Overseer</span> : !!CRITICAL!! 44
+<span>Overseer</span> : [%] 38
+<span>Overseer</span> : !!CRITICAL!! 88
+<span>Overseer</span> : [%] 4
+<span>Overseer</span> : [%] 69
+<span>Overseer</span> : [%] 58
+<span>Overseer</span> : [%] 16
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 18
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 6
+<span>Overseer</span> : [2D10] 14
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 14
+<span>Overseer</span> : [2D10] 15
+<span>STORYTELLER</span> : [2D10] 18
+<span>STORYTELLER</span> : [2D10] 14
+<span>STORYTELLER</span> : [2D10] 13
+<span>STORYTELLER</span> : [2D10] 3
+<span>STORYTELLER</span> : [2D10] 9
+<span>STORYTELLER</span> : [2D10] 9
+<span>STORYTELLER</span> : [2D10] 8
+<span>STORYTELLER</span> : [2D10] 13
+<span>STORYTELLER</span> : [2D10] 14
+<span>STORYTELLER</span> : [2D10] 7
+<span>STORYTELLER</span> : [2D10] 16
+<span>STORYTELLER</span> : [2D10] 8
+<span>STORYTELLER</span> : [2D10] 5
+<span>STORYTELLER</span> : [2D10] 6
+<span>STORYTELLER</span> : [2D10] 15
+<span>STORYTELLER</span> : [2D10] 11
+<span>STORYTELLER</span> : [2D10] 14
+<span>STORYTELLER</span> : [2D10] 10
+<span>STORYTELLER</span> : [2D10] 12
+<span>STORYTELLER</span> : [2D10] 11
+<span>STORYTELLER</span> : [2D10] 12
+<span>STORYTELLER</span> : [2D10] 13
+<span>STORYTELLER</span> : [2D10] 13
+<span>STORYTELLER</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 15
+<span>Overseer</span> : [2D10] 19
+<span>Overseer</span> : [2D10] 18
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 7
+<span>STORYTELLER</span> : [%] 78
+<span>STORYTELLER</span> : [%] 67
+<span>STORYTELLER</span> : [%] 92
+<span>STORYTELLER</span> : [%] 32
+<span>Overseer</span> : blakdaldkfal;kdjf;alskf;lasdjldfa
+
+<span>Overseer</span> : aljb;klajd;lkad
+
+<span>Overseer</span> : bkla;dlkfjasdl;dkfal;skdf;lasd
+
+<span>Overseer</span> : blkajl;dkjfal;skdjf;alsdkf;alsjda
+
+<span>Overseer</span> : blakdl;kfa;lskdjfasldjfa
+
+<span>Overseer</span> : [2D10] 17
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 15
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 8
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 15
+<span>Overseer</span> : [2D10] 18
+<span>Overseer</span> : [2D10] 4
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 15
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 6
+<span>Overseer</span> : [2D10] 14
+<span>Overseer</span> : [%] 98
+<span>Overseer</span> : [%] 97
+<span>Overseer</span> : [%] 29
+<span>Overseer</span> : !!CRITICAL!! 11
+<span>Overseer</span> : [%] 30
+<span>Overseer</span> : [%] 2
+<span>Overseer</span> : [%] 68
+<span>Overseer</span> : [%] 45
+<span>Overseer</span> : [%] 48
+<span>Overseer</span> : !!CRITICAL!! 11
+<span>Overseer</span> : [%] 64
+<span>Overseer</span> : [%] 20
+<span>Overseer</span> : [%] 59
+<span>Overseer</span> : !!CRITICAL!! 66
+<span>STORYTELLER</span> : [%] 37
+<span>STORYTELLER</span> : [%] 48
+<span>STORYTELLER</span> : [%] 38
+<span>STORYTELLER</span> : [%] 2
+<span>STORYTELLER</span> : [%] 48
+<span>STORYTELLER</span> : [%] 16
+<span>STORYTELLER</span> : [%] 42
+<span>STORYTELLER</span> : [%] 3
+<span>STORYTELLER</span> : [%] 86
+<span>STORYTELLER</span> : [%] 68
+<span>STORYTELLER</span> : [%] 60
+<span>STORYTELLER</span> : !!CRITICAL!! 33
+<span>STORYTELLER</span> : [%] 37
+<span>STORYTELLER</span> : [%] 28
+<span>STORYTELLER</span> : [%] 71
+<span>STORYTELLER</span> : [%] 62
+<span>STORYTELLER</span> : [%] 67
+<span>STORYTELLER</span> : [%] 83
+<span>STORYTELLER</span> : [%] 83
+<span>STORYTELLER</span> : [%] 86
+<span>STORYTELLER</span> : [%] 20
+<span>Overseer</span> : [%] 42
+<span>Overseer</span> : [%] 36
+<span>Overseer</span> : [%] 42
+<span>Overseer</span> : [%] 6
+<span>Overseer</span> : [%] 69
+<span>Overseer</span> : [%] 20
+<span>Overseer</span> : [%] 39
+<span>Overseer</span> : [%] 62
+<span>Overseer</span> : [%] 17
+<span>Overseer</span> : [%] 2
+<span>Overseer</span> : [%] 87
+<span>Overseer</span> : [%] 58
+<span>Overseer</span> : [%] 80
+<span>Overseer</span> : [%] 63
+<span>Overseer</span> : [%] 31
+<span>Overseer</span> : [%] 95
+<span>Overseer</span> : [%] 62
+<span>Overseer</span> : [%] 16
+<span>Overseer</span> : !!CRITICAL!! 55
+<span>Overseer</span> : [%] 5
+<span>Overseer</span> : [%] 68
+<span>Overseer</span> : [%] 3
+<span>Overseer</span> : [%] 51
+<span>Overseer</span> : !!CRITICAL!! 99
+<span>Overseer</span> : !!CRITICAL!! 88
+<span>Overseer</span> : [%] 21
+<span>Overseer</span> : [%] 49
+<span>Overseer</span> : [%] 94
+<span>Overseer</span> : [%] 26
+<span>Overseer</span> : [%] 48
+<span>Overseer</span> : [%] 40
+<span>Overseer</span> : [%] 68
+<span>Overseer</span> : [%] 19
+<span>Overseer</span> : [%] 20
+<span>Overseer</span> : [%] 62
+<span>Overseer</span> : !!CRITICAL!! 77
+<span>Overseer</span> : [%] 62
+<span>Overseer</span> : [%] 81
+<span>Overseer</span> : [%] 71
+<span>Overseer</span> : [%] 5
+<span>Overseer</span> : !!CRITICAL!! 11
+<span>Overseer</span> : [%] 85
+<span>Overseer</span> : [%] 61
+<span>Overseer</span> : [%] 10
+<span>Overseer</span> : [%] 12
+<span>Overseer</span> : [%] 6
+<span>Overseer</span> : [%] 26
+<span>Overseer</span> : [%] 6
+<span>Overseer</span> : [%] 59
+<span>Overseer</span> : [%] 96
+<span>Overseer</span> : [%] 14
+<span>Overseer</span> : [%] 86
+<span>Overseer</span> : [%] 81
+<span>Overseer</span> : [%] 81
+<span>Overseer</span> : [%] 96
+<span>Overseer</span> : [%] 76
+<span>Overseer</span> : [%] 86
+<span>Overseer</span> : [%] 73
+<span>Overseer</span> : [%] 34
+<span>Overseer</span> : [%] 31
+<span>Overseer</span> : [%] 65
+<span>Overseer</span> : [%] 51
+<span>Overseer</span> : !!CRITICAL!! 55
+<span>Overseer</span> : [%] 94
+<span>Overseer</span> : [%] 47
+<span>Overseer</span> : [%] 9
+<span>Overseer</span> : [%] 74
+<span>Overseer</span> : [%] 81
+<span>Overseer</span> : [%] 95
+<span>Overseer</span> : [%] 96
+<span>Overseer</span> : [%] 48
+<span>Overseer</span> : [%] 7
+<span>Overseer</span> : [%] 96
+<span>Overseer</span> : [%] 49
+<span>Overseer</span> : [%] 29
+<span>Overseer</span> : [%] 54
+<span>Overseer</span> : [%] 68
+<span>Overseer</span> : [%] 60
+<span>Overseer</span> : [%] 91
+<span>Overseer</span> : [%] 15
+<span>Overseer</span> : [%] 90
+<span>Overseer</span> : [%] 80
+<span>Overseer</span> : [%] 80
+<span>Overseer</span> : [%] 19
+<span>Overseer</span> : [%] 65
+<span>Overseer</span> : [%] 91
+<span>Overseer</span> : [%] 81
+<span>Overseer</span> : [%] 80
+<span>Overseer</span> : [%] 78
+<span>Overseer</span> : [%] 27
+<span>Overseer</span> : [%] 3
+<span>Overseer</span> : !!CRITICAL!! 11
+<span>Overseer</span> : [%] 40
+<span>Overseer</span> : [%] 80
+<span>Overseer</span> : [%] 27
+<span>Overseer</span> : [%] 86
+<span>Overseer</span> : [%] 14
+<span>Overseer</span> : [%] 73
+<span>Overseer</span> : [%] 19
+<span>Overseer</span> : [%] 71
+<span>Overseer</span> : [%] 31
+<span>Overseer</span> : [%] 35
+<span>Overseer</span> : [%] 78
+<span>Overseer</span> : [%] 30
+<span>Overseer</span> : [%] 13
+<span>Overseer</span> : [%] 91
+<span>Overseer</span> : [%] 47
+<span>Overseer</span> : [%] 56
+<span>Overseer</span> : [%] 58
+<span>Overseer</span> : [%] 13
+<span>Overseer</span> : [%] 8
+<span>Overseer</span> : [%] 78
+<span>Overseer</span> : [%] 72
+<span>Overseer</span> : [%] 79
+<span>Overseer</span> : [%] 98
+<span>Overseer</span> : [%] 3
+<span>Overseer</span> : [%] 71
+<span>Overseer</span> : [%] 10
+<span>Overseer</span> : [%] 14
+<span>Overseer</span> : !!CRITICAL!! 88
+<span>Overseer</span> : [%] 32
+<span>Overseer</span> : !!CRITICAL!! 11
+<span>Overseer</span> : [%] 89
+<span>Overseer</span> : [%] 95
+<span>Overseer</span> : [%] 51
+<span>Overseer</span> : [%] 21
+<span>Overseer</span> : [%] 85
+<span>Overseer</span> : !!CRITICAL!! 99
+<span>Overseer</span> : [%] 38
+<span>Overseer</span> : [%] 89
+<span>Overseer</span> : [%] 34
+<span>Overseer</span> : [%] 49
+<span>Overseer</span> : [%] 10
+<span>Overseer</span> : [%] 60
+<span>Overseer</span> : [%] 8
+<span>Overseer</span> : [%] 60
+<span>Overseer</span> : [2D10] 6
+<span>Overseer</span> : [2D10] 19
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 4
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 8
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 16
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 17
+<span>Overseer</span> : [2D10] 5
+<span>Overseer</span> : [2D10] 13
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 19
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 15
+<span>Overseer</span> : [2D10] 8
+<span>Overseer</span> : [2D10] 11
+<span>Overseer</span> : [2D10] 10
+<span>Overseer</span> : [2D10] 14
+<span>Overseer</span> : [2D10] 12
+<span>Overseer</span> : [2D10] 14
+<span>Overseer</span> : [2D10] 8
+<span>Overseer</span> : [2D10] 9
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 14
+<span>Overseer</span> : [2D10] 7
+<span>Overseer</span> : [2D10] 15
+<span>Overseer</span> : [2D10] 5
+<span>Overseer</span> : [%] 78
+<span>Overseer</span> : [%] 17
+<span>Overseer</span> : [%] 93
+<span>Overseer</span> : [%] 45
+<span>Overseer</span> : [%] 23
+<span>Overseer</span> : [%] 71
+<span>Overseer</span> : [%] 9
+<span>Overseer</span> : [%] 32
+<span>Overseer</span> : [%] 4
+<span>Overseer</span> : [%] 20
+<span>Overseer</span> : !!CRITICAL!! 55
+<span>Overseer</span> : [%] 52
+<span>Overseer</span> : [%] 60
+<span>Overseer</span> : !!CRITICAL!! 44
+<span>Overseer</span> : [%] 71
+<span>Overseer</span> : [%] 10
+<span>Overseer</span> : [%] 25
+<span>Overseer</span> : [%] 50
+<span>Overseer</span> : [%] 73
+<span>Overseer</span> : [%] 29
+<span>Overseer</span> : [%] 13
+<span>Overseer</span> : [%] 57
+<span>Overseer</span> : !!CRITICAL!! 88
+<span>Overseer</span> : [%] 35
+<span>Overseer</span> : [%] 13
+<span>Overseer</span> : [%] 71
+<span>Overseer</span> : [%] 43
+<span>Overseer</span> : [%] 36
+<span>Overseer</span> : [%] 76
+<span>Overseer</span> : [%] 29
+<span>Overseer</span> : [%] 67
+<span>Overseer</span> : !!CRITICAL!! 66
+<span>Overseer</span> : [%] 3
+<span>Overseer</span> : [%] 97
+<span>Overseer</span> : [%] 20
+<span>Overseer</span> : [%] 24
+<span>Overseer</span> : [%] 13
+<span>STORYTELLER</span> : check 
+
+<span>STORYTELLER</span> : check
+
+<span>STORYTELLER</span> : check
+
+<span>STORYTELLER</span> : chek
+
+<span>STORYTELLER</span> : blach blach blach blach blach blach blach blach blach blach blach blach blach blach blach blach blac
+<span>STORYTELLER</span> : blach blach blach blach blach blach blach blach blach blach blach 
+
+<span>STORYTELLER</span> : kk
+
+<span>STORYTELLER</span> : 555
+
+<span>STORYTELLER</span> : [2D10] 12
+<span>STORYTELLER</span> : [2D10] 4
+<span>STORYTELLER</span> : [2D10] 18
+<span>STORYTELLER</span> : [2D10] 8
+<span>STORYTELLER</span> : [%] 36
+<span>STORYTELLER</span> : [%] 6

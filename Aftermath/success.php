@@ -1,10 +1,10 @@
 <?php
    include("inc/config.php");
-   if(isset($_POST['submit'])){
-      $username = htmlentities(stripslashes($_POST['username']));
-      $password = htmlentities(stripslashes($_POST['password']));
-  }
   session_start();
+
+  if (isset($_SESSION['id']) == false){
+        header("Location: login.php");
+    } 
 ?>
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
@@ -32,32 +32,11 @@
 <div class="large-12 columns"><a href="index.php"><img src="img/banners/aftermathcity.jpg" style="margin: 0 auto; max-height: 15vh;" /></a></div>
 </div>
 
-<form id="login" method="post" action="inc/confirmLI.php">
-<div class="row content">
-<div class="large-3 columns">&nbsp;</div>
-
-<div class="large-2 columns">
-<label style="font-family: impact;">USERNAME:<input type="text" name="username" placeholder="ENTER USERNAME" /></label>  
-</div>
-
-<div class="large-2 columns">
-<label style="font-family: impact;">PASSWORD:<input type="password" name="password" placeholder="ENTER PASSWORD" /></label> 
-</div>
-
-<div class="large-2 columns">&nbsp;</div>
-<div class="large-2 columns"><br><input type="submit" value="SUBMIT" class="button"/>
-</div>
-
-</div>
-<div class="row content">
-<div class="large-12 columns">
-<?php
-    $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    if (strpos($url, 'error=fail')){
-    echo '<p class="error">INVALID USERNAME OR PASSWORD</p>';
-}
-?>
-</div>
+<div class="row">
+  <div class="large 12-columns content">
+    <p class="success" style="padding-bottom: 10px;">UPLOAD SUCCESSFUL</p>
+    <div class="large 12-columns"><a href="index.php" class="button">RETURN TO HOMEPAGE</a></div>
+  </div>
 </div>
 
 </form>
