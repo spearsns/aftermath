@@ -1,0 +1,244 @@
+html{
+	height: 100vh;
+	}
+
+body{
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 5vh;
+}
+
+.error{
+	color: red;
+	text-align: center;
+	font-size: 18px;
+	margin-top: 6px;
+	margin-bottom: -6px;
+}
+
+.success{
+	color: red;
+	text-align: center;
+	font-size: 24px;
+	margin-top: 6px;
+	margin-bottom: -6px;
+}
+
+.ceiling{
+	background-color: #DDD;
+	border: 4px solid black;
+}
+
+.banner{
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 15vh;
+}
+
+.content{
+	background-color: #DDD;
+}
+
+.contentbox{
+	background-color: white;
+	border: solid 5px black;
+	height: 67vh;
+	overflow-y: scroll;
+}
+
+.userbox{
+	background-color: white;
+	border: solid 5px black;
+	height: 5vh;
+}
+
+.campaignbox{
+	background-color: white;
+	border: solid 5px black;
+	height: 15vh;
+}
+
+.box{
+	background-color: white;
+	border: solid 5px black;
+	height: 15vh;
+	overflow-y: scroll;
+}
+
+.hotbox{
+	padding-bottom: 2vh;
+}
+
+.footer{
+	background-color: black;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 5vh;
+}
+
+img{
+	display: block;
+}
+
+.button{
+	width: 100%;
+	margin: 0 auto;
+	height: 6.5vh;
+	font-family: impact;
+	font-size-adjust: 0.7;
+	background-color: orange;
+	color: black;
+	border: 2px solid black;
+	text-align: center;
+}
+
+.modButton{
+	background-color: orange;
+	color: black;
+	float: left;
+	display: inline-block;
+	min-width: 10%;
+	min-height: 6vh;
+	font-weight: bolder;
+}
+
+.trainBtn{
+	background-color: orange;
+	color: black;
+	float: left;
+	display: inline-block;
+	min-width: 20%;
+	min-height: 6vh;
+	font-weight: bolder;
+}
+
+.advTrainBtn{
+	background-color: red;
+	color: black;
+	float: left;
+	display: inline-block;
+	min-width: 20%;
+	min-height: 6vh;
+	font-weight: bolder;
+}
+
+table{
+	width: 100%;
+	font-size: 1em;
+}
+
+td{
+	text-align: center;
+	border: 1px solid black;
+	width: 12.5% !important;
+	background-color: #EEE;
+}
+
+input{
+	text-align: center;
+	display: inline-block;
+	margin-bottom: 0 !important;
+}
+
+input[type="text"]{
+	font-size: 0.8em;
+	height: inherit !important;
+}
+
+.trait{
+	text-align: center;
+	display: inline-block;
+	float: left;
+	max-width: 80%;
+}
+
+.skill{
+	text-align: center;
+	display: inline-block;
+	float: left;
+	max-width: 80%;
+}
+
+.spendexp{
+	text-align: center;
+	display: inline-block;
+	float: left;
+	max-width: 60%;
+}
+
+.playsheet{
+	font-size: 0.7em;
+}
+
+/* MODALS */
+.modal{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 86.8%;
+	height: 60%;
+	overflow: auto;
+	background-color: black;
+	opacity: 0.9;
+	padding: 15px;
+	color: white;
+}
+.editModal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	width: 88.5%;
+	height: 75%;
+	overflow: auto;
+	background-color: black;
+	opacity: 0.9;
+	padding: 15px;
+	color: black;
+}
+.close{
+	float: right;
+	background-color: orange;
+	text-align: center;
+	width: 6vw;
+	height: 6vh;
+	font-family: impact;
+	font-size-adjust: 0.7;
+	padding-top: 1.5vh;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sheetarea{
+	height: 67vh;
+	overflow: auto;
+	float: left;
+	border: double;
+	background-color: black;
+}
+.playerlist{
+	height: 73vh;
+	overflow: auto;
+	float: left;
+	border: double;
+	background-color: black;
+}
+/* CHATBOX */
+#chat-area{   
+  border: solid;
+  width: 100%;
+  height: 50vh;
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+p{
+	margin-bottom: 0;
+}
