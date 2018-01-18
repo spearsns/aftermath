@@ -2772,6 +2772,12 @@
       <td style="background-color: lightgray; text-align: center;">LITERACY</td>
       <td colspan="2" style="background-color: darkgray;"></td>
     </tr>
+
+    <tr>
+    <td colspan="4" style="background-color: black;"></td>
+    <td colspan="4"><button type="button" onclick="document.getElementById('skillModal').style.display='none';" class="button">CANCEL</button></td>
+    <td colspan="4" style="background-color: black;"></td>
+  </tr>
   </table>
 </div>
 </div>
@@ -2841,6 +2847,12 @@
         class="button" id="planesBtn" data-name="PLANES">AIRPLANES</button></td>
       <td style="background-color: darkgray;"></td>
     </tr>
+
+    <tr>
+    <td colspan="4" style="background-color: black;"></td>
+    <td colspan="4"><button type="button" onclick="document.getElementById('advSkillModal').style.display='none';" class="button">CANCEL</button></td>
+    <td colspan="4" style="background-color: black;"></td>
+  </tr>
 </table>
 </div>
 </div>

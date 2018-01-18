@@ -245,10 +245,10 @@ window.onload = function background(){
 		break;
     	} while (1 == 1);
 
-//GANGSTER
+//GANG-MEMBER
 		} else if (background >= 41 && background <= 70){
 		do {
-		document.getElementById("background").setAttribute("value", "GANGSTER");
+		document.getElementById("background").setAttribute("value", "GANG MEMBER");
 		break;
     	} while (1 == 1);
 

@@ -44,8 +44,8 @@
 <!--form-->
 <div class="row content">
 <div class="large-12 columns">
-
-<form style="margin-top: 10px;" id="charsheet" action="inc/uploadchar.php" method="post">
+<p class='error'>RED BUTTONS INDICATE 2 SKILL CHOICES</p>
+<form id="charsheet" action="inc/uploadchar.php" method="post">
 <table>
 <!--PLAYER-->
     <tr>

@@ -685,8 +685,8 @@ window.onload = function skills(){
         break;
         } while (1 == 1);
 
-//GANGSTER
-        } else if (background === "GANGSTER"){
+//GANG MEMBER
+        } else if (background === "GANG MEMBER"){
         do {
         negot += roll(3,30);
         var modal = document.getElementById('gangModal');
