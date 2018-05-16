@@ -1,0 +1,72 @@
+NEW CAMPAIGN<span>Nick</span> : yes? 
+<span>STORYTELLER</span> : yes? 
+<span>Nick</span> : yes? 
+<span>STORYTELLER</span> : yes?!? 
+<span>Nick</span> : YES!!! 
+<span>Guest</span> : blah blah blah blah 
+<span>STORYTELLER</span> : blah blah blah 
+<span>STORYTELLER</span> : random dude jumps you in alley 
+<span>Guest</span> : does anything connect? 
+<span>STORYTELLER</span> : [%] 30
+<span>Guest</span> : ill use one of my 6 to block 
+<span>Guest</span> : [%] 19
+<span>Guest</span> : [%] 37
+<span>Guest</span> : [%] 37
+<span>Guest</span> : [%] 75
+<span>Guest</span> : [%] 29
+<span>Guest</span> : [%] 26
+<span>Guest</span> : [%] 32
+<span>Guest</span> : [%] 16
+<span>Guest</span> : [%] 74
+<span>Guest</span> : [%] 27
+<span>Guest</span> : [%] 52
+<span>Guest</span> : [%] 75
+<span>Guest</span> : [%] 60
+<span>Guest</span> : [%] 63
+<span>Guest</span> : [%] 74
+<span>Guest</span> : !!CRITICAL!! 66
+<span>Guest</span> : [%] 27
+<span>Guest</span> : [%] 47
+<span>Guest</span> : [%] 9
+<span>Guest</span> : [%] 26
+<span>Guest</span> : [%] 91
+<span>Guest</span> : !!CRITICAL!! 22
+<span>Guest</span> : [%] 42
+<span>Guest</span> : [%] 47
+<span>Guest</span> : [%] 81
+<span>Guest</span> : [%] 59
+<span>Guest</span> : !!CRITICAL!! 66
+<span>Guest</span> : [%] 61
+<span>Guest</span> : [%] 86
+<span>Guest</span> : [%] 2
+<span>Guest</span> : [%] 74
+<span>Guest</span> : [%] 73
+<span>Guest</span> : !!CRITICAL!! 44
+<span>Guest</span> : [%] 96
+<span>Guest</span> : [%] 25
+<span>Guest</span> : [%] 1
+<span>Guest</span> : [%] 53
+<span>Guest</span> : [%] 10
+<span>Guest</span> : [%] 28
+<span>Guest</span> : [%] 91
+<span>Guest</span> : [%] 75
+<span>Guest</span> : [%] 21
+<span>Guest</span> : [%] 34
+<span>Guest</span> : [%] 35
+<span>Guest</span> : [%] 38
+<span>Guest</span> : [%] 89
+<span>Guest</span> : [%] 9
+<span>Guest</span> : [%] 85
+<span>Guest</span> : [%] 47
+<span>Guest</span> : [%] 81
+<span>Guest</span> : !!CRITICAL!! 77
+<span>Guest</span> : [%] 49
+<span>Guest</span> : !!CRITICAL!! 55
+<span>Guest</span> : [%] 93
+<span>Guest</span> : [%] 97
+<span>Guest</span> : [%] 43
+<span>Guest</span> : [%] 82
+<span>Guest</span> : !!CRITICAL!! 55
+<span>Guest</span> : [%] 9
+<span>Guest</span> : [%] 79
+<span>Guest</span> : [%] 42

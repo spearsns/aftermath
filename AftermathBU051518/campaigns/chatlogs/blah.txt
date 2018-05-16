@@ -1,0 +1,169 @@
+NEW CAMPAIGN<span>Guest</span> : [2D10] 9
+<span>Guest</span> : [2D10] 10
+<span>Guest</span> : [2D10] 9
+<span>Guest</span> : LEFT UPPER ARM
+<span>Guest</span> : LEFT HAND
+<span>STORYTELLER</span> : [%] 27
+<span>STORYTELLER</span> : [2D10] 6
+<span>STORYTELLER</span> : RIGHT FOREARM
+<span>STORYTELLER</span> : HEAD
+<span>STORYTELLER</span> : [%] 24
+<span>STORYTELLER</span> : [2D10] 4
+<span>STORYTELLER</span> : [RHC] LEFT UPPER ARM
+<span>STORYTELLER</span> : [2D10] 10
+<span>STORYTELLER</span> : [%] 29
+<span>STORYTELLER</span> : [%] 01 
+<span>STORYTELLER</span> : {} 
+<span>Guest</span> : blah 
+<span>Guest</span> : bahg 
+<span>Guest</span> : [%] 96
+<span>Guest</span> : RIGHT FOOT
+<span>Guest</span> : [2D10] 8
+<span>STORYTELLER</span> : [RHC] MIDSECTION (STOMACH / LOWER BACK)
+<span>STORYTELLER</span> : [2D10] 11
+<span>STORYTELLER</span> : [%] 13
+<span>STORYTELLER</span> : [RHC] RIGHT THIGH
+<span>STORYTELLER</span> : [2D10] 13
+<span>Guest</span> : [2D10] 10
+<span>Guest</span> : [RHC] LEFT CALF
+<span>Guest</span> : [%] 70
+<span>Guest</span> : ladidda 
+<span>Guest</span> : [%] 20
+<span>Guest</span> : [RHC] MIDSECTION (STOMACH / LOWER BACK)
+<span>Guest</span> : [2D10] 16
+<span>Guest</span> : lala 
+<span>Guest</span> : lala 
+<span>Guest</span> : lala 
+<span>Guest</span> : lalalala 
+<span>Guest</span> : lala 
+<span>Guest</span> : lala 
+<span>Guest</span> : lala 
+<span>Guest</span> : laal 
+<span>Guest</span> : blah 
+<span>Guest</span> : blah 
+<span>Guest</span> : blah 
+<span>Guest</span> : blah 
+<span>Guest</span> : KAKA 
+<span>Guest</span> : [%] 50
+<span>Guest</span> : [%] 76
+<span>Guest</span> : [%] 51
+<span>STORYTELLER</span> : [%] 81
+<span>STORYTELLER</span> : [RHC] LEFT UPPER BODY (RIBS[HEART] / SHOULDER)
+<span>STORYTELLER</span> : [2D10] 9
+<span>STORYTELLER</span> : [2D10] 16
+<span>STORYTELLER</span> : [RHC] LEFT UPPER ARM
+<span>STORYTELLER</span> : [%] 54
+<span>FATE</span> : [2D10] 7
+<span>FATE</span> : [%] 54
+<span>FATE</span> : [RHC] RIGHT HAND
+<span>FATE</span> : [2D10] 9
+<span>FATE</span> : [%] 62
+<span>FATE</span> : [RHC] RIGHT UPPER BODY (RIBS / SHOULDER)
+<span>FATE</span> : [RHC] LEFT UPPER ARM
+<span>FATE</span> : [RHC] MIDSECTION(STOMACH/LOWER BACK)
+<span>FATE</span> : [RHC] RIGHT CALF
+<span>FATE</span> : [RHC] LEFT THIGH
+<span>FATE</span> : [RHC] RIGHT UPPER BODY(RIBS/SHOULDER)
+<span>FATE</span> : [RHC] RIGHT THIGH
+<span>FATE</span> : [RHC] RIGHT FOREARM
+<span>FATE</span> : [RHC] RIGHT UPPER ARM
+<span>FATE</span> : [RHC] PELVIS(GROIN/REAR)
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] RIGHT UPPER BODY(RIBS/SHOULDER)
+<span>FATE</span> : [RHC] MIDSECTION(STOMACH/LOWER BACK)
+<span>FATE</span> : [RHC] MIDSECTION(STOMACH/LOWER BACK)
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] RIGHT UPPER BODY(RIBS/SHOULDER)
+<span>FATE</span> : [RHC] LEFT UPPER BODY(RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] LEFT FOREARM
+<span>FATE</span> : [RHC] LEFT UPPER BODY (RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] RIGHT THIGH
+<span>FATE</span> : [RHC] LEFT UPPER BODY (RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] RIGHT HAND
+<span>FATE</span> : [RHC] RIGHT FOREARM
+<span>FATE</span> : [RHC] RIGHT UPPER BODY(RIBS/SHOULDER)
+<span>FATE</span> : RIGHT FOOT
+<span>FATE</span> : [RHC] LEFT UPPER ARM
+<span>FATE</span> : [RHC] RIGHT UPPER ARM
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] RIGHT UPPER BODY(RIBS/SHOULDER)
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : RIGHT FOOT
+<span>FATE</span> : [RHC] LEFT FOREARM
+<span>FATE</span> : [RHC] LEFT CALF
+<span>FATE</span> : [RHC] LEFT UPPER ARM
+<span>FATE</span> : [RHC] LEFT UPPER BODY(RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] LEFT UPPER BODY(RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] LEFT UPPER BODY(RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] RIGHT FOREARM
+<span>FATE</span> : [RHC] RIGHT HAND
+<span>FATE</span> : [RHC] L UPPER ARM
+<span>FATE</span> : [RHC] R UPPER BODY(RIBS/SHOULDER)
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] R THIGH
+<span>FATE</span> : [RHC] NECK
+<span>FATE</span> : [RHC] R FOREARM
+<span>FATE</span> : [RHC] R CALF
+<span>FATE</span> : [RHC] R UPPER ARM
+<span>FATE</span> : [RHC] L UPPER BODY(RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] L CALF
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] NECK
+<span>FATE</span> : [RHC] L UPPER BODY(RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] R CALF
+<span>FATE</span> : [RHC] PELVIS(GROIN/REAR)
+<span>FATE</span> : [RHC] L UPPER BODY(RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] L CALF
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] L UPPER BODY(RIBS[HEART]/SHOULDER)
+<span>FATE</span> : [RHC] R FOREARM
+<span>FATE</span> : [RHC] NECK
+<span>FATE</span> : [RHC] L FOOT
+<span>FATE</span> : [RHC] R HAND
+<span>FATE</span> : [RHC] R HAND
+<span>FATE</span> : [RHC] MIDSECTION(STOMACH/LOWER BACK)
+<span>FATE</span> : [RHC] HEAD
+<span>FATE</span> : [RHC] L THIGH
+<span>FATE</span> : [RHC] L FOREARM
+<span>FATE</span> : [RHC] L CALF
+<span>FATE</span> : [RHC] R THIGH
+<span>FATE</span> : [RHC] PELVIS(GROIN/REAR)
+<span>FATE</span> : [RHC] R UPPER BODY(RIBS/SHOULDER)
+<span>FATE</span> : [RHC] L UPPER ARM
+<span>FATE</span> : [2D10] 6
+<span>FATE</span> : [2D10] 14
+<span>FATE</span> : [%] 8
+<span>FATE</span> : [%] !!CRITICAL!! 77
+<span>FATE</span> : [%] 19
+<span>FATE</span> : [%] 41
+<span>FATE</span> : [%] 8
+<span>FATE</span> : [%] 20
+<span>FATE</span> : [%] !!CRITICAL!! 55
+<span>FATE</span> : [%] !!CRITICAL!! 44
+<span>FATE</span> : [%] 92
+<span>FATE</span> : [%] 94
+<span>FATE</span> : [%] 18
+<span>FATE</span> : [%] 25
+<span>FATE</span> : [%] !!CRITICAL!! 22
+<span>FATE</span> : [%] 69
+<span>FATE</span> : [%] 5
+<span>FATE</span> : [%] 69
+<span>FATE</span> : [%] 62
+<span>FATE</span> : [%] 26
+<span>FATE</span> : [%] 6
+<span>FATE</span> : [%] 96
+<span>FATE</span> : [%] 74
+<span>FATE</span> : [%] 30
+<span>FATE</span> : [%] !!CRITICAL!! 55
+<span>FATE</span> : [%] 47
+<span>FATE</span> : [%] 62
+<span>FATE</span> : [%] 38
+<span>FATE</span> : [%] 20
+<span>FATE</span> : [%] 90
+<span>FATE</span> : [%] 21
+<span>FATE</span> : [%] 51
+<span>FATE</span> : [RHC] R THIGH
