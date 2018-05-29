@@ -20,41 +20,21 @@
   </head>
 <body>
 
-<!--ceiling--> 
-<div class="row ceiling">
-<div class="large-2 columns"><a href="login.php" class="button">LOGIN</a></div>
-<form id="logout" action="inc/logout.php" method="post">
-<div class="large-2 columns"><input type="submit" value="LOG OUT" class="button" style="font-family: impact;" /></div>
-</form>
-<div class="large-6 columns">
-<?php
-    $username = $_SESSION['username'];
+<?php include("header.php"); ?>
 
-    $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    
-    echo "<p class='error'>Currently logged in as:  " .$username ."</p>";
-?>
+<div class="row metal">
+  <div class="small-12 columns"><p class="error hotbox">PLEASE SELECT CHARACTER:</p></div>
 </div>
-<div class="large-2 columns"><a href="signup.php" class="button">JOIN</a></div>
-</div>
-
-<!--banner-->
-<div class="row banner">
-<div class="large-12 columns"><a href="index.php?logged"><img src="img/banners/aftermathcity.jpg" style="margin: 0 auto; max-height: 15vh;" /></a></div>
-</div>
-
 <!--content-->
-<div class="row content">
-    <div class="large-4 large-centered error">PLEASE SELECT CHARACTER:</div>
-    <br>
-    <div class="large-4 large-centered">
+<div class="row charSelBox">
+    <div class="small-4 small-centered">
         <?php
             $sql = "SELECT charName FROM characters WHERE username ='$username'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                echo "<a href='charMgmt.php?". $row["charName"]."' class='button'>". $row["charName"]."</a><br>";
+                echo "<a href='charMgmt.php?". $row["charName"]."'><button class='navbutton'>". $row["charName"]."</button></a><br>";
                 }
             } else {
             echo "0 results";
@@ -62,13 +42,9 @@
 
         ?>
     </div>
-    <br>
 </div>
 
-<!--footer-->
-<div class="row footer">
-<div class="large-12 columns">&nbsp;</div>
-</div>
+<?php include("footer.php"); ?>
 
 </body>
 </html>

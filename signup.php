@@ -21,58 +21,50 @@
   </head>
 <body>
 
-<!--ceiling--> 
-<div class="row ceiling">
-<div class="large-2 columns"><a href="login.php" class="button">LOGIN</a></div>
-<form id="logout" action="inc/logout.php" method="post">
-<div class="large-2 columns"><input type="submit" value="LOG OUT" class="button" style="font-family: impact;" /></div>
-</form>
-<div class="large-6 columns">&nbsp;</div>
-<div class="large-2 columns"><a href="signup.php" class="button">JOIN</a></div>
-</div>
+<?php include("header.php"); ?>
 
-<!--banner-->
-<div class="row banner">
-<div class="large-12 columns"><a href="index.php"><img src="img/banners/aftermathcity.jpg" style="margin: 0 auto; max-height: 15vh;" /></a></div>
+<div class="row metal">
+  <div class="small-12 columns" style="height: 10vh;">&nbsp;</div>
 </div>
 
 <form id="signup" method="post" action="inc/confirmSU.php">
 
-<div class="row content">
-<div class="large-4 columns">&nbsp;</div>
-<div class="large-4 columns">
-<label style="font-family: impact;">USERNAME:<input type="text" name="username" placeholder="ENTER USERNAME" /></label>  
-</div>
-<div class="large-4 columns">&nbsp;</div>
-</div>
-
-<div class="row content">
-<div class="large-4 columns">&nbsp;</div>
-<div class="large-4 columns">
-<label style="font-family: impact;">PASSWORD:<input type="password" name="password" placeholder="ENTER PASSWORD" /></label> 
-</div>
-<div class="large-4 columns">&nbsp;</div>
+<div class="row banner">
+  <div class="small-2 columns">&nbsp;</div>
+  <div class="small-4 columns"><img src="img/graffiti/username.png" /></div>
+  <div class="small-4 columns"><input type="text" name="username" class="enter" placeholder="ENTER USERNAME" /></div>
+  <div class="small-2 columns">&nbsp;</div>
 </div>
 
-<div class="row content">
-<div class="large-4 columns">&nbsp;</div>
-<div class="large-4 columns">
-<label style="font-family: impact;">CONFIRM PASSWORD:<input type="password" name="passwordConfirm" placeholder="RE-ENTER PASSWORD" /></label> 
-</div>
-<div class="large-4 columns">&nbsp;</div>
-</div>
-
-<div class="row content">
-<div class="large-4 columns">&nbsp;</div>
-<div class="large-4 columns">
-<label style="font-family: impact;">EMAIL:<input type="text" name="email" placeholder="ENTER EMAIL" /></label> 
-</div>
-<div class="large-2 columns">&nbsp;</div>
-<div class="large-2 column"><br><input type="submit" name="submit" value="SUBMIT" class="button"/></div>
+<div class="row banner">
+  <div class="small-2 columns">&nbsp;</div>
+  <div class="small-4 columns"><img src="img/graffiti/password.png" /></div>
+  <div class="small-4 columns"><input type="password" name="password" class="enter" placeholder="ENTER PASSWORD" /></div>
+  <div class="small-2 columns">&nbsp;</div>
 </div>
 
-<div class="row content">
-<div class="large-12 columns">
+<div class="row banner">
+  <div class="small-2 columns">&nbsp;</div>
+  <div class="small-4 columns"><img src="img/graffiti/confirmpassword.png" /></div>
+  <div class="small-4 columns"><input type="password" name="passwordConfirm" placeholder="RE-ENTER PASSWORD" /></div>
+  <div class="small-2 columns">&nbsp;</div>
+</div>
+
+<div class="row banner">
+  <div class="small-2 columns">&nbsp;</div>
+  <div class="small-4 columns"><img src="img/graffiti/email.png" /></div>
+  <div class="small-4 columns"><input type="text" name="email" placeholder="ENTER EMAIL" /></div>
+  <div class="small-2 columns">&nbsp;</div>
+</div>
+
+<div class="row banner">
+  <div class="small-3 columns">&nbsp;</div>
+  <div class="small-6 columns"><input type="submit" name="submit" value="SUBMIT" class="navbutton"/></div>
+  <div class="small-3 columns">&nbsp;</div>
+</div>
+
+<div class="row banner">
+<div class="small-12 columns">
   <?php
     $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     if (strpos($url, 'error=empty')){
@@ -89,5 +81,6 @@
 </div>
 </form>
 
+<?php include("footer.php"); ?>
 </body>
 </html>  

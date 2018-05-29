@@ -5,10 +5,176 @@
     if (isset($_SESSION['id']) == false){
         header("Location: login.php?");
     }
-    
+
     $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    $username = $_SESSION['username'];
     $charName = parse_url($url, PHP_URL_QUERY);
+    
+    $sql="SELECT * FROM characters WHERE charName = '$charName'";
+          $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+
+    //DEMOGRAPHICS
+    $ethnicity =        $row['ETHNICITY'];
+    $sex =              $row['SEX'];
+    $age =              $row['AGE'];
+    $hairColor =        $row['HAIR_COLOR'];
+    $hairStyle =        $row['HAIR_STYLE'];
+    $habitat =          $row['HABITAT'];
+    $background =       $row['BACKGROUND'];
+    //TRAITS
+    $MEM =              $row['MEM'];
+    $STR =              $row['STR'];
+    $LOG =              $row['LOG'];
+    $END =              $row['END'];
+    $PER =              $row['PER'];
+    $DEX =              $row['DEX'];
+    $WILL =             $row['WILL'];
+    $SPD =              $row['SPD'];
+    $CHA =              $row['CHA'];
+    $BTY =              $row['BTY'];
+    //COMBAT STATS
+    $ACTIONS =          $row['ACT'];
+    $SEQ =              $row['SEQ'];
+    $BLOCK =            $row['BLOCK'];
+    $DODGE =            $row['DODGE'];
+    //COMBAT SKILLS
+    $UNARMED =          $row['UNARMED'];
+    $THROWN =           $row['THROW'];
+    $GRAPPLE =          $row['GRAPPLE'];
+    $ARCH =             $row['ARCH'];
+    $OFF =              $row['OFF'];
+    $PISTOLS =          $row['PISTOLS'];
+    $SHORT =            $row['SHORTW'];
+    $RIFLES =           $row['RIFLES'];
+    $LONG =             $row['LONGW'];
+    $BURST =            $row['BURST'];
+    $THM =              $row['TWOHW'];
+    $SPECIAL =          $row['SPECIAL'];
+    $CHAIN =            $row['CHAIN'];
+    $WSYS =             $row['WSYS'];
+
+    $GAMBLING =         $row['GAMBLING'];
+    //SURVIVAL    
+    $envAware =         $row['ENV_AWARENESS'];
+    $firstAid =         $row['FIRST_AID'];
+    $navigation =       $row['NAVIGATION'];
+    $tracking =         $row['TRACKING'];
+    $trapping =         $row['TRAPPING'];
+    $fishing =          $row['FISHING'];
+    //ESPIONAGE
+    $stealth =          $row['STEALTH'];
+    $surveillance =     $row['SURVEILLANCE'];
+    $pickpocket =       $row['PICKPOCKET'];
+    $lockpick =         $row['LOCKPICK'];
+    //TECHNOLOGY
+    $crafting =         $row['CRAFTING'];
+    $computers =        $row['COMPUTERS'];
+    $mechanics =        $row['MECHANICS'];
+    $electrical =       $row['ELECTRICAL'];
+    $radioSys =         $row['RADIO_SYS'];
+    //TRANSPORTATION
+    $skateboard =       $row['SKATEBOARD'];
+    $bicycle =          $row['BICYCLE'];
+    $horsemanship =     $row['HORSEMANSHIP'];
+    $automobile =       $row['AUTOMOBILE'];
+    $sailing =          $row['SAILING'];
+    $boating =          $row['BOATING'];
+    $motorcycle =       $row['MOTORCYCLE'];
+    $jetSki =           $row['JET_SKI'];
+    //SOL
+    $literacy =         $row['LITERACY'];
+    $math =             $row['MATH'];
+    $history =          $row['HISTORY'];
+    $biology =          $row['BIOLOGY'];
+    $botany =           $row['BOTANY'];
+    $chemistry =        $row['CHEMISTRY'];
+    //SOFT
+    $negotiation =      $row['NEGOTIATION'];
+    $law =              $row['FEDERAL_LAW'];
+    $lang1 =            $row['LANG1'];
+    $langRate1 =        $row['LANGRATE1'];
+    $lit1 =             $row['LIT1'];
+    $litRate1 =         $row['LITRATE1'];
+    $lang2 =            $row['LANG2'];
+    $langRate2 =        $row['LANGRATE2'];
+    $lit2 =             $row['LIT2'];
+    $litRate2 =         $row['LITRATE2'];
+    $lang3 =            $row['LANG3'];
+    $langRate3 =        $row['LANGRATE3'];
+    $lit3 =             $row['LIT3'];
+    $litRate3 =         $row['LITRATE3'];
+    $lang4 =            $row['LANG4'];
+    $langRate4 =        $row['LANGRATE4'];
+    $lit4 =             $row['LIT4'];   
+    $litRate4 =         $row['LITRATE4'];
+    //ADVANCED
+    $forensics =        $row['FORENSICS'];
+    $physics =          $row['PHYSICS'];
+    $construction =     $row['CONSTRUCTION'];
+    $programming =      $row['PROGRAMMING'];
+    $helicopters =      $row['HELICOPTERS'];
+    $airplanes =        $row['AIRPLANES'];
+    $MGV =              $row['MGV'];
+    $hvyEquip =         $row['HVY_EQUIP'];
+    $toxicology =       $row['TOXICOLOGY'];
+    $pharmacology =     $row['PHARMACOLOGY'];
+    $doctor =           $row['DOCTOR'];
+    //ABILITIES
+    $ABILITY1 =         $row['ABILITY1'];
+    $ABILITY2 =         $row['ABILITY2'];
+    $ABILITY3 =         $row['ABILITY3'];
+    $ABILITY4 =         $row['ABILITY4'];
+    $ABILITY5 =         $row['ABILITY5'];
+    $ABILITY6 =         $row['ABILITY6'];
+    $ABILITY7 =         $row['ABILITY7'];
+    $ABILITY8 =         $row['ABILITY8'];
+    $ABILITY9 =         $row['ABILITY9'];
+    $ABILITY10 =        $row['ABILITY10'];
+    $ABILITY11 =        $row['ABILITY11'];
+    $ABILITY12 =        $row['ABILITY12'];
+    $ABILITY13 =        $row['ABILITY13'];
+    $ABILITY14 =        $row['ABILITY14'];
+    $ABILITY15 =        $row['ABILITY15'];
+    //EXPERIENCE
+    $remEXP =           $row['remEXP'];
+    $totalEXP =         $row['totalEXP'];
+    } 
+      } else { echo "0 results"; }
+
+    $idmarks="SELECT * FROM idmarks WHERE charName = '$charName'";
+          $results = $conn->query($idmarks);
+            if ($results->num_rows > 0) {
+              while($row = $results->fetch_assoc()) {
+
+              $face =         $row['face'];
+              $head =         $row['head'];
+              $neck =         $row['neck'];
+              $groin =        $row['groin'];
+              $rear =         $row['rear'];
+              $stomach =      $row['stomach'];
+              $lowerBack =    $row['lowerBack'];
+              $LRibs =        $row['LRibs'];
+              $RRibs =        $row['RRibs'];
+              $LShoulder =    $row['LShoulder'];
+              $RShoulder =    $row['RShoulder'];
+              $LUpperArm =    $row['LUpperArm'];
+              $RUpperArm =    $row['RUpperArm'];
+              $LThigh =       $row['LThigh'];
+              $RThigh =       $row['RThigh'];
+              $LForearm =     $row['LForearm'];
+              $RForearm =     $row['RForearm'];
+              $LCalf =        $row['LCalf'];
+              $RCalf =        $row['RCalf'];
+              $LHand =        $row['LHand'];
+              $RHand =        $row['RHand'];
+              $LFoot =        $row['LFoot'];
+              $RFoot =        $row['RFoot']; 
+              } 
+                } else { echo "0 results"; }
 ?>
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -18,1618 +184,422 @@
     <title>The Aftermath</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <link type="text/css" media="screen" rel="stylesheet" href="../inc/zurb-responsive-tables/responsive-tables.css" />
+    <script type="text/javascript" src="../inc/zurb-responsive-tables/responsive-tables.js"></script>
   </head>
 <body>
 
-<!--ceiling--> 
-<div class="row ceiling">
-<div class="large-2 columns"><a href="login.php" class="button">LOGIN</a></div>
-<form id="logout" action="inc/logout.php" method="post">
-<div class="large-2 columns"><input type="submit" value="LOG OUT" class="button" style="font-family: impact;" /></div>
-</form>
-
-<div class="large-6 columns">
-<?php
-    $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    $username = $_SESSION['username'];
-    echo "<p class='error'>Currently logged in as:  " .$username ."</p>";
-?>
-</div>
-<div class="large-2 columns"><a href="signup.php" class="button">JOIN</a></div>
-</div>
-
-<!--banner-->
-<div class="row banner">
-<div class="large-12 columns"><a href="index.php"><img src="img/banners/aftermathcity.jpg" style="margin: 0 auto; max-height: 15vh;" /></a></div>
-</div>
+<?php include("header.php") ?>
 
 <!--CONTENT-->
 <div class="row content">
-<div class="large-12 columns">
+<div class="small-12 columns">
 <table>
+
 <!--PLAYER-->
-    <tr>
-      <td>PLAYER NAME</td>
-      <td><input type="text" id="username" name="username" value="<?php $sql="SELECT username FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['username'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-      <td>CHARACTER NAME</td>
-      <td><input type="text" id="charName" name="charName" value="<?php echo $charName ?>" readonly /></td>
-      <td colspan="2">BACKGROUND</td>
-      <td colspan="2"><input type="text" id="background" name="background"  
-          value="<?php $sql="SELECT background FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['background'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-    </tr>
-    
-    <tr>
-      <td>ETHNICITY</td>
-      <td><input type="text" id="ethnicity" name="ethnicity" 
-          value="<?php $sql="SELECT ethnicity FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ethnicity'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-      
-      <td>SEX</td>
-      <td><input type="text" id="sex" name="sex"  
-          value="<?php $sql="SELECT sex FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['sex'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-      
-      <td>AGE</td>
-      <td><input type="text" id="age" name="age"  
-          value="<?php $sql="SELECT age FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['age'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-      
-      <td>EYE COLOR</td>
-      <td><input type="text" id="eyeColor" name="eyeColor"  
-          value="<?php $sql="SELECT eyeColor FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['eyeColor'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-    </tr>
-
-<!--DEMO 3rd-->
-    <tr>
-      <td>BUILD</td>
-      <td><input type="text" id="build" name="build"  
-          value="<?php $sql="SELECT build FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['build'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-      
-      <td>HABITAT</td>
-      <td><input type="text" id="habitat" name="habitat"  
-          value="<?php $sql="SELECT habitat FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['habitat'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-      
-      <td>HAIR COLOR</td>
-      <td><input type="text" id="hairColor" name="hairColor"  
-          value="<?php $sql="SELECT hairColor FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['hairColor'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-      
-      <td>HAIR STYLE</td>
-      <td><input type="text" id="hairStyle" name="hairStyle"  
-          value="<?php $sql="SELECT hairStyle FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['hairStyle'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-    </tr>
-
-<!--TRAIT-->
-    <tr>
-      <td colspan="4" style="font-weight: bold;">TRAITS</td>
-      <td colspan="4" style="font-weight: bold;">COMBAT STATS</td>
-    </tr>   
-<!--TRAIT 1st-->
-    <tr>
-      <td>MEMORY</td>
-        <td>
-          <input type="text" id="MEM" name="MEM" 
-          value="<?php $sql="SELECT MEM FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['MEM'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-
-        </td>
-
-        <td>STRENGTH</td>
-        <td>
-          <input type="text" id="STR" name="STR"  
-          value="<?php $sql="SELECT STR FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['STR'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-        <td style="font-weight: bold;">ACTIONS</td>
-        <td><input type="text" id="act" name="act"  
-          value="<?php $sql="SELECT ACT FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ACT'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-        <td style="font-weight: bold;">SEQUENCE</td>
-        <td><input type="text" id="seq" name="seq"  
-          value="<?php $sql="SELECT SEQ FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['SEQ'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-    </tr>
-<!--TRAIT 2nd-->
-    <tr>
-      <td>LOGIC</td>
-        <td>
-          <input type="text" id="LOG" name="LOG" 
-          value="<?php $sql="SELECT LOG FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['LOG'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td>ENDURANCE</td>
-        <td>
-          <input type="text" id="END" name="END" 
-          value="<?php $sql="SELECT END FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['END'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-        <td style="font-weight: bold;">BLOCK</td>
-        <td>
-          <input type="text" id="block" name="block"   
-          value="<?php $sql="SELECT BLOCK FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['BLOCK'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-
-        <td style="font-weight: bold;">DODGE</td>
-        <td>
-          <input type="text" id="dodge" name="dodge"   
-          value="<?php $sql="SELECT DODGE FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['DODGE'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-    </tr>
-<!--TRAIT 3rd-->
-    <tr>
-<td>PERCEPTION</td>
-        <td>          <input type="text" id="PER" name="PER"  
-          value="<?php $sql="SELECT PER FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['PER'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />        </td>
-
-      <td>DEXTERITY</td>
-        <td>
-          <input type="text" id="DEX" name="DEX"  
-          value="<?php $sql="SELECT DEX FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['DEX'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-        <td>UNARM</td>
-        <td>
-          <input type="text" id="unarm" name="unarm" 
-          value="<?php $sql="SELECT UNARM FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['UNARM'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-        <td>THROW</td>
-        <td>
-          <input type="text" id="thrown" name="thrown" 
-          value="<?php $sql="SELECT THROW FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['THROW'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
- 
-<!--TRAIT 5th-->
-    <tr>
-      <td>WILLPOWER</td>
-        <td>
-          <input type="text" id="WILL" name="WILL"
-          value="<?php $sql="SELECT WILL FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['WILL'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td>SPEED</td>
-        <td>
-          <input type="text" id="SPD" name="SPD" 
-          value="<?php $sql="SELECT SPD FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['SPD'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td>GRAPPLE</td>
-        <td>
-          <input type="text" id="grap" name="grap"
-          value="<?php $sql="SELECT GRAPPLE FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['GRAPPLE'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-       <td>ARCH</td>
-        <td>
-          <input type="text" id="arch" name="arch" 
-          value="<?php $sql="SELECT ARCH FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ARCH'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr>
-
-<!--COMBAT 3rd-->
-    <tr>
-      <td>CHARISMA</td>
-        <td>
-        <input type="text" id="CHA" name="CHA"
-          value="<?php $sql="SELECT CHA FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['CHA'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td>BEAUTY</td>
-        <td>
-          <input type="text" id="BTY" name="BTY"  
-          value="<?php $sql="SELECT BTY FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['BTY'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-      
-      <td>OFF</td>
-      <td>
-        <input type="text" id="off" name="off"
-          value="<?php $sql="SELECT OFF FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['OFF'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td>1H GUNS</td>
-      <td>
-        <input type="text" id="oneHguns" name="oneHguns"
-          value="<?php $sql="SELECT ONEHGUNS FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ONEHGUNS'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-    </tr>
-<!--COMBAT 4th-->
-    <tr>
-      <td colspan="4" style="font-weight: bold;">UNIVERSAL SKILLS</td>
-
-      <td>SHORT W</td>
-      <td>
-        <input type="text" id="shortW" name="shortW"
-          value="<?php $sql="SELECT SHORTW FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['SHORTW'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td>2H GUNS</td>
-      <td>
-        <input type="text" id="twoHguns" name="twoHguns"
-          value="<?php $sql="SELECT TWOHGUNS FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['TWOHGUNS'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-    </tr>
-<!--COMBAT 5th-->
-    <tr>
-      <td>STEALTH</td>
-      <td>
-        <input type="text" id="stealth" name="stealth" 
-          value="<?php $sql="SELECT STEALTH FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['STEALTH'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-
-      <td>CLIMBING</td>
-      <td>
-        <input type="text" id="climb" name="climb"
-          value="<?php $sql="SELECT CLIMB FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['CLIMB'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td>LONG W</td>
-      <td>
-        <input type="text" id="longW" name="longW"
-          value="<?php $sql="SELECT LONGW FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['LONGW'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td>BURST</td>
-      <td>
-        <input type="text" id="burst" name="burst"
-          value="<?php $sql="SELECT BURST FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['BURST'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-    </tr>
-<!--COMBAT 6th-->
-    <tr>
-      <td>NAVIG.</td>
-      <td>
-        <input type="text" id="navig" name="navig"
-          value="<?php $sql="SELECT NAVIG FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['NAVIG'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-
-      <td>NEGOT.</td>
-      <td>
-        <input type="text" id="negot" name="negot"
-          value="<?php $sql="SELECT NEGOT FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['NEGOT'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-
-      <td>2H W</td>
-      <td>
-        <input type="text" id="twoHW" name="twoHW"
-          value="<?php $sql="SELECT TWOHW FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['TWOHW'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td>SPECIAL</td>
-      <td>
-        <input type="text" id="special" name="special"
-          value="<?php $sql="SELECT SPECIAL FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['SPECIAL'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-    </tr>
-<!--COMBAT 7th-->
-    <tr>
-      <td>CRAFTING</td>
-      <td>
-        <input type="text" id="craft" name="craft"
-          value="<?php $sql="SELECT CRAFTING FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['CRAFTING'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td>SURVIVAL</td>
-      <td>
-        <input type="text" id="survival" name="survival"
-          value="<?php $sql="SELECT SURVIVAL FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['SURVIVAL'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td>CHAIN</td>
-      <td>
-        <input type="text" id="chain" name="chain"
-          value="<?php $sql="SELECT CHAIN FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['CHAIN'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td>W SYS</td>
-      <td>
-        <input type="text" id="wsys" name="wsys" 
-          value="<?php $sql="SELECT WSYS FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['WSYS'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-    </tr>
-
-    <tr>
-      <td colspan="8" style="font-weight: bold;">BASIC SKILLS</td>
-    </tr>
-<!--SKILLS 1st-->
-    <tr>
-      <td><input type="text"  id="skill1" name="skill1"  
-          value="<?php $sql="SELECT skill1 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill1'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate1" name="skillRate1" 
-          value="<?php $sql="SELECT skillRate1 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate1'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-
-      <td><input type="text"  id="skill2" name="skill2"  
-          value="<?php $sql="SELECT skill2 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill2'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate2" name="skillRate2"
-          value="<?php $sql="SELECT skillRate2 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate2'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-
-      <td><input type="text"  id="skill3" name="skill3"  
-          value="<?php $sql="SELECT skill3 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill3'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate3" name="skillRate3"
-          value="<?php $sql="SELECT skillRate3 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate3'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-      </td>
-      
-      <td><input type="text"  id="skill4" name="skill4"  
-          value="<?php $sql="SELECT skill4 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill4'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate4" name="skillRate4"
-          value="<?php $sql="SELECT skillRate4 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate4'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr>    
-<!--SKILLS 2nd-->
-    <tr>
-      <td><input type="text"  id="skill5" name="skill5"  
-          value="<?php $sql="SELECT skill5 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill5'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate5" name="skillRate5"
-          value="<?php $sql="SELECT skillRate5 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate5'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill6" name="skill6"  
-          value="<?php $sql="SELECT skill6 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill6'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate6" name="skillRate6"
-          value="<?php $sql="SELECT skillRate6 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate6'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill7" name="skill7"  
-          value="<?php $sql="SELECT skill7 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill7'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate7" name="skillRate7"
-          value="<?php $sql="SELECT skillRate7 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate7'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill8" name="skill8"  
-          value="<?php $sql="SELECT skill8 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill8'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate8" name="skillRate8"
-          value="<?php $sql="SELECT skillRate8 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate8'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr>    
-<!--SKILLS 3rd-->
-    <tr>
-      <td><input type="text"  id="skill9" name="skill9"  
-          value="<?php $sql="SELECT skill9 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill9'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate9" name="skillRate9"
-          value="<?php $sql="SELECT skillRate9 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate9'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill10" name="skill10"  
-          value="<?php $sql="SELECT skill10 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill10'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate10" name="skillRate10"
-          value="<?php $sql="SELECT skillRate10 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate10'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill11" name="skill11"  
-          value="<?php $sql="SELECT skill11 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill11'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate11" name="skillRate11"
-          value="<?php $sql="SELECT skillRate11 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate11'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill12" name="skill12"  
-          value="<?php $sql="SELECT skill12 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill12'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate12" name="skillRate12"
-          value="<?php $sql="SELECT skillRate12 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate12'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr> 
-<!--SKILLS 4th-->
-    <tr>
-      <td><input type="text"  id="skill13" name="skill13"  
-          value="<?php $sql="SELECT skill13 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill13'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate13" name="skillRate13"
-          value="<?php $sql="SELECT skillRate13 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate13'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill14" name="skill14"  
-          value="<?php $sql="SELECT skill14 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill14'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate14" name="skillRate14"
-          value="<?php $sql="SELECT skillRate14 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate14'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill15" name="skill15"  
-          value="<?php $sql="SELECT skill15 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill15'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate15" name="skillRate15"
-          value="<?php $sql="SELECT skillRate15 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate15'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill16" name="skill16"  
-          value="<?php $sql="SELECT skill16 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill16'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate16" name="skillRate16"
-          value="<?php $sql="SELECT skillRate16 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate16'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr>   
-<!--SKILLS 5TH-->
-    <tr>
-      <td><input type="text"  id="skill17" name="skill17"  
-          value="<?php $sql="SELECT skill17 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill17'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate17" name="skillRate17"
-          value="<?php $sql="SELECT skillRate17 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate17'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill18" name="skill18"  
-          value="<?php $sql="SELECT skill18 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill18'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="skillRate18" name="skillRate18"
-          value="<?php $sql="SELECT skillRate18 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate18'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill19" name="skill19"  
-          value="<?php $sql="SELECT skill19 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill19'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="skillRate19" name="skillRate19"
-          value="<?php $sql="SELECT skillRate19 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate19'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="skill20" name="skill20"  
-          value="<?php $sql="SELECT skill20 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skill20'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="skillRate20" name="skillRate20"
-          value="<?php $sql="SELECT skillRate20 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['skillRate20'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr> 
-<!--ADVANCED SKILLS-->
-    <tr>
-      <td colspan="8" style="font-weight: bold;">ADVANCED SKILLS</td>
-    </tr>
-    <tr>
-      <td><input type="text"  id="advSkill1" name="advSkill1"  
-          value="<?php $sql="SELECT advSkill1 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill1'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="advSkillRate1" name="advSkillRate1"
-          value="<?php $sql="SELECT advSkillRate1 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate1'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill2" name="advSkill2"  
-          value="<?php $sql="SELECT advSkill2 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill2'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="advSkillRate2" name="advSkillRate2"
-          value="<?php $sql="SELECT advSkillRate2 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate2'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill3" name="advSkill3"  
-          value="<?php $sql="SELECT advSkill3 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill3'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="advSkillRate3" name="advSkillRate3"
-          value="<?php $sql="SELECT advSkillRate3 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate3'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill4" name="advSkill4"  
-          value="<?php $sql="SELECT advSkill4 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill4'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text"  id="advSkillRate4" name="advSkillRate4"
-          value="<?php $sql="SELECT advSkillRate4 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate4'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr>
-<!--ADV 2nd-->
-    <tr>
-      <td><input type="text"  id="advSkill5" name="advSkill5"  
-          value="<?php $sql="SELECT advSkill5 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill5'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="advSkillRate5" name="advSkillRate5"
-          value="<?php $sql="SELECT advSkillRate5 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate5'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill6" name="advSkill6"  
-          value="<?php $sql="SELECT advSkill6 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill6'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="advSkillRate6" name="advSkillRate6"
-          value="<?php $sql="SELECT advSkillRate6 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate6'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill7" name="advSkill7"  
-          value="<?php $sql="SELECT advSkill7 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill7'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="advSkillRate7" name="advSkillRate7"
-          value="<?php $sql="SELECT advSkillRate7 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate7'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill8" name="advSkill8"  
-          value="<?php $sql="SELECT advSkill8 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill8'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="advSkillRate8" name="advSkillRate8" 
-          value="<?php $sql="SELECT advSkillRate8 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate8'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr>
-
-    <tr>
-      <td><input type="text"  id="advSkill9" name="advSkill9"  
-          value="<?php $sql="SELECT advSkill9 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill9'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="advSkillRate9" name="advSkillRate9"
-          value="<?php $sql="SELECT advSkillRate9 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate9'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill10" name="advSkill10"  
-          value="<?php $sql="SELECT advSkill10 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill10'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="advSkillRate10" name="advSkillRate10"
-          value="<?php $sql="SELECT advSkillRate10 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate10'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill11" name="advSkill11"  
-          value="<?php $sql="SELECT advSkill11 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill11'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="advSkillRate11" name="advSkillRate11"
-          value="<?php $sql="SELECT advSkillRate11 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate11'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-
-      <td><input type="text"  id="advSkill12" name="advSkill12"  
-          value="<?php $sql="SELECT advSkill12 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkill12'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td>
-        <input type="text" id="advSkillRate12" name="advSkillRate12"
-          value="<?php $sql="SELECT advSkillRate12 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['advSkillRate12'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly />
-        </td>
-    </tr>
-<!--ABILITIES-->
-    <tr>
-      <td colspan="8" style="font-weight: bold;">ABILITIES</td>
-    </tr> 
-
-    <tr>
-      <td colspan="2"><input type="text" id="ability1" name="ability1" 
-          value="<?php $sql="SELECT ability1 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability1'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability2" name="ability2" 
-          value="<?php $sql="SELECT ability2 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability2'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability3" name="ability3" 
-          value="<?php $sql="SELECT ability3 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability3'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability4" name="ability4" 
-          value="<?php $sql="SELECT ability4 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability4'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-    </tr>
-
-    <tr>
-      <td colspan="2"><input type="text" id="ability5" name="ability5" 
-          value="<?php $sql="SELECT ability5 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability5'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability6" name="ability6" 
-          value="<?php $sql="SELECT ability6 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability6'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability7" name="ability7" 
-          value="<?php $sql="SELECT ability7 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability7'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability8" name="ability8" 
-          value="<?php $sql="SELECT ability8 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability8'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-    </tr>
-
-    <tr>
-      <td colspan="2"><input type="text" id="ability9" name="ability9" 
-          value="<?php $sql="SELECT ability9 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability9'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability10" name="ability10" 
-          value="<?php $sql="SELECT ability10 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability10'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability11" name="ability11" 
-          value="<?php $sql="SELECT ability11 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability11'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2"><input type="text" id="ability12" name="ability12" 
-          value="<?php $sql="SELECT ability12 FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['ability12'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-    </tr>
-<!--EXP-->
-    <tr>
-      <td colspan="2">TOTAL EXP</td>
-      <td colspan="2"><input type="text" id="totalEXP" name="totalEXP"  
-          value="<?php $sql="SELECT totalEXP FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['totalEXP'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-
-      <td colspan="2">REMAINING EXP</td>
-      <td colspan="2"><input type="text"  id="remEXP" name="remEXP"  
-          value="<?php $sql="SELECT remEXP FROM characters WHERE charName = '$charName'";
-          $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                echo $row['remEXP'];
-                }
-            } else {
-            echo "0 results";
-            } ?>" readonly /></td>
-    </tr>
+<tr>
+  <td colspan="4" rowspan="4"><img src="img/picSlot.png" style="margin: 0 auto;" /></td>
+  <td>NAME:</td>
+  <td colspan="2"><input type="text" id="charName" name="charName" value="<?php $charName = parse_url($url, PHP_URL_QUERY); echo $charName ?>" class="full" readonly /></td>
+  <td>PLAYER:</td>
+  <td colspan="2"><input type="text" id="username" name="username" value="<?php echo $username; ?>" class="full" readonly /></td>
+</tr>
+
+<tr>
+  <td>BACK GROUND:</td>
+  <td colspan="2"><input type="text" id="background" name="background" value="<?php echo $background ?>" class="full" readonly /></td>
+  <td>HABITAT:</td>
+  <td colspan="2"><input type="text" id="habitat" name="habitat" value="<?php echo $habitat ?>" class="full" readonly /></td>
+</tr>
+
+<tr>
+  <td>HAIR COLOR:</td>
+  <td colspan="2"><input type="text" id="hairColor" name="hairColor" value="<?php echo $hairColor ?>" class="full" readonly /></td>
+  <td>HAIR STYLE:</td>
+  <td colspan="2"><input type="text" id="hairStyle" name="hairStyle" value="<?php echo $hairStyle ?>" class="full" readonly /></td>
+</tr>
+
+<tr>
+  <td>ETHNIC:</td>
+  <td><input type="text" id="ethnicity" name="ethnicity" value="<?php echo $ethnicity ?>" class="full" readonly /></td>
+  <td>SEX:</td>
+  <td><input type="text" id="sex" name="sex" value="<?php echo $sex ?>" class="full" readonly /></td>
+  <td>AGE:</td> 
+  <td><input type="text" id="age" name="age" value="<?php echo $age ?>" class="full" readonly /></td>
+</tr>
+
+<tr>
+  <td colspan="6">COMBAT PROFICIENCIES</td>
+  <td colspan="4">PHYSICAL TRAITS</td>
+</tr>
+
+<tr>
+  <td>UNARM:</td>
+  <td><input type="text" id="unarm" name="unarm" value="<?php echo $UNARMED; ?>" readonly /></td>
+  <td>THROW:</td>
+  <td><input type="text" id="thrown" name="thrown" value="<?php echo $THROWN; ?>" readonly /></td>
+  <td>ACT:</td>
+  <td><input type="text" id="act" name="act" value="<?php echo $ACTIONS; ?>" readonly /></td>
+  <td>MEM:</td>
+  <td><input type="text" id="mem" name="mem" value="<?php echo $MEM; ?>" readonly /></td>
+  <td>STR:</td>
+  <td><input type="text" id="str" name="str" value="<?php echo $STR; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>GRAP:</td>
+  <td><input type="text" id="grap" name="grap" value="<?php echo $GRAPPLE; ?>" readonly /></td>
+  <td>ARCH:</td>
+  <td><input type="text" id="arch" name="arch" value="<?php echo $ARCH; ?>" readonly /></td>
+  <td>SEQ:</td>
+  <td><input type="text" id="seq" name="seq" value="<?php echo $SEQ; ?>" readonly /></td>
+  <td>LOG:</td>
+  <td><input type="text" id="log" name="log" value="<?php echo $LOG; ?>" readonly /></td>
+  <td>END:</td>
+  <td><input type="text" id="end" name="end" value="<?php echo $END; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>OFF:</td>
+  <td><input type="text" id="off" name="off" value="<?php echo $OFF; ?>" readonly /></td>
+  <td>PISTOLS:</td>
+  <td><input type="text" id="pistols" name="pistols" value="<?php echo $PISTOLS; ?>" readonly /></td>
+  <td>BLOCK:</td>
+  <td><input type="text" id="block" name="block" value="<?php echo $BLOCK; ?>" readonly /></td>
+  <td>PER:</td></td>
+  <td><input type="text" id="per" name="per" value="<?php echo $PER; ?>" readonly /></td>
+  <td>DEX:</td></td>
+  <td><input type="text" id="dex" name="dex" value="<?php echo $DEX; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>SHORT:</td>
+  <td><input type="text" id="shortW" name="shortW" value="<?php echo $SHORT; ?>" readonly /></td>
+  <td>RIFLES:</td>
+  <td><input type="text" id="rifles" name="rifles" value="<?php echo $RIFLES; ?>" readonly /></td>
+  <td>DODGE:</td>
+  <td><input type="text" id="dodge" name="dodge" value="<?php echo $DODGE; ?>" readonly /></td>
+  <td>WILL:</td></td>
+  <td><input type="text" id="will" name="will" value="<?php echo $WILL; ?>" readonly /></td>
+  <td>SPD:</td></td>
+  <td><input type="text" id="spd" name="spd" value="<?php echo $SPD; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>LONG:</td>
+  <td><input type="text" id="longW" name="longW" value="<?php echo $LONG; ?>" readonly /></td>
+  <td>BURST:</td>
+  <td><input type="text" id="burst" name="burst" value="<?php echo $BURST; ?>" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+  <td>CHA:</td>
+  <td><input type="text" id="cha" name="cha" value="<?php echo $CHA; ?>" readonly /></td>
+  <td>BTY:</td>
+  <td><input type="text" id="bty" name="bty" value="<?php echo $BTY; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>2 HAND:</td>
+  <td><input type="text" id="twoHW" name="twoHW" value="<?php echo $THM; ?>" readonly /></td>
+  <td>SPECIAL:</td>
+  <td><input type="text" id="special" name="special" value="<?php echo $SPECIAL; ?>" readonly /></td>
+  <td colspan="6">SURVIVAL SKILLS</td>
+</tr>
+
+<tr>
+  <td>CHAIN:</td>
+  <td><input type="text" id="chain" name="chain" value="<?php echo $CHAIN; ?>" readonly /></td>
+  <td>W SYS:</td>
+  <td><input type="text" id="wsys" name="wsys" value="<?php echo $WSYS; ?>" readonly /></td>
+  <td>ENV AWR:</td>
+  <td><input type="text" id="survival" name="survival" value="<?php echo $envAware; ?>" readonly /></td>
+  <td>1ST AID:</td>
+  <td><input type="text" id="firstAid" name="firstAid" value="<?php echo $firstAid; ?>" readonly /></td>
+  <td>NAVIG:</td>
+  <td><input type="text" id="navig" name="navig" value="<?php echo $navigation; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td colspan="4">TRANSPORTATION SKILLS</td>
+  <td>TRACK:</td>
+  <td><input type="text" id="tracking" name="tracking" value="<?php echo $tracking; ?>" readonly /></td>
+  <td>TRAP:</td>
+  <td><input type="text" id="trapping" name="trapping" value="<?php echo $trapping; ?>" readonly /></td>
+  <td>FISH:</td>
+  <td><input type="text" id="fishing" name="fishing" value="<?php echo $fishing; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>SKATE:</td>
+  <td><input type="text" id="skateboard" name="skateboard" value="<?php echo $skateboard; ?>" readonly /></td>
+  <td>BIKE:</td>
+  <td><input type="text" id="bicycle" name="bicycle" value="<?php echo $bicycle; ?>" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+  <td style="font-weight: bolder;">GAMBLE:</td>
+  <td><input type="text" id="gambling" name="gambling" value="<?php echo $GAMBLING; ?>" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+  <td>HORSE:</td>
+  <td><input type="text" id="horsemanship" name="horsemanship" value="<?php echo $horsemanship; ?>" readonly /></td>
+  <td>AUTO:</td>
+  <td><input type="text" id="automobile" name="automobile" value="<?php echo $automobile; ?>" readonly /></td>
+  <td colspan="6">ESPIONAGE SKILLS</td>
+</tr>
+
+<tr>
+  <td>MOTOR X:</td>
+  <td><input type="text" id="motorcycle" name="motorcycle" value="<?php echo $motorcycle; ?>" readonly /></td>
+  <td>JET SKI:</td>
+  <td><input type="text" id="jetSki" name="jetSki" value="<?php echo $jetSki; ?>" readonly /></td>
+  <td>STEALTH:</td>
+  <td><input type="text" id="stealth" name="stealth" value="<?php echo $stealth; ?>" readonly /></td>
+  <td>SURVEIL:</td>
+  <td><input type="text" id="surveillance" name="surveillance" value="<?php echo $surveillance; ?>" readonly /></td>
+  <td>FOREN:</td>
+  <td><input type="text" id="forensics" name="forensics" value="<?php echo $forensics; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>SAIL:</td>
+  <td><input type="text" id="sailing" name="sailing" value="<?php echo $sailing; ?>" readonly /></td>
+  <td>BOAT:</td>
+  <td><input type="text" id="boating" name="boating" value="<?php echo $boating; ?>" readonly /></td>
+  <td>PICK:</td>
+  <td><input type="text" id="pickpocket" name="pickpocket" value="<?php echo $pickpocket; ?>" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+  <td>LOCK:</td>
+  <td><input type="text" id="lockpick" name="lockpick" value="<?php echo $lockpick; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>MULTI GEAR:</td>
+  <td><input type="text" id="MGV" name="MGV" value="<?php echo $MGV; ?>" class="full" readonly /></td>
+  <td>HVY EQUIP:</td>
+  <td><input type="text" id="hvyEquip" name="hvyEquip" value="<?php echo $hvyEquip; ?>" class="full" readonly /></td>
+  <td colspan="6">TECHNOLOGY SKILLS</td>
+</tr>
+
+<tr>
+  <td>HELI:</td>
+  <td><input type="text" id="helicopters" name="helicopters" value="<?php echo $helicopters; ?>" readonly /></td>
+  <td>PLANE:</td>
+  <td><input type="text" id="airplanes" name="airplanes" value="<?php echo $airplanes; ?>" readonly /></td>
+  <td>CRAFT:</td>
+  <td><input type="text" id="craft" name="craft" value="<?php echo $crafting; ?>" readonly /></td>
+  <td>COMP:</td>
+  <td><input type="text" id="computers" name="computers" value="<?php echo $computers; ?>" readonly /></td>
+  <td>PROGRAM:</td>
+  <td><input type="text" id="programming" name="programming" value="<?php echo $programming; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td colspan="4">SCIENCES</td>
+  <td>MECHS:</td>
+  <td><input type="text" id="mechanics" name="mechanics" value="<?php echo $mechanics; ?>" readonly /></td>
+  <td>ELECT:</td>
+  <td><input type="text" id="electrical" name="electrical" value="<?php echo $electrical; ?>" readonly /></td>
+  <td>RADIO SYS:</td>
+  <td><input type="text" id="radioSys" name="radioSys" value="<?php echo $radioSys; ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td>LIT:</td>
+  <td><input type="text" id="literacy" name="literacy" value="<?php echo $literacy; ?>" readonly /></td>
+  <td>HISTORY:</td>
+  <td><input type="text" id="history" name="history" value="<?php echo $history; ?>" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+  <td>CONSTR:</td>
+  <td><input type="text" id="construction" name="construction" value="<?php echo $construction; ?>" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+  <td>MATH:</td>
+  <td><input type="text" id="math" name="math" value="<?php echo $math; ?>" readonly /></td>
+  <td>PHYSIC:</td>
+  <td><input type="text" id="physics" name="physics" value="<?php echo $physics; ?>" readonly /></td>
+  <td colspan="6">SOFT SKILLS & LANGUAGES</td>
+</tr>
+
+<tr>
+  <td>BIO:</td>
+  <td><input type="text" id="biology" name="biology" value="<?php echo $biology; ?>" readonly /></td>
+  <td>BOT:</td>
+  <td><input type="text" id="botany" name="botany" value="<?php echo $botany; ?>" readonly /></td>
+  <td></td>
+  <td>NEGOT:</td>
+  <td><input type="text" id="negot" name="negot" value="<?php echo $negotiation; ?>" readonly /></td>
+  <td>LAW:</td>
+  <td><input type="text" id="law" name="law" value="<?php echo $law; ?>" readonly /></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>CHEM:</td>
+  <td><input type="text" id="chemistry" name="chemistry" value="<?php echo $chemistry; ?>" readonly /></td>
+  <td>TOXIC:</td>
+  <td><input type="text" id="toxicology" name="toxicology" value="<?php echo $toxicology; ?>" readonly /></td>
+  <td colspan="3" style="font-style: italic;">LANGUAGES</td>
+  <td colspan="3" style="font-style: italic;">LITERACIES</td>
+</tr>
+
+<tr>
+  <td>PHARMA:</td>
+  <td><input type="text" id="pharmacology" name="pharmacology" value="<?php echo $pharmacology; ?>" readonly /></td>
+  <td>DOCTOR:</td>
+  <td><input type="text" id="doctor" name="doctor" value="<?php echo $doctor; ?>" readonly /></td>
+  <td>&nbsp;</td>
+  <td><input type="text" id="lang1" name="lang1" value="<?php echo $lang1; ?>" readonly /></td>
+  <td><input type="text" id="langRate1" name="langRate1" value="<?php echo $langRate1; ?>" readonly /></td>
+  <td><input type="text" id="lit1" name="lit1" value="<?php echo $lit1; ?>" readonly /></td>
+  <td><input type="text" id="litRate1" name="litRate1" value="<?php echo $litRate1; ?>" readonly /></td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td colspan="2">EXP POOL:</td>
+  <td colspan="2"><input type="text" id="" name="" value="<?php echo $remEXP; ?>" readonly /></td>
+  <td>&nbsp;</td>
+  <td><input type="text" id="lang2" name="lang2" value="<?php echo $lang2; ?>" readonly /></td>
+  <td><input type="text" id="langRate2" name="langRate2" value="<?php echo $langRate2; ?>" readonly /></td>
+  <td><input type="text" id="lit2" name="lit2" value="<?php echo $lit2; ?>" readonly /></td>
+  <td><input type="text" id="litRate2" name="litRate2" value="<?php echo $litRate2; ?>" readonly /></td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td colspan="2">TOTAL EXP:</td>
+  <td colspan="2"><input type="text" id="totalExp" name="totalExp" value="<?php echo $totalEXP; ?>" readonly /></td>  
+  <td>&nbsp;</td>
+  <td><input type="text" id="lang3" name="lang3" value="<?php echo $lang3; ?>" readonly /></td>
+  <td><input type="text" id="langRate3" name="langRate3" value="<?php echo $langRate3; ?>" readonly /></td>
+  <td><input type="text" id="lit3" name="lit3" value="<?php echo $lit3; ?>" readonly /></td>
+  <td><input type="text" id="litRate3" name="litRate3" value="<?php echo $litRate3; ?>" readonly /></td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td colspan="10">ABILITIES</td>
+</tr>
+
+<tr>
+  <td colspan="2"><input type="text" id="ability1" name="ability1" value="<?php echo $ABILITY1 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability2" name="ability2" value="<?php echo $ABILITY2 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability3" name="ability3" value="<?php echo $ABILITY3 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability4" name="ability4" value="<?php echo $ABILITY4 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability5" name="ability5" value="<?php echo $ABILITY5 ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td colspan="2"><input type="text" id="ability6" name="ability6" value="<?php echo $ABILITY6 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability7" name="ability7" value="<?php echo $ABILITY7 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability8" name="ability8" value="<?php echo $ABILITY8 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability9" name="ability9" value="<?php echo $ABILITY9 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability10" name="ability10" value="<?php echo $ABILITY10 ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td colspan="2"><input type="text" id="ability11" name="ability11" value="<?php echo $ABILITY11 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability12" name="ability12" value="<?php echo $ABILITY12 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability13" name="ability13" value="<?php echo $ABILITY13 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability14" name="ability14" value="<?php echo $ABILITY14 ?>" readonly /></td>
+  <td colspan="2"><input type="text" id="ability15" name="ability15" value="<?php echo $ABILITY15 ?>" readonly /></td>
+</tr>
+
+<tr>
+  <td colspan="10">
+    <button class="button" style="max-width: 50%;" type="button" id="idMarksBtn" onclick="document.getElementById('idMarksModal').style.display = 'block';">VIEW ID MARKS</button>
+  </td>
+</tr> 
 
 </table>
+</div>
+
+<!--idMarksModal-->
+<div id="idMarksModal" class="editModal">
+<div style="float: left; width: 25%;">
+      <p style="color: white; text-align: center;">HEAD</p>
+      <input type="text" id="head" name="head" value="<?php echo $head; ?>" readonly />
+
+      <p style="color: white; text-align: center;">NECK</p>
+      <input type="text" id="neck" name="neck" value="<?php echo $neck; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L SHOULD</p>
+      <input type="text" id="LShoulder" name="LShoulder" value="<?php echo $LShoulder; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L RIBS</p>          
+      <input type="text" id="LRibs" name="LRibs" value="<?php echo $LRibs; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L BICEP</p>         
+      <input type="text" id="LUpperArm" name="LUpperArm" value="<?php echo $LUpperArm; ?>" readonly />
+
+      <p style="color: white; text-align: center;">STOMACH</p>         
+      <input type="text" id="stomach" name="stomach" value="<?php echo $stomach; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L FORE</p>
+      <input type="text" id="LForearm" name="LForearm" value="<?php echo $LForearm; ?>" readonly />
+
+      <p style="color: white; text-align: center;">REAR</p>
+      <input type="text" id="rear" name="rear" value="<?php echo $rear; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L HAND</p>
+      <input type="text" id="LHand" name="LHand" value="<?php echo $LHand; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L THIGH</p>
+      <input type="text" id="LThigh" name="LThigh" value="<?php echo $LThigh; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L CALF</p>
+      <input type="text" id="LCalf" name="LCalf" value="<?php echo $LCalf; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L FOOT</p>
+      <input type="text" id="LFoot" name="LFoot" value="<?php echo $LFoot; ?>" readonly />
+</div>
+
+<div style="float: left; width: 50%;">
+<img src="img/virtruvian/sketchyvirtruvian.jpg" style="padding: 1vw; width: 100%; height: 105vh;" />
+<button type="button" onclick="document.getElementById('idMarksModal').style.display='none';" class="navbutton">CLOSE</button>
+</div>
+
+<div style="float: left; width: 25%;">
+      <p style="color: white; text-align: center;">FACE</p>
+      <input type="text" id="face" name="face" value="<?php echo $face; ?>" readonly />
+
+      <p>&nbsp;</p>
+      <input type="text" value="" style="visibility: hidden;" readonly />
+
+      <p style="color: white; text-align: center;">R SHOULD</p>
+      <input type="text" id="RShoulder" name="RShoulder" value="<?php echo $RShoulder; ?>" readonly />
+      
+      <p style="color: white; text-align: center;">R RIBS</p>
+      <input type="text" id="RRibs" name="RRibs" value="<?php echo $RRibs; ?>" readonly />
+
+      <p style="color: white; text-align: center;">R BICEP</p>
+      <input type="text" id="RUpperArm" name="RUpperArm" value="<?php echo $RUpperArm; ?>" readonly />
+
+      <p style="color: white; text-align: center;">L BACK</p>
+      <input type="text" id="lowerBack" name="lowerBack" value="<?php echo $lowerBack; ?>" readonly />
+
+      <p style="color: white; text-align: center;">R FORE</p>
+      <input type="text" id="RForearm" name="RForearm" value="<?php echo $RForearm; ?>" readonly />
+
+      <p style="color: white; text-align: center;">GROIN</p>        
+      <input type="text" id="groin" name="groin" value="<?php echo $groin; ?>" readonly />
+
+      <p style="color: white; text-align: center;">R HAND</p>
+      <input type="text" id="RHand" name="RHand" value="<?php echo $RHand; ?>" readonly />
+
+      <p style="color: white; text-align: center;">R THIGH</p>
+      <input type="text" id="RThigh" name="RThigh" value="<?php echo $RThigh; ?>" readonly />
+
+      <p style="color: white; text-align: center;">R CALF</p>        
+      <input type="text" id="RCalf" name="RCalf" value="<?php echo $RCalf; ?>" readonly />
+
+      <p style="color: white; text-align: center;">R FOOT</p>
+      <input type="text" id="RFoot" name="RFoot" value="<?php echo $RFoot; ?>" readonly />
+  </div>
+
+</div>
 </div>
 </div>
 

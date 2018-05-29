@@ -18,27 +18,16 @@
   </head>
 <body>
 
-<!--ceiling--> 
-<div class="row ceiling">
-<div class="large-2 columns"><a href="login.php" class="button">LOGIN</a></div>
-<form id="logout" action="inc/logout.php" method="post">
-<div class="large-2 columns"><input type="submit" value="LOG OUT" class="button" style="font-family: impact;" /></div>
-</form>
-<div class="large-2 columns"><a href="signup.php" class="button">JOIN</a></div>
-</div>
+<?php include("header.php"); ?>
 
-<!--banner-->
+<div class="row metal">
+    <div class="small-4 small-centered error" style="margin-bottom: 2.5vh;">UPLOAD SUCCESSFUL</div>
+</div>
 <div class="row banner">
-<div class="large-12 columns"><a href="index.php"><img src="img/banners/aftermathcity.jpg" style="margin: 0 auto; max-height: 15vh;" /></a></div>
+    <div class="small-4 small-centered"><a href="index.php"><button class='navbutton' style='font-weight: bold; margin-top: 2.5vh;'>RETURN TO HOMEPAGE</button></a></div>
+    <br>
 </div>
 
-<div class="row">
-  <div class="large 12-columns content">
-    <p class="success" style="padding-bottom: 10px;">UPLOAD SUCCESSFUL</p>
-    <div class="large 12-columns"><a href="index.php" class="button">RETURN TO HOMEPAGE</a></div>
-  </div>
-</div>
-
-</form>
+<?php include("footer.php"); ?>
 </body>
 </html>

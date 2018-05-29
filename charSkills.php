@@ -15,45 +15,39 @@
     <title>The Aftermath</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <link type="text/css" media="screen" rel="stylesheet" href="inc/zurb-responsive-tables/responsive-tables.css" />
+    <script type="text/javascript" src="inc/zurb-responsive-tables/responsive-tables.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/charSkills.js" type="text/javascript"></script>
   </head>
 <body>
 
-<!--ceiling--> 
-<div class="row ceiling">
-<div class="large-2 columns"><a href="login.php" class="button">LOGIN</a></div>
-<form id="logout" action="inc/logout.php" method="post">
-<div class="large-2 columns"><input type="submit" value="LOG OUT" class="button" style="font-family: impact;" /></div>
-</form>
-<div class="large-6 columns">
-<?php
-    $username = $_SESSION['username'];
-    $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    echo "<p class='error'>Currently logged in as:  " .$username ."</p>";
-?>
-</div>
-<div class="large-2 columns"><a href="signup.php" class="button">JOIN</a></div>
+<div class="row" id="skillChoiceModal">
+    <div class="small-6 columns skillChoice">SKILL CHOICES:</div>
+    <div class="small-6 columns"><input type="text" id="skillChoice" value="" readonly />
+      <script>document.getElementById("skillChoice").setAttribute("value", skillChoice);</script>
+    </div>
 </div>
 
-<!--banner-->
-<div class="row banner">
-<div class="large-12 columns"><a href="index.php?logged"><img src="img/banners/aftermathcity.jpg" style="margin: 0 auto; max-height: 15vh;" /></a></div>
-</div>
+<?php include('header.php'); ?>
 
 <!--form-->
-<div class="row content">
-<div class="large-12 columns">
+<div class="row metal">
+<div class="large-12 columns"><p class='alert'>RED BUTTONS INDICATE 2 SKILL CHOICES</p></div>
+<div class="large-12 columns"><p class='alert'>PROGRAMMING REQUIRES COMPUTERS</p></div>
+<div class="large-12 columns"><p class='alert'>TOXIC/PHARMACOLOGY REQUIRES BIOLOGY & CHEMISTRY</p></div>
+<div class="large-12 columns"><p class='alert'>DOCTOR REQUIRES BIOLOGY & FIRST AID >= 75</p></div>
+<form id="charsheet" action="inc/uploadchar.php" method="post">
 
-<form style="margin-top: 10px;" id="charsheet" action="inc/uploadchar.php" method="post">
 <table>
-<!--PLAYER-->
-    <tr>
-      <td>PLAYER NAME</td>
-      <td><input type="text" id="username" name="username" value="<?php $username = $_SESSION['username']; echo $username; ?>" /></td>
-      <td>CHARACTER NAME</td>
-      <td><input type="text" id="charName" name="charName" placeholder="Character Name" onBlur="checkAvail();" required/>
-        
+
+<tr>
+  <td colspan="4" rowspan="4"><img src="img/picSlot.png" style="margin: 0 auto;" /></td>
+  <td>NAME:</td>
+  <td colspan="2"><input type="text" id="charName" name="charName" placeholder="Character Name" onBlur="checkAvail();" class="full" required/>
+    <span id="charName_avail"></span>
+  </td>
+
         <script>
             function checkAvail() {
             jQuery.ajax({
@@ -68,961 +62,619 @@
         }
         </script>
 
-      <span id="charName_avail"></span>
-      </td>
+  <td>PLAYER:</td>
+  <td colspan="2"><input type="text" id="username" name="username" value="<?php echo $username; ?>" class="full" readonly /></td>
+</tr>    
 
-      <td colspan="2">BACKGROUND</td>
-      <td colspan="2"><input type="text" id="background" name="background" value="" readonly />
-      <script>document.getElementById("background").setAttribute('value', String(sessionStorage.getItem('background')));</script>
-      </td>
-    </tr>
-<!--DEMO 2nd-->
-    <tr>
-      <td>ETHNICITY</td>
-      <td><input type="text" id="ethnicity" name="ethnicity" placeholder="Character lineage" required /></td>
-      <td>SEX</td>
-      <td><input type="text" id="sex" name="sex" value="" required /></td>
-      <td>AGE</td>
-      <td><input type="text" id="age" name="age" placeholder="NUMBERS ONLY!!! 16 - 60 (FATE mod stats if old)" onBlur="checkAge();" required /></td>
-      <td>EYE COLOR</td>
-      <td><input type="text" id="eyeColor" name="eyeColor" placeholder="..." required /></td>     
-    </tr>   
-<!--DEMO 4th-->
-    <tr>
-      <td>BUILD</td>
-      <td><input type="text" id="build" name="build" placeholder="Based on STR, END, and SPD" required /></td>
-      <td>HABITAT</td>
-      <td><input type="text" id="habitat" name="habitat" placeholder="Environs char is most familiar in" required /></td>
-      <td>HAIR COLOR</td>
-      <td><input type="text" id="hairColor" name="hairColor" placeholder="..." required /></td>
-      <td>HAIR STYLE</td>
-      <td><input type="text" id="hairStyle" name="hairStyle" placeholder="..." required /></td>
-      
-    </tr>
-<!--TRAIT-->
-    <tr>
-      <td colspan="2">MENTAL TRAITS</td>
-      <td colspan="2">PHYSICAL TRAITS</td>
-      <td colspan="4">COMBAT STATS</td>
-    </tr>   
-<!--TRAIT 1st-->
-    <tr>
-      <td>MEMORY</td>
-        <td>     
-        <input type="text" id="MEM" name="MEM" readonly />
-        <script>document.getElementById("MEM").setAttribute('value', Number(sessionStorage.getItem('MEM')));</script>
-        </td>
-      <td>STRENGTH</td>
-        <td>
-        <input type="text" id="STR" name="STR" readonly />
-        <script>document.getElementById("STR").setAttribute('value', Number(sessionStorage.getItem('STR')));</script>
-        </td>
-        <td>ACTIONS</td>
-        <td><input type="text" id="act" name="act" readonly /><script>document.getElementById("act").setAttribute('value', act);</script></td>
-        <td>SEQUENCE</td>
-        <td><input type="text" id="seq" name="seq" readonly /><script>document.getElementById("seq").setAttribute('value', seq);</script></td>
-    </tr>
-<!--TRAIT 2nd-->
-    <tr>
-      <td>LOGIC</td>
-        <td>         
-        <input type="text" id="LOG" name="LOG" readonly />
-        <script>document.getElementById("LOG").setAttribute('value', Number(sessionStorage.getItem('LOG')));</script>
-        </td>
-      <td>ENDURANCE</td>
-        <td>          
-        <input type="text" id="END" name="END" readonly />
-        <script>document.getElementById("END").setAttribute('value', Number(sessionStorage.getItem('END')));</script>   
-        </td>
-        <td>BLOCK</td>
-        <td><input type="text" id="block" name="block" class="skill" readonly /><script>document.getElementById("block").setAttribute('value', block);</script>
-        <button onclick="trainblock();" class="trainBtn" type="button" id="blockTrnBtn">+</button></td></td>
-        <td>DODGE</td>
-        <td><input type="text" id="dodge" name="dodge" class="skill" readonly /><script>document.getElementById("dodge").setAttribute('value', dodge);</script>
-        <button onclick="traindodge();" class="advTrainBtn" type="button" id="dodgeTrnBtn">+</button></td></td>
-    </tr>
-<!--TRAIT 3rd-->
-    <tr>
-      <td>PERCEPTION</td>
-        <td>            
-        <input type="text" id="PER" name="PER" readonly />
-        <script>document.getElementById("PER").setAttribute('value', Number(sessionStorage.getItem('PER')));</script>
-        </td>
-      <td>DEXTERITY</td>
-        <td>         
-        <input type="text" id="DEX" name="DEX" readonly />
-        <script>document.getElementById("DEX").setAttribute('value', Number(sessionStorage.getItem('DEX')));</script>
-        </td>
-        <td colspan="2">MELEE</td>
-        <td colspan="2">RANGED</td>
-    </tr>
-<!--TRAIT 4th-->
-    <tr>
-      <td>WILLPOWER</td>
-        <td>            
-        <input type="text" id="WILL" name="WILL" readonly />
-        <script>document.getElementById("WILL").setAttribute('value', Number(sessionStorage.getItem('WILL')));</script>
-        </td>
-      <td>SPEED</td>
-        <td>           
-        <input type="text" id="SPD" name="SPD" readonly />
-        <script>document.getElementById("SPD").setAttribute('value', Number(sessionStorage.getItem('SPD')));</script>
-        </td>
-        <td>UNARM</td>
-        <td><input type="text" id="unarm" name="unarm" class="skill" readonly /><script>document.getElementById("unarm").setAttribute('value', unarm);</script>
-        <button onclick="trainunarm();" class="trainBtn" type="button" id="unarmTrnBtn">+</button></td>
-        <td>THROW</td>
-        <td><input type="text" id="thrown" name="thrown" class="skill" readonly /><script>document.getElementById("thrown").setAttribute('value', thrown);</script>
-        <button onclick="trainthrown();" class="trainBtn" type="button" id="thrownTrnBtn">+</button></td>
-    </tr>
-<!--TRAIT 5th-->
-    <tr>
-      <td>CHARISMA</td>
-        <td>          
-        <input type="text" id="CHA" name="CHA" readonly />
-        <script>document.getElementById("CHA").setAttribute('value', Number(sessionStorage.getItem('CHA')));</script>
-        </td>
-      <td>BEAUTY</td>
-        <td>             
-        <input type="text" id="BTY" name="BTY" readonly />
-        <script>document.getElementById("BTY").setAttribute('value', Number(sessionStorage.getItem('BTY')));</script>
-        </td>
-      <td>GRAPPLE</td>
-        <td><input type="text" id="grap" name="grap" class="skill" readonly /><script>document.getElementById("grap").setAttribute('value', grap);</script>
-        <button onclick="traingrap();" class="trainBtn" type="button" id="grapTrnBtn">+</button></td>
-       <td>ARCH</td>
-        <td><input type="text" id="arch" name="arch" class="skill" readonly /><script>document.getElementById("arch").setAttribute('value', arch);</script>
-        <button onclick="trainarch();" class="trainBtn" type="button" id="archTrnBtn">+</button></td>
-    </tr>
+<tr>
+  <td>BACK GROUND:</td>
+  <td colspan="2"><input type="text" id="background" name="background" value="" class="full" readonly /></td>
+  <script>document.getElementById("background").setAttribute('value', String(sessionStorage.getItem('background')));</script>
 
-<!--COMBAT 3rd-->
-    <tr>
-      <td colspan="4">UNIVERSAL SKILLS</td>
-      <td>OFF</td>
-      <td><input type="text" id="off" name="off" class="skill" readonly /><script>document.getElementById("off").setAttribute('value', off);</script>
-      <button onclick="trainoff();" class="advTrainBtn" type="button" id="offTrnBtn">+</button></td>
-      <td>1H GUNS</td>
-      <td><input type="text" id="oneHguns" name="oneHguns" class="skill" readonly /><script>document.getElementById("oneHguns").setAttribute('value', oneHguns);</script>
-      <button onclick="trainoneHguns();" class="trainBtn" type="button" id="oneHgunsTrnBtn">+</button></td>
-      
-    </tr>
-<!--COMBAT 4th-->
-    <tr>
-      <td>STEALTH</td>
-      <td><input type="text" id="stealth" name="stealth" class="skill" readonly /><script>document.getElementById("stealth").setAttribute('value', stealth);</script>
-      <button onclick="trainstealth();" class="trainBtn" type="button" id="stealthTrnBtn">+</button></td>
-      <td>CLIMBING</td>
-      <td><input type="text" id="climb" name="climb" class="skill" readonly /><script>document.getElementById("climb").setAttribute('value', climb);</script>
-      <button onclick="trainclimb();" class="trainBtn" type="button" id="climbTrnBtn">+</button></td>
-      <td>SHORT W</td>
-      <td><input type="text" id="shortW" name="shortW" class="skill" readonly /><script>document.getElementById("shortW").setAttribute('value', shortW);</script>
-      <button onclick="trainshortW();" class="trainBtn" type="button" id="shortWTrnBtn">+</button></td>
-      <td>2H GUNS</td>
-      <td><input type="text" id="twoHguns" name="twoHguns" class="skill" readonly /><script>document.getElementById("twoHguns").setAttribute('value', twoHguns);</script>
-      <button onclick="traintwoHguns();" class="trainBtn" type="button" id="twoHgunsTrnBtn">+</button></td>
-      
-    </tr>
-<!--COMBAT 5th-->
-    <tr>
-      <td>NAVIG.</td>
-      <td><input type="text" id="navig" name="navig" class="skill" readonly /><script>document.getElementById("navig").setAttribute('value', navig);</script>
-      <button onclick="trainnavig();" class="trainBtn" type="button" id="navigTrnBtn">+</button></td>
-      <td>NEGOT.</td>
-      <td><input type="text" id="negot" name="negot" class="skill" readonly /><script>document.getElementById("negot").setAttribute('value', negot);</script>
-      <button onclick="trainnegot();" class="trainBtn" type="button" id="negotTrnBtn">+</button></td>
-      <td>LONG W</td>
-      <td><input type="text" id="longW" name="longW" class="skill" readonly /><script>document.getElementById("longW").setAttribute('value', longW);</script>
-      <button onclick="trainlongW();" class="trainBtn" type="button" id="longWTrnBtn">+</button></td>
-      <td>BURST</td>
-      <td><input type="text" id="burst" name="burst" class="skill" readonly /><script>document.getElementById("burst").setAttribute('value', burst);</script>
-      <button onclick="trainburst();" class="advTrainBtn" type="button" id="burstTrnBtn">+</button></td>
-      
-    </tr>
-<!--COMBAT 6th-->
-    <tr>
-      <td>CRAFTING</td>
-      <td><input type="text" id="craft" name="craft" class="skill" readonly /><script>document.getElementById("craft").setAttribute('value', craft);</script>
-      <button onclick="traincraft();" class="trainBtn" type="button" id="craftTrnBtn">+</button></td>
-      <td>SURVIVAL</td>
-      <td><input type="text" id="survival" name="survival" class="skill" readonly /><script>document.getElementById("survival").setAttribute('value', survival);</script>
-      <button onclick="trainsurvival();" class="trainBtn" type="button" id="survivalTrnBtn">+</button></td>
-      <td>2H W</td>
-      <td><input type="text" id="twoH" name="twoH" class="skill" readonly /><script>document.getElementById("twoH").setAttribute('value', twoH);</script>
-      <button onclick="traintwoH();" class="trainBtn" type="button" id="twoHTrnBtn">+</button></td>
-      <td>SPECIAL</td>
-      <td><input type="text" id="special" name="special" class="skill" readonly /><script>document.getElementById("special").setAttribute('value', special);</script>
-      <button onclick="trainspecial();" class="advTrainBtn" type="button" id="specialTrnBtn">+</button></td>
-      
-    </tr>
-<!--COMBAT 7th-->
-    <tr>
-      <td colspan="3">SKILL CHOICES<br><p class="error">Some know more than they realize...</p></td>
-      <td><input type="text" id="skillChoice" value="" readonly />
-      <script>document.getElementById("skillChoice").setAttribute("value", skillChoice);</script>
-      </td>
-      <td>CHAIN</td>
-      <td><input type="text" id="chain" name="chain" class="skill" readonly /><script>document.getElementById("chain").setAttribute('value', chain);</script>
-      <button onclick="trainchain();" class="trainBtn" type="button">+</button></td>
-      <td>W SYS</td>
-      <td><input type="text" id="wsys" name="wsys" class="skill" readonly /><script>document.getElementById("wsys").setAttribute('value', wsys);</script>
-      <button onclick="trainwsys();" class="advTrainBtn" type="button">+</button></td>
-    </tr>
+  <td>HABITAT:</td>
+  <td colspan="2"><input type="text" id="habitat" name="habitat" value="" class="full" required /></td>
+</tr>
 
-    <tr>
-      <td colspan="8">BASIC SKILLS</td>
-    </tr>
-<!--SKILLS 1st-->
-    <tr>
-      <td><input type="text"  id="skill1" name="skill1" value="" readonly /></td>
-      <td><input type="text"  id="skillRate1" name="skillRate1" value="" readonly /></td>
-      <td><input type="text"  id="skill2" name="skill2" value="" readonly /></td>
-      <td><input type="text"  id="skillRate2" name="skillRate2" value="" readonly /></td>
-      <td><input type="text"  id="skill3" name="skill3" value="" readonly /></td>
-      <td><input type="text"  id="skillRate3" name="skillRate3" value="" readonly /></td>
-      <td><input type="text"  id="skill4" name="skill4" value="" readonly /></td>
-      <td><input type="text"  id="skillRate4" name="skillRate4" value="" readonly /></td>
-    </tr>    
-<!--SKILLS 2nd-->
-    <tr>
-      <td><input type="text"  id="skill5" name="skill5" value="" readonly /></td>
-      <td><input type="text"  id="skillRate5" name="skillRate5" value="" readonly /></td>
-      <td><input type="text"  id="skill6" name="skill6" value="" readonly /></td>
-      <td><input type="text"  id="skillRate6" name="skillRate6" value="" readonly /></td>
-      <td><input type="text"  id="skill7" name="skill7" value="" readonly /></td>
-      <td><input type="text"  id="skillRate7" name="skillRate7" value="" readonly /></td>
-      <td><input type="text"  id="skill8" name="skill8" value="" readonly /></td>
-      <td><input type="text"  id="skillRate8" name="skillRate8" value="" readonly /></td>
-    </tr>    
-<!--SKILLS 3rd-->
-    <tr>
-      <td><input type="text"  id="skill9" name="skill9" value="" readonly /></td>
-      <td><input type="text"  id="skillRate9" name="skillRate9" value="" readonly /></td>
-      <td><input type="text"  id="skill10" name="skill10" value="" readonly /></td>
-      <td><input type="text"  id="skillRate10" name="skillRate10" value="" readonly /></td>
-      <td><input type="text"  id="skill11" name="skill11" value="" readonly /></td>
-      <td><input type="text"  id="skillRate11" name="skillRate11" value="" readonly /></td>
-      <td><input type="text"  id="skill12" name="skill12" value="" readonly /></td>
-      <td><input type="text"  id="skillRate12" name="skillRate12" value="" readonly /></td>
-    </tr> 
-<!--SKILLS 4th-->
-    <tr>
-      <td><input type="text"  id="skill13" name="skill13" value="" readonly /></td>
-      <td><input type="text"  id="skillRate13" name="skillRate13" value="" readonly /></td>
-      <td><input type="text"  id="skill14" name="skill14" value="" readonly /></td>
-      <td><input type="text"  id="skillRate14" name="skillRate14" value="" readonly /></td>
-      <td><input type="text"  id="skill15" name="skill15" value="" readonly /></td>
-      <td><input type="text"  id="skillRate15" name="skillRate15" value="" readonly /></td>
-      <td><input type="text"  id="skill16" name="skill16" value="" readonly /></td>
-      <td><input type="text"  id="skillRate16" name="skillRate16" value="" readonly /></td>
-    </tr>   
-<!--SKILLS 5TH-->
-    <tr>
-      <td><input type="text"  id="skill17" name="skill17" value="" readonly /></td>
-      <td><input type="text"  id="skillRate17" name="skillRate17" value="" readonly /></td>
-      <td><input type="text"  id="skill18" name="skill18" value="" readonly /></td>
-      <td><input type="text"  id="skillRate18" name="skillRate18" value="" readonly /></td>
-      <td><input type="text"  id="skill19" name="skill19" value="" readonly /></td>
-      <td><input type="text"  id="skillRate19" name="skillRate19" value="" readonly /></td>
-      <td><input type="text"  id="skill20" name="skill20" value="" readonly /></td>
-      <td><input type="text"  id="skillRate20" name="skillRate20" value="" readonly /></td>
-    </tr> 
-<!--ADVANCED SKILLS-->
-    <tr>
-      <td colspan="8">ADVANCED SKILLS</td>
-    </tr>
-    <tr>
-      <td><input type="text"  id="advSkill1" name="advSkill1" value="" readonly /></td>
-      <td><input type="text"  id="advSkillRate1" name="advSkillRate1" value="" readonly /></td>
-      <td><input type="text"  id="advSkill2" name="advSkill2" value="" readonly /></td>
-      <td><input type="text"  id="advSkillRate2" name="advSkillRate2" value="" readonly /></td>
-      <td><input type="text"  id="advSkill3" name="advSkill3" value="" readonly /></td>
-      <td><input type="text"  id="advSkillRate3" name="advSkillRate3" value="" readonly /></td>
-      <td><input type="text"  id="advSkill4" name="advSkill4" value="" readonly /></td>
-      <td><input type="text"  id="advSkillRate4" name="advSkillRate4" value="" readonly /></td>
-    </tr>
-<!--ADV 2nd-->
-    <tr>
-      <td><input type="text"  id="advSkill5" name="advSkill5" value="" readonly /></td>
-      <td><input type="text"  id="advSkillRate5" name="advSkillRate5" value="" readonly /></td>
-      <td><input type="text"  id="advSkill6" name="advSkill6" value="" readonly /></td>
-      <td><input type="text"  id="advSkillRate6" name="advSkillRate6" value="" readonly /></td>
-      <td><input type="text"  id="advSkill7" name="advSkill7" value="" readonly /></td>
-      <td><input type="text"  id="advSkillRate7" name="advSkillRate7" value="" readonly /></td>
-      <td><input type="text"  id="advSkill8" name="advSkill8" value="" readonly /></td>
-      <td><input type="text"  id="advSkillRate8" name="advSkillRate8" value="" readonly /></td>
-    </tr>
-<!--EXP-->
-    <tr>
-      <td colspan="2">TOTAL EXP</td>
-      <td colspan="2"><input type="text"  id="EXP" name="EXP" value="" readonly /></td>
-      <td colspan="2">REMAINING EXP</td>
-      <td colspan="2"><input type="text"  id="remEXP" name="remEXP" value="" readonly /></td>
-    </tr> 
+<tr>
+  <td>HAIR COLOR:</td>
+  <td colspan="2"><input type="text" id="hairColor" name="hairColor" value="" class="full" required /></td>
+  <td>HAIR STYLE:</td>
+  <td colspan="2"><input type="text" id="hairStyle" name="hairStyle" value="" class="full" required /></td>
+</tr>
+
+<tr>
+  <td>ETHNIC:</td>
+  <td><input type="text" id="ethnicity" name="ethnicity" value="" required /></td>
+  <td>SEX:</td>
+  <td><input type="text" id="sex" name="sex" value="" required /></td>
+  <td>AGE:</td> 
+  <td><input type="text" id="age" name="age" value="" required /></td>
+</tr>
+
+<tr>
+  <td colspan="6" class="header">COMBAT PROFICIENCIES</td>
+  <td colspan="4" class="header">PHYSICAL TRAITS</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainunarm();" class="button" type="button" id="unarmTrnBtn">UNARM</button></td>
+  <td><input type="text" id="unarmed" name="unarmed" value="" readonly /></td>
+  <td><button onclick="trainthrown();" class="button" type="button" id="thrownTrnBtn">THROW</button></td>
+  <td><input type="text" id="thrown" name="thrown" value="" readonly /></td>
+  <td>ACT:</td>
+  <td><input type="text" id="actions" name="actions" value="" readonly /></td>
+  <td>MEM:</td>
+  <td><input type="text" id="mem" name="mem" value="" readonly /></td>
+  <td>STR:</td>
+  <td><input type="text" id="str" name="str" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="traingrap();" class="button" type="button" id="grapTrnBtn">GRAP</button></td>
+  <td><input type="text" id="grappling" name="grappling" value="" readonly /></td>
+  <td><button onclick="trainarch();" class="button" type="button" id="archTrnBtn">ARCH</button></td>
+  <td><input type="text" id="archery" name="archery" value="" readonly /></td>
+  <td>SEQ:</td>
+  <td><input type="text" id="sequence" name="sequence" value="" readonly /></td>
+  <td>LOG:</td>
+  <td><input type="text" id="log" name="log" value="" readonly /></td>
+  <td>END:</td>
+  <td><input type="text" id="end" name="end" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="trainoff();" class="button" style="background-color: red;" type="button" id="offTrnBtn">OFF</button></td>
+  <td><input type="text" id="off" name="off" value="" readonly /></td>
+  <td><button onclick="trainpistols();" class="button" type="button" id="pistolsTrnBtn">PISTOLS</button></td>
+  <td><input type="text" id="pistols" name="pistols" value="" readonly /></td>
+  <td><button onclick="trainblock();" class="button" type="button" id="blockTrnBtn">BLOCK</button></td>
+  <td><input type="text" id="block" name="block" value="" readonly /></td>
+  <td>PER:</td>
+  <td><input type="text" id="per" name="per" value="" readonly /></td>
+  <td>DEX:</td>
+  <td><input type="text" id="dex" name="dex" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="trainshortW();" class="button" type="button" id="shortWTrnBtn">SHORT</button></td>
+  <td><input type="text" id="short" name="short" value="" readonly /></td>
+  <td><button onclick="trainrifles();" class="button" type="button" id="riflesTrnBtn">RIFLES</button></td>
+  <td><input type="text" id="rifles" name="rifles" value="" readonly /></td>
+  <td><button onclick="traindodge();" class="button" style="background-color: red;" type="button" id="dodgeTrnBtn">DODGE</button></td>
+  <td><input type="text" id="dodge" name="dodge" value="" readonly /></td>
+  <td>WILL:</td>
+  <td><input type="text" id="will" name="will" value="" readonly /></td>
+  <td>SPD:</td>
+  <td><input type="text" id="spd" name="spd" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="trainlongW();" class="button" type="button" id="longWTrnBtn">LONG</button></td>
+  <td><input type="text" id="long" name="long" value="" readonly /></td>
+  <td><button onclick="trainburst();" class="button" style="background-color: red;" type="button" id="burstTrnBtn">BURST</button></td>
+  <td><input type="text" id="burst" name="burst" value="" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+  <td>CHA:</td>
+  <td><input type="text" id="cha" name="cha" value="" readonly /></td>
+  <td>BTY:</td>
+  <td><input type="text" id="bty" name="bty" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="traintwoH();" class="button" type="button" id="twoHTrnBtn">2 HAND</button></td>
+  <td><input type="text" id="THM" name="THM" value="" readonly /></td>
+  <td><button onclick="trainspecial();" class="button" style="background-color: red;" type="button" id="specialTrnBtn">SPECIAL</button></td>
+  <td><input type="text" id="special" name="special" value="" readonly /></td>
+  <td colspan="6" class="header">SURVIVAL SKILLS</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainchain();" class="button" type="button" id="chainTrnBtn">CHAIN</button></td>
+  <td><input type="text" id="chain" name="chain" value="" readonly /></td>
+  <td><button onclick="trainwsys();" class="button" style="background-color: red;" type="button" id="wsysTrnBtn">W SYS</button></td>
+  <td><input type="text" id="weaponSys" name="weaponSys" value="" readonly /></td>
+  <td><button onclick="trainEnvAware();" class="button" type="button" id="envAwareTrnBtn">ENV AWR</button></td>
+  <td><input type="text" id="envAware" name="envAware" value="" readonly /></td>
+  <td><button onclick="trainFirstAid();" class="button" style="background-color: red;" type="button" id="firstAidTrnBtn">1ST AID</button></td>
+  <td><input type="text" id="firstAid" name="firstAid" value="" readonly /></td>
+  <td><button onclick="trainnavig();" class="button" type="button" id="navigTrnBtn">NAVIG</button></td>
+  <td><input type="text" id="navigation" name="navigation" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td colspan="4" class="header">TRANSPORTATION SKILLS</td>
+  <td><button onclick="trainTrack();" class="button" type="button" id="trackTrnBtn">TRACK</button></td>
+  <td><input type="text" id="tracking" name="tracking" value="" readonly /></td>
+  <td><button onclick="trainTrap();" class="button" type="button" id="trapTrnBtn">TRAP</button></td>
+  <td><input type="text" id="trapping" name="trapping" value="" readonly /></td>
+  <td><button onclick="trainFish();" class="button" type="button" id="fishTrnBtn">FISH</button></td>
+  <td><input type="text" id="fishing" name="fishing" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="trainSkate();" class="button" type="button" id="skateTrnBtn">SKATE</button></td>
+  <td><input type="text" id="skateboard" name="skateboard" value="" readonly /></td>
+  <td><button onclick="trainBicycle();" class="button" type="button" id="bicycleTrnBtn">BIKE</button></td>
+  <td><input type="text" id="bicycle" name="bicycle" value="" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+  <td style="font-weight: bolder;">GAMBLE:</td>
+  <td><input type="text" id="gambling" name="gambling" value="" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainHorse();" class="button" type="button" id="horseTrnBtn">HORSE</button></td>
+  <td><input type="text" id="horsemanship" name="horsemanship" value="" readonly /></td>
+  <td><button onclick="trainAuto();" class="button" type="button" id="autoTrnBtn">AUTO</button></td>
+  <td><input type="text" id="automobile" name="automobile" value="" readonly /></td>
+  <td colspan="6" class="header">ESPIONAGE SKILLS</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainMotorcycle();" class="button" type="button" id="motorcycleTrnBtn">MOTOR X</button></td>
+  <td><input type="text" id="motorcycle" name="motorcycle" value="" readonly /></td>
+  <td><button onclick="trainJetSki();" class="button" type="button" id="jetSkiTrnBtn">JET SKI</button></td>
+  <td><input type="text" id="jetSki" name="jetSki" value="" readonly /></td>
+  <td><button onclick="trainstealth();" class="button" type="button" id="stealthTrnBtn">STEALTH</button></td>
+  <td><input type="text" id="stealth" name="stealth" value="" readonly /></td>
+  <td><button onclick="trainSurvey();" class="button" type="button" id="survTrnBtn">SURVEIL</button></td>
+  <td><input type="text" id="surveillance" name="surveillance" value="" readonly /></td>
+  <td><button onclick="trainForen();" class="button" style="background-color: red;" type="button" id="forensicsTrnBtn">FOREN</button></td>
+  <td><input type="text" id="forensics" name="forensics" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="trainSail();" class="button" type="button" id="sailTrnBtn">SAIL</button></td>
+  <td><input type="text" id="sailing" name="sailing" value="" readonly /></td>
+  <td><button onclick="trainBoat();" class="button" type="button" id="boatTrnBtn">BOAT</button></td>
+  <td><input type="text" id="boating" name="boating" value="" readonly /></td>
+  <td><button onclick="trainPick();" class="button" type="button" id="pickTrnBtn">PICK</button></td>
+  <td><input type="text" id="pickpocket" name="pickpocket" value="" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+  <td><button onclick="trainLock();" class="button" type="button" id="lockTrnBtn">LOCK</button></td>
+  <td><input type="text" id="lockpick" name="lockpick" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="trainMGV();" class="button" style="background-color: red;" type="button" id="MGVTrnBtn">MULTI GEAR</button></td>
+  <td><input type="text" id="MGV" name="MGV" value="" readonly /></td>
+  <td><button onclick="trainHvyEquip();" class="button" style="background-color: red;" type="button" id="hvyEquipTrnBtn">HVY EQUIP</button></td>
+  <td><input type="text" id="hvyEquip" name="hvyEquip" value="" readonly /></td>
+  <td colspan="6" class="header">TECHNOLOGY SKILLS</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainHeli();" class="button" style="background-color: red;" type="button" id="heliTrnBtn">HELI</button></td>
+  <td><input type="text" id="helicopters" name="helicopters" value="" readonly /></td>
+  <td><button onclick="trainPlane();" class="button" style="background-color: red;" type="button" id="planeTrnBtn">PLANE</button></td>
+  <td><input type="text" id="airplanes" name="airplanes" value="" readonly /></td>
+  <td><button onclick="traincraft();" class="button" type="button" id="craftTrnBtn">CRAFT</button></td>
+  <td><input type="text" id="crafting" name="crafting" value="" readonly /></td>
+  <td><button onclick="trainComp();" class="button" type="button" id="compTrnBtn">COMP</button></td>
+  <td><input type="text" id="computers" name="computers" value="" readonly /></td>
+  <td><button onclick="trainProgram();" class="button" style="background-color: red;" type="button" id="programTrnBtn" disabled="true" >PROGRAM</button></td>
+  <td><input type="text" id="programming" name="programming" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td colspan="4" class="header">SCIENCES</td>
+  <td><button onclick="trainMech();" class="button" type="button" id="mechTrnBtn">MECH</button></td>
+  <td><input type="text" id="mechanics" name="mechanics" value="" readonly /></td>
+  <td><button onclick="trainElect();" class="button" type="button" id="electricalTrnBtn">ELECT</button></td>
+  <td><input type="text" id="electrical" name="electrical" value="" readonly /></td>
+  <td><button onclick="trainRadio();" class="button" type="button" id="radioTrnBtn">RADIO SYS</button></td>
+  <td><input type="text" id="radioSys" name="radioSys" value="" readonly /></td>
+</tr>
+
+<tr>
+  <td><button onclick="trainLiteracy();" class="button" type="button" id="litTrnBtn">LIT</button></td>
+  <td><input type="text" id="literacy" name="literacy" value="" readonly /></td>
+  <td><button onclick="trainHistory();" class="button" type="button" id="historyTrnBtn">HISTORY</button></td>
+  <td><input type="text" id="history" name="history" value="" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+  <td><button onclick="trainConstruct();" class="button" style="background-color: red;" type="button" id="constructTrnBtn">CONST</button></td>
+  <td><input type="text" id="construction" name="construction" value="" readonly /></td>
+  <td colspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainMath();" class="button" type="button" id="mathTrnBtn">MATH</button></td>
+  <td><input type="text" id="math" name="math" value="" readonly /></td>
+  <td><button onclick="trainPhysics();" class="button" style="background-color: red;" type="button" id="physicsTrnBtn">PHYSICS</button></td>
+  <td><input type="text" id="physics" name="physics" value="" readonly /></td>
+  <td colspan="6" class="header">SOFT SKILLS & LANGUAGES</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainBio();" class="button" type="button" id="bioTrnBtn">BIO</button></td>
+  <td><input type="text" id="biology" name="biology" value="" readonly /></td>
+  <td><button onclick="trainBot();" class="button" type="button" id="botTrnBtn">BOT</button></td>
+  <td><input type="text" id="botany" name="botany" value="" readonly /></td>
+  <td>&nbsp;</td>
+  <td><button onclick="trainnegot();" class="button" type="button" id="negotTrnBtn">NEGOT</button></td>
+  <td><input type="text" id="negotiation" name="negotiation" value="" readonly /></td>
+  <td><button onclick="trainLaw();" class="button" style="background-color: red;" type="button" id="lawTrnBtn">LAW</button></td>
+  <td><input type="text" id="law" name="law" value="" readonly /></td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainChem();" class="button" type="button" id="chemTrnBtn">CHEM</button></td>
+  <td><input type="text" id="chemistry" name="chemistry" value="" readonly /></td>
+  <td><button onclick="trainToxic();" class="button" style="background-color: red;" type="button" id="toxicTrnBtn" disabled="true">TOXIC</button></td>
+  <td><input type="text" id="toxicology" name="toxicology" value="" readonly /></td>
+  <td colspan="3" style="font-style: italic;">LANGUAGES</td>
+  <td colspan="3" style="font-style: italic;">LITERACIES</td>
+</tr>
+
+<tr>
+  <td><button onclick="trainPharma();" class="button" style="background-color: red;" type="button" id="pharmaTrnBtn" disabled="true">PHARMA</button></td>
+  <td><input type="text" id="pharmacology" name="pharmacology" value="" readonly /></td>
+  <td><button onclick="trainDoc();" class="button" style="background-color: red;" type="button" id="doctorTrnBtn" disabled="true">DOCTOR</button></td>
+  <td><input type="text" id="doctor" name="doctor" value="" readonly /></td>
+  <td><button onclick="n = 1; langModal.style.display='block';" class="button" type="button" id="langBtn1">LEARN</button></td>
+  <td><input type="text" id="lang1" name="lang1" value="" readonly /></td>
+  <td><input type="text" id="langRate1" name="langRate1" value="" readonly /></td>
+  <td><input type="text" id="lit1" name="lit1" value="" readonly /></td>
+  <td><input type="text" id="litRate1" name="litRate1" value="" readonly /></td>
+  <td><button onclick="m = 1; litModal.style.display='block';" class="button" type="button" id="litBtn1">LEARN</button></td>
+</tr>
+
+<tr>
+  <td colspan="4">&nbsp;</td>
+  <td><button onclick="n = 2; langModal.style.display='block';" class="button" type="button" id="langBtn2">LEARN</button></td>
+  <td><input type="text" id="lang2" name="lang2" value="" readonly /></td>
+  <td><input type="text" id="langRate2" name="langRate2" value="" readonly /></td>
+  <td><input type="text" id="lit2" name="lit2" value="" readonly /></td>
+  <td><input type="text" id="litRate2" name="litRate2" value="" readonly /></td>
+  <td><button onclick="m = 2; litModal.style.display='block';" class="button" type="button" id="litBtn2">LEARN</button></td>
+</tr>
+
+<tr>
+  <td colspan="4">&nbsp;</td>
+  <td><button onclick="n = 3; langModal.style.display='block';" class="button" type="button" id="langBtn3">LEARN</button></td>
+  <td><input type="text" id="lang3" name="lang3" value="" readonly /></td>
+  <td><input type="text" id="langRate3" name="langRate3" value="" readonly /></td>
+  <td><input type="text" id="lit3" name="lit3" value="" readonly /></td>
+  <td><input type="text" id="litRate3" name="litRate3" value="" readonly /></td>
+  <td><button onclick="m = 3; litModal.style.display='block';" class="button" type="button" id="litBtn3">LEARN</button></td>
+</tr>
+
 <!--SUBMIT-->
     <tr>
-      <td colspan="8"><input style="max-width: 50%;" id="upload" type="submit" name="submit" value="CONFIRM & UPLOAD" class="button" /></td>
-      <script>
+      <td colspan="3">&nbsp;</td>
+      <td colspan="4"><input id="upload" type="submit" name="submit" value="CONFIRM & UPLOAD" class="button" /></td>
+      <td colspan="3">&nbsp;</td>
+
+    <script>
       document.getElementById("upload").addEventListener("click", function(event){
         if (skillChoice > 0){
         alert('YOU MUST SPEND ALL SKILL POINTS AVAILABLE');
         event.preventDefault()
       }
-        if (document.getElementById('farmModal').style.display == 'block'){
+        if (document.getElementById('outdoorsmanModal').style.display == 'block'){
         alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
         event.preventDefault()
       }
+        if (document.getElementById('thiefModal').style.display == 'block'){
+        alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
+        event.preventDefault()
+      } 
+        if (document.getElementById('militiaModal').style.display == 'block'){
+        alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
+        event.preventDefault()
+      } 
+        if (document.getElementById('banditModal').style.display == 'block'){
+        alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
+        event.preventDefault()
+      } 
         if (document.getElementById('gangModal').style.display == 'block'){
         alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
         event.preventDefault()
       } 
-        if (document.getElementById('soldModal').style.display == 'block'){
+        if (document.getElementById('securityModal').style.display == 'block'){
         alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
         event.preventDefault()
       } 
-        if (document.getElementById('outModal').style.display == 'block'){
+        if (document.getElementById('marinerModal').style.display == 'block'){
         alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
         event.preventDefault()
       } 
-        if (document.getElementById('tradeModal').style.display == 'block'){
-        alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
-        event.preventDefault()
-      } 
-        if (document.getElementById('mechModal').style.display == 'block'){
-        alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
-        event.preventDefault()
-      } 
-        if (document.getElementById('educModal').style.display == 'block'){
+        if (document.getElementById('mechanicModal').style.display == 'block'){
         alert('PLEASE SELECT YOUR BACKGROUND SKILLS');
         event.preventDefault()
       } 
 });
-      </script>
+    </script>
 
-    </tr> 
-    <br>
-
-</form>
+    </tr><br>
 </table>
-</div>
-
-<!--SKILL CHOICES-->
-<div class="row content">
-<div class="large-12 columns">
-<table>
 
 <!--MODALS-->
-<!--FARMER MODAL-->
-<div id="farmModal" class="modal">
-      <div>
-      <p style="font-weight: bold;">PLEASE SELECT ONE OF THE FOLLOWING:</p>
-          <ul>
-            <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('horseBtn').disabled = true; farmModal.style.display='none';" class="button" data-name="HORSEMANSHIP">HORSEMANSHIP</button>
-            <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('autoBtn').disabled = true; farmModal.style.display='none';" class="button" data-name="AUTOMOBILE">AUTOMOBILE</button>
-          </ul>
-      </div>
-</div> 
-<!--GANGSTER MODAL-->
-<div id="gangModal" class="modal">
-    <div>
-        <div style="width: 50%; float: left;">
-        <p style="font-weight: bold;">PLEASE SELECT ONE FROM EACH COLUMN</p>
-        <ul>
-          <li><button type="button" onclick="modunarm(); gangModal();
-            document.getElementById('unarmModBtn').disabled = true; 
-            document.getElementById('grapModBtn').disabled = true;
-            document.getElementById('offModBtn').disabled = true;
-            document.getElementById('shortModBtn').disabled = true;
-            document.getElementById('longModBtn').disabled = true;
-            document.getElementById('twoHModBtn').disabled = true;
-            document.getElementById('chainModBtn').disabled = true;" 
-            id="unarmModBtn" class="button">UNARMED</button>
-          <li><button type="button" onclick="modgrap(); gangModal();
-            document.getElementById('unarmModBtn').disabled = true; 
-            document.getElementById('grapModBtn').disabled = true;
-            document.getElementById('offModBtn').disabled = true;
-            document.getElementById('shortModBtn').disabled = true;
-            document.getElementById('longModBtn').disabled = true;
-            document.getElementById('twoHModBtn').disabled = true;
-            document.getElementById('chainModBtn').disabled = true;"
-            id="grapModBtn" class="button">GRAPPLING</button>
-          <li><button type="button" onclick="modoff(); gangModal();
-            document.getElementById('unarmModBtn').disabled = true; 
-            document.getElementById('grapModBtn').disabled = true;
-            document.getElementById('offModBtn').disabled = true;
-            document.getElementById('shortModBtn').disabled = true;
-            document.getElementById('longModBtn').disabled = true;
-            document.getElementById('twoHModBtn').disabled = true;
-            document.getElementById('chainModBtn').disabled = true;"
-            id="offModBtn" class="button">OFF HAND</button>
-          <li><button type="button" onclick="modshortW(); gangModal();
-            document.getElementById('unarmModBtn').disabled = true; 
-            document.getElementById('grapModBtn').disabled = true;
-            document.getElementById('offModBtn').disabled = true;
-            document.getElementById('shortModBtn').disabled = true;
-            document.getElementById('longModBtn').disabled = true;
-            document.getElementById('twoHModBtn').disabled = true;
-            document.getElementById('chainModBtn').disabled = true;"
-            id="shortModBtn" class="button">SHORT WEAPONS</button>
-          <li><button type="button" onclick="modlongW(); gangModal();
-            document.getElementById('unarmModBtn').disabled = true; 
-            document.getElementById('grapModBtn').disabled = true;
-            document.getElementById('offModBtn').disabled = true;
-            document.getElementById('shortModBtn').disabled = true;
-            document.getElementById('longModBtn').disabled = true;
-            document.getElementById('twoHModBtn').disabled = true;
-            document.getElementById('chainModBtn').disabled = true;"
-            id="longModBtn" class="button">LONG WEAPONS</button>
-          <li><button type="button" onclick="modtwoH(); gangModal();
-            document.getElementById('unarmModBtn').disabled = true; 
-            document.getElementById('grapModBtn').disabled = true;
-            document.getElementById('offModBtn').disabled = true;
-            document.getElementById('shortModBtn').disabled = true;
-            document.getElementById('longModBtn').disabled = true;
-            document.getElementById('twoHModBtn').disabled = true;
-            document.getElementById('chainModBtn').disabled = true;"
-            id="twoHModBtn" class="button">TWO HANDED</button>
-          <li><button type="button" onclick="modchain(); gangModal();
-            document.getElementById('unarmModBtn').disabled = true; 
-            document.getElementById('grapModBtn').disabled = true;
-            document.getElementById('offModBtn').disabled = true;
-            document.getElementById('shortModBtn').disabled = true;
-            document.getElementById('longModBtn').disabled = true;
-            document.getElementById('twoHModBtn').disabled = true;
-            document.getElementById('chainModBtn').disabled = true;"
-            id="chainModBtn" class="button">CHAIN</button>
-        </ul>
-        </div>
-
-        <div style="width: 50%; float: left;">
-          <p>&nbsp;</p>
-        <ul>
-          <li><button type="button" onclick="modthrown(); gangModal();
-            document.getElementById('throwModBtn').disabled = true; 
-            document.getElementById('archModBtn').disabled = true;
-            document.getElementById('oneHgunsModBtn').disabled = true;
-            document.getElementById('twoHgunsModBtn').disabled = true;
-            document.getElementById('burstModBtn').disabled = true;
-            document.getElementById('specialModBtn').disabled = true;" 
-            id="throwModBtn" class="button">THROWING</button>
-          <li><button type="button" onclick="modarch(); gangModal();
-            document.getElementById('throwModBtn').disabled = true; 
-            document.getElementById('archModBtn').disabled = true;
-            document.getElementById('oneHgunsModBtn').disabled = true;
-            document.getElementById('twoHgunsModBtn').disabled = true;
-            document.getElementById('burstModBtn').disabled = true;
-            document.getElementById('specialModBtn').disabled = true;"  
-            id="archModBtn" class="button">ARCHERY</button>
-          <li><button type="button" onclick="modoneHguns(); gangModal();
-            document.getElementById('throwModBtn').disabled = true; 
-            document.getElementById('archModBtn').disabled = true;
-            document.getElementById('oneHgunsModBtn').disabled = true;
-            document.getElementById('twoHgunsModBtn').disabled = true;
-            document.getElementById('burstModBtn').disabled = true;
-            document.getElementById('specialModBtn').disabled = true;"  
-            id="oneHgunsModBtn" class="button">ONE HANDED GUNS</button>
-          <li><button type="button" onclick="modtwoHguns(); gangModal();
-            document.getElementById('throwModBtn').disabled = true; 
-            document.getElementById('archModBtn').disabled = true;
-            document.getElementById('oneHgunsModBtn').disabled = true;
-            document.getElementById('twoHgunsModBtn').disabled = true;
-            document.getElementById('burstModBtn').disabled = true;
-            document.getElementById('specialModBtn').disabled = true;"  
-            id="twoHgunsModBtn" class="button">TWO HANDED GUNS</button>
-          <li><button type="button" onclick="modburst(); gangModal();
-            document.getElementById('throwModBtn').disabled = true; 
-            document.getElementById('archModBtn').disabled = true;
-            document.getElementById('oneHgunsModBtn').disabled = true;
-            document.getElementById('twoHgunsModBtn').disabled = true;
-            document.getElementById('burstModBtn').disabled = true;
-            document.getElementById('specialModBtn').disabled = true;"  
-            id="burstModBtn" class="button">BURST CONTROL</button>
-          <li><button type="button" onclick="modspecial(); gangModal();
-            document.getElementById('throwModBtn').disabled = true; 
-            document.getElementById('archModBtn').disabled = true;
-            document.getElementById('oneHgunsModBtn').disabled = true;
-            document.getElementById('twoHgunsModBtn').disabled = true;
-            document.getElementById('burstModBtn').disabled = true;
-            document.getElementById('specialModBtn').disabled = true;"  
-            id="specialModBtn" class="button">SPECIAL WEAPONS</button>
-        </ul>
-        </div>
-    </div>
-</div>
-<!--SOLDIER MODAL-->
-<div id="soldModal" class="modal">
-    <div>
-        <div style="width: 50%; float: left;">
-        <p style="font-weight: bold;">PLEASE SELECT THREE OF THE FOLLOWING</p>
-        <ul>
-          <li><button type="button" onclick="modunarm(); soldModal();" 
-            id="unarmModBtn" class="button">UNARMED</button>
-          <li><button type="button" onclick="modgrap(); soldModal();" 
-            id="grapModBtn" class="button melee">GRAPPLING</button>
-          <li><button type="button" onclick="modoff(); soldModal();" 
-            id="offModBtn" class="button">OFF HAND</button>
-          <li><button type="button" onclick="modshortW(); soldModal();" 
-            id="shortModBtn" class="button">SHORT WEAPONS</button>
-          <li><button type="button" onclick="modlongW(); soldModal();" 
-            id="longModBtn" class="button">LONG WEAPONS</button>
-          <li><button type="button" onclick="modtwoH(); soldModal();" 
-            id="twoHModBtn" class="button">TWO HANDED</button>
-          <li><button type="button" onclick="modchain(); soldModal();" 
-            id="chainModBtn" class="button">CHAIN</button>
-        </ul>
-        </div>
-
-        <div style="width: 50%; float: left;">
-          <p>&nbsp;</p>
-        <ul>
-          <li><button type="button" onclick="modthrown(); soldModal();" 
-            id="throwModBtn" class="button">THROWING</button>
-          <li><button type="button" onclick="modarch(); soldModal();" 
-            id="archModBtn" class="button">ARCHERY</button>
-          <li><button type="button" onclick="modoneHguns(); soldModal();" 
-            id="oneHgunsModBtn" class="button">ONE HANDED GUNS</button>
-          <li><button type="button" onclick="modtwoHguns(); soldModal();" 
-            id="twoHgunsModBtn" class="button">TWO HANDED GUNS</button>
-          <li><button type="button" onclick="modburst(); soldModal();" 
-            id="burstModBtn" class="button">BURST CONTROL</button>
-          <li><button type="button" onclick="modspecial(); soldModal();" 
-            id="specialModBtn" class="button ranged">SPECIAL WEAPONS</button>
-          <li><button type="button" onclick="modwsys(); soldModal();" 
-            id="wsysModBtn" class="button">WEAPON SYSTEMS</button>
-        </ul>
-        </div>
-    </div>
-</div>
-<!--OUTDOORSMAN MODAL-->
-<div id="outModal" class="modal">
-    <div>
-        <div>
-        <p style="font-weight: bold;">PLEASE SELECT ONE OF THE FOLLOWING</p>
-        <ul>
-          <li><button type="button" onclick="modthrown(); outModal.style.display='none';" class="button">THROWING</button>
-          <li><button type="button" onclick="modarch(); outModal.style.display='none';" class="button">ARCHERY</button>
-          <li><button type="button" onclick="modoneHguns(); outModal.style.display='none';" class="button">ONE HANDED GUNS</button>
-          <li><button type="button" onclick="modtwoHguns(); outModal.style.display='none';" class="button">TWO HANDED GUNS</button>
-        </ul>
-        </div>
-    </div>
-</div>
-<!--TRADER MODAL-->
-    <div id="tradeModal" class="modal">
-      <div>
-        <div style="width: 50%; float: left;">
-        <p style="font-weight: bold;">PLEASE SELECT ONE FROM EITHER COLUMN</p>
-        <ul>
-          <li><button type="button" onclick="modunarm(); tradeModal();
-            document.getElementById('tunarmModBtn').disabled = true; 
-            document.getElementById('tgrapModBtn').disabled = true;
-            document.getElementById('toffModBtn').disabled = true;
-            document.getElementById('tshortModBtn').disabled = true;
-            document.getElementById('tlongModBtn').disabled = true;
-            document.getElementById('ttwoHModBtn').disabled = true;
-            document.getElementById('tchainModBtn').disabled = true;" 
-            id="tunarmModBtn" class="button">UNARMED</button>
-          <li><button type="button" onclick="modgrap(); tradeModal();
-            document.getElementById('tunarmModBtn').disabled = true; 
-            document.getElementById('tgrapModBtn').disabled = true;
-            document.getElementById('toffModBtn').disabled = true;
-            document.getElementById('tshortModBtn').disabled = true;
-            document.getElementById('tlongModBtn').disabled = true;
-            document.getElementById('ttwoHModBtn').disabled = true;
-            document.getElementById('tchainModBtn').disabled = true;"
-            id="tgrapModBtn" class="button">GRAPPLING</button>
-          <li><button type="button" onclick="modoff(); tradeModal();
-            document.getElementById('tunarmModBtn').disabled = true; 
-            document.getElementById('tgrapModBtn').disabled = true;
-            document.getElementById('toffModBtn').disabled = true;
-            document.getElementById('tshortModBtn').disabled = true;
-            document.getElementById('tlongModBtn').disabled = true;
-            document.getElementById('ttwoHModBtn').disabled = true;
-            document.getElementById('tchainModBtn').disabled = true;"
-            id="toffModBtn" class="button">OFF HAND</button>
-          <li><button type="button" onclick="modshortW(); tradeModal();
-            document.getElementById('tunarmModBtn').disabled = true; 
-            document.getElementById('tgrapModBtn').disabled = true;
-            document.getElementById('toffModBtn').disabled = true;
-            document.getElementById('tshortModBtn').disabled = true;
-            document.getElementById('tlongModBtn').disabled = true;
-            document.getElementById('ttwoHModBtn').disabled = true;
-            document.getElementById('tchainModBtn').disabled = true;"
-            id="tshortModBtn" class="button">SHORT WEAPONS</button>
-          <li><button type="button" onclick="modlongW(); tradeModal();
-            document.getElementById('tunarmModBtn').disabled = true; 
-            document.getElementById('tgrapModBtn').disabled = true;
-            document.getElementById('toffModBtn').disabled = true;
-            document.getElementById('tshortModBtn').disabled = true;
-            document.getElementById('tlongModBtn').disabled = true;
-            document.getElementById('ttwoHModBtn').disabled = true;
-            document.getElementById('tchainModBtn').disabled = true;"
-            id="tlongModBtn" class="button">LONG WEAPONS</button>
-          <li><button type="button" onclick="modtwoH(); tradeModal();
-            document.getElementById('tunarmModBtn').disabled = true; 
-            document.getElementById('tgrapModBtn').disabled = true;
-            document.getElementById('toffModBtn').disabled = true;
-            document.getElementById('tshortModBtn').disabled = true;
-            document.getElementById('tlongModBtn').disabled = true;
-            document.getElementById('ttwoHModBtn').disabled = true;
-            document.getElementById('tchainModBtn').disabled = true;"
-            id="ttwoHModBtn" class="button">TWO HANDED</button>
-          <li><button type="button" onclick="modchain(); tradeModal();
-            document.getElementById('tunarmModBtn').disabled = true; 
-            document.getElementById('tgrapModBtn').disabled = true;
-            document.getElementById('toffModBtn').disabled = true;
-            document.getElementById('tshortModBtn').disabled = true;
-            document.getElementById('tlongModBtn').disabled = true;
-            document.getElementById('ttwoHModBtn').disabled = true;
-            document.getElementById('tchainModBtn').disabled = true;"
-            id="tchainModBtn" class="button">CHAIN</button>
-        </ul>
-        </div>
-
-        <div style="width: 50%; float: left;">
-          <p>&nbsp;</p>
-        <ul>
-          <li><button type="button" onclick="modthrown(); tradeModal();
-            document.getElementById('tthrowModBtn').disabled = true; 
-            document.getElementById('tarchModBtn').disabled = true;
-            document.getElementById('toneHgunsModBtn').disabled = true;
-            document.getElementById('ttwoHgunsModBtn').disabled = true;
-            document.getElementById('tburstModBtn').disabled = true;
-            document.getElementById('tspecialModBtn').disabled = true;" 
-            id="tthrowModBtn" class="button">THROWING</button>
-          <li><button type="button" onclick="modarch(); tradeModal();
-            document.getElementById('tthrowModBtn').disabled = true; 
-            document.getElementById('tarchModBtn').disabled = true;
-            document.getElementById('toneHgunsModBtn').disabled = true;
-            document.getElementById('ttwoHgunsModBtn').disabled = true;
-            document.getElementById('tburstModBtn').disabled = true;
-            document.getElementById('tspecialModBtn').disabled = true;"  
-            id="tarchModBtn" class="button">ARCHERY</button>
-          <li><button type="button" onclick="modoneHguns(); tradeModal();
-            document.getElementById('tthrowModBtn').disabled = true; 
-            document.getElementById('tarchModBtn').disabled = true;
-            document.getElementById('toneHgunsModBtn').disabled = true;
-            document.getElementById('ttwoHgunsModBtn').disabled = true;
-            document.getElementById('tburstModBtn').disabled = true;
-            document.getElementById('tspecialModBtn').disabled = true;"  
-            id="toneHgunsModBtn" class="button">ONE HANDED GUNS</button>
-          <li><button type="button" onclick="modtwoHguns(); tradeModal();
-            document.getElementById('tthrowModBtn').disabled = true; 
-            document.getElementById('tarchModBtn').disabled = true;
-            document.getElementById('toneHgunsModBtn').disabled = true;
-            document.getElementById('ttwoHgunsModBtn').disabled = true;
-            document.getElementById('tburstModBtn').disabled = true;
-            document.getElementById('tspecialModBtn').disabled = true;"  
-            id="ttwoHgunsModBtn" class="button">TWO HANDED GUNS</button>
-          <li><button type="button" onclick="modburst(); tradeModal();
-            document.getElementById('tthrowModBtn').disabled = true; 
-            document.getElementById('tarchModBtn').disabled = true;
-            document.getElementById('toneHgunsModBtn').disabled = true;
-            document.getElementById('ttwoHgunsModBtn').disabled = true;
-            document.getElementById('tburstModBtn').disabled = true;
-            document.getElementById('tspecialModBtn').disabled = true;"  
-            id="tburstModBtn" class="button">BURST CONTROL</button>
-          <li><button type="button" onclick="modspecial(); tradeModal();
-            document.getElementById('tthrowModBtn').disabled = true; 
-            document.getElementById('tarchModBtn').disabled = true;
-            document.getElementById('toneHgunsModBtn').disabled = true;
-            document.getElementById('ttwoHgunsModBtn').disabled = true;
-            document.getElementById('tburstModBtn').disabled = true;
-            document.getElementById('tspecialModBtn').disabled = true;"  
-            id="tspecialModBtn" class="button">SPECIAL WEAPONS</button>
-        </ul>
-        </div>
-
-        <div>
-          <p style="font-weight: bold; clear: both;">AS WELL AS ONE OF THE FOLLOWING:</p>
-          <ul>
-            <li><button type="button" onclick=" tradeModal(); addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('horseBtn').disabled = true;" class="button" id='horseModBtn' data-name="HORSEMANSHIP">HORSEMANSHIP</button>
-            <li><button type="button" onclick=" tradeModal(); addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('cycleBtn').disabled = true;" class="button" id='cycleModBtn' data-name="MOTORCYCLE">MOTORCYCLE</button>
-            <li><button type="button" onclick=" tradeModal(); addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-               getElementById('autoBtn').disabled = true;" class="button" id='autoModBtn' data-name="AUTOMOBILE">AUTOMOBILE</button>
-            <li><button type="button" onclick=" tradeModal(); addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-               getElementById('boatBtn').disabled = true;" class="button" id='boatModBtn' data-name="BOATING">BOATING</button>
-            <li><button type="button" onclick=" tradeModal(); addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-               getElementById('sailBtn').disabled = true;" class="button" id='sailModBtn' data-name="SAILING">SAILING</button>
-            <li><button type="button" onclick="tradeModal(); addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-               getElementById('jetSkiBtn').disabled = true;" class="button" id='skiModBtn' data-name="JET_SKI">JET SKI</button>
-            <li><button type="button" onclick="tradeModal(); addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-               getElementById('bikeBtn').disabled = true;" class="button" id='bikeModBtn' data-name="BICYCLE">BICYCLE</button>
-          </ul>  
-        </div>
-
-    </div>
-  </div>
-<!--MECHANIC MODAL-->
-<div id="mechModal" class="modal">
-    <div>
-       <p style="font-weight: bold;">PLEASE SELECT ONE OF THE FOLLOWING:</p>
-          <ul>
-            <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('cycleBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="MOTORCYCLE">MOTORCYCLE</button>
-            <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('autoBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="AUTOMOBILE">AUTOMOBILE</button>
-            <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('boatBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="BOATING">BOATING</button>
-            <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('sailBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="SAILING">SAILING</button>
-            <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('jetSkiBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="JET_SKI">JET SKI</button>
-            <li><button type="button" onclick="addAdvSkill(this); skillChoice += 2; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('multiGearBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="MULTI_GEARS">MULTI GEARED</button>
-            <li><button type="button" onclick="addAdvSkill(this); skillChoice += 2; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('hvyEquipBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="HEAVY_EQUIP">HEAVY EQUIPMENT</button>
-            <li><button type="button" onclick="addAdvSkill(this); skillChoice += 2; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('treadBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="TREADED">TREADED VEHICLES</button>
-            <li><button type="button" onclick="addAdvSkill(this); skillChoice += 2; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('heliBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="HELICOPTERS">HELICOPTERS</button>
-            <li><button type="button" onclick="addAdvSkill(this); skillChoice += 2; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('planesBtn').disabled = true; mechModal.style.display='none';" class="button" data-name="AIRPLANES">AIRPLANES</button>
-          </ul>  
-    </div>
-</div>
-<!--EDUCATED MODAL-->
-<div id="educModal" class="modal">
-      <div>
-        <div style="width: 50%; float: left;">
-        <p style="font-weight: bold;">PLEASE SELECT ONE FROM EITHER COLUMN</p>
-        <ul>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1;  getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('bioBtn').disabled = true; educModal.style.display='none'; bioBtnClk = true;" class="button" data-name="BIOLOGY">BIOLOGY</button>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('botBtn').disabled = true; educModal.style.display='none';" class="button" data-name="BOTANY">BOTANY</button>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('chemBtn').disabled = true; educModal.style.display='none'; chemBtnClk = true;" class="button" data-name="CHEMISTRY">CHEMISTRY</button>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('histBtn').disabled = true; educModal.style.display='none';" class="button" data-name="HISTORY">HISTORY</button>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1; getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('mycoBtn').disabled = true; educModal.style.display='none';" class="button" data-name="MYCOLOGY">MYCOLOGY</button>
-        </ul>
-        </div>
-
-        <div style="width: 50%; float: left;">
-          <p>&nbsp;</p>
-        <ul>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1;  getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('mechBtn').disabled = true; educModal.style.display='none';" class="button" data-name="MECHANICS">MECHANICS</button>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1;  getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('electBtn').disabled = true; educModal.style.display='none';" class="button" data-name="ELECTRONICS">ELECTRONICS</button>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1;  getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('lockBtn').disabled = true; educModal.style.display='none';" class="button" data-name="LOCKPICK">LOCKPICK</button>
-          <li><button type="button" onclick="addSkill(this); skillChoice += 1;  getElementById('skillChoice').setAttribute('value', skillChoice);
-              getElementById('commSysBtn').disabled = true; educModal.style.display='none';" class="button" data-name="COMM_SYSTEMS">COMM. SYSTEMS</button>
-        </ul>
-      </div>
-
-      </div>
-    </div>
 <!--LANGUAGE MODAL-->
     <div id="langModal" class="modal">
-      <div>
+        <p style="font-weight: bold; color: white;">PLEASE SELECT A LANGUAGE</p>
         <div style="width: 50%; float: left;">
-        <p style="font-weight: bold;">PLEASE SELECT A LANGUAGE</p>
         <ul>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="SPANISH_LANG" class="button">SPANISH</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="FRENCH_LANG" class="button">FRENCH</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="ITALIAN_LANG" class="button">ITALIAN</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="GERMAN_LANG" class="button">GERMAN</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="ARABIC_LANG" class="button">ARABIC</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="YIDDISH_LANG" class="button">YIDDISH</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="RUSSIAN_LANG" class="button">RUSSIAN</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="POLISH_LANG" class="button">POLISH</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="US_SIGN_LANG" class="button">US SIGN</button>
+          <li><button type="button" onclick="language = 'SPANISH'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">SPANISH</button></li>
+          <li><button type="button" onclick="language = 'FRENCH'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">FRENCH</button></li>
+          <li><button type="button" onclick="language = 'ITALIAN'; addLang(); langModal.style.display = 'none' this.disabled = true;;" class="button">ITALIAN</button></li>
+          <li><button type="button" onclick="language = 'GERMAN'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">GERMAN</button></li>
+          <li><button type="button" onclick="language = 'ARABIC'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">ARABIC</button></li>
+          <li><button type="button" onclick="language = 'YIDDISH'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">YIDDISH</button></li>
+          <li><button type="button" onclick="language = 'RUSSIAN'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">RUSSIAN</button></li>
+          <li><button type="button" onclick="language = 'POLISH'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">POLISH</button></li>
+          <li><button type="button" onclick="language = 'US_SIGN'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">US SIGN</button></li>
         </ul>
         </div>
 
         <div style="width: 50%; float: left;">
           <p>&nbsp;</p>
         <ul>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="MANDARIN_LANG" class="button">MANDARIN</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="CANTONESE_LANG" class="button">CANTONESE</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="CANTONESE_LANG" class="button">JAPANESE</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="KHMER_LANG" class="button">KHMER</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="VIETNAMESE_LANG" class="button">VIETNAMESE</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="FINNISH_LANG" class="button">FINNISH</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="SWEDISH_LANG" class="button">SWEDISH</button>
-          <li><button type="button" onclick="addLang(this); langModal.style.display='none';" data-name="WELSH_LANG" class="button">WELSH</button>
+          <li><button type="button" onclick="language = 'MANDARIN'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">MANDARIN</button></li>
+          <li><button type="button" onclick="language = 'CANTONESE'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">CANTONESE</button></li>
+          <li><button type="button" onclick="language = 'JAPANESE'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">JAPANESE</button></li>
+          <li><button type="button" onclick="language = 'HINDI'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">HINDI</button></li>
+          <li><button type="button" onclick="language = 'VIETNAMESE'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">VIETNAMESE</button></li>
+          <li><button type="button" onclick="language = 'FINNISH'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">FINNISH</button></li>
+          <li><button type="button" onclick="language = 'SWEDISH'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">SWEDISH</button></li>
+          <li><button type="button" onclick="language = 'WELSH'; addLang(); langModal.style.display = 'none'; this.disabled = true;" class="button">WELSH</button></li>
         </ul>
-      </div>
-    </div>
+        </div>
+        <br>
+        
+        <button type="navbutton" onclick="langModal.style.display = 'none';" class="button">CANCEL</button>
   </div>  
 <!--LITERACY MODAL-->
     <div id="litModal" class="modal">
-      <div>
+        <p style="font-weight: bold; color: white;">PLEASE SELECT A LANGUAGE</p>
         <div style="width: 50%; float: left;">
-        <p style="font-weight: bold;">PLEASE SELECT A LANGUAGE</p>
         <ul>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="SPANISH_LIT" class="button">SPANISH</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="FRENCH_LIT" class="button">FRENCH</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="ITALIAN_LIT" class="button">ITALIAN</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="GERMAN_LIT" class="button">GERMAN</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="ARABIC_LIT" class="button">ARABIC</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="YIDDISH_LIT" class="button">YIDDISH</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="RUSSIAN_LIT" class="button">RUSSIAN</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="POLISH_LIT" class="button">POLISH</button>
+          <li><button type="button" onclick="lit = 'SPANISH'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">SPANISH</button></li>
+          <li><button type="button" onclick="lit = 'FRENCH'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">FRENCH</button></li>
+          <li><button type="button" onclick="lit = 'ITALIAN'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">ITALIAN</button></li>
+          <li><button type="button" onclick="lit = 'GERMAN'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">GERMAN</button></li>
+          <li><button type="button" onclick="lit = 'ARABIC'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">ARABIC</button></li>
+          <li><button type="button" onclick="lit = 'YIDDISH'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">YIDDISH</button></li>
+          <li><button type="button" onclick="lit = 'RUSSIAN'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">RUSSIAN</button></li>
+          <li><button type="button" onclick="lit = 'POLISH'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">POLISH</button></li>
         </ul>
         </div>
 
         <div style="width: 50%; float: left;">
-          <p>&nbsp;</p>
         <ul>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="MANDARIN_LIT" class="button">MANDARIN</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="CANTONESE_LIT" class="button">CANTONESE</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="CANTONESE_LIT" class="button">JAPANESE</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="KHMER_LIT" class="button">KHMER</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="VIETNAMESE_LIT" class="button">VIETNAMESE</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="FINNISH_LIT" class="button">FINNISH</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="SWEDISH_LIT" class="button">SWEDISH</button>
-          <li><button type="button" onclick="addLit(this); litModal.style.display='none';" data-name="WELSH_LIT" class="button">WELSH</button>
+          <li><button type="button" onclick="lit = 'MANDARIN'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">MANDARIN</button></li>
+          <li><button type="button" onclick="lit = 'CANTONESE'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">CANTONESE</button></li>
+          <li><button type="button" onclick="lit = 'JAPANESE'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">JAPANESE</button></li>
+          <li><button type="button" onclick="lit = 'HINDI'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">HINDI</button></li>
+          <li><button type="button" onclick="lit = 'VIETNAMESE'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">VIETNAMESE</button></li>
+          <li><button type="button" onclick="lit = 'FINNISH'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">FINNISH</button></li>
+          <li><button type="button" onclick="lit = 'SWEDISH'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">SWEDISH</button></li>
+          <li><button type="button" onclick="lit = 'WELSH'; addLit(); litModal.style.display = 'none'; this.disabled = true;" class="button">WELSH</button></li>
         </ul>
         </div>
-      </div>
+      <button type="button" onclick="litModal.style.display = 'none';" class="button">CANCEL</button>
     </div>
 
-<!--SKILL CHOICES-->
-<form style="margin-top: 10px;" id="skillSheet" action="#" method="#">
-<table>
-  
-  <tr>
-    <td colspan="8" style="background-color: lightblue; font-weight: bold;">STANDARD SKILLS (ONE SKILL CHOICE)<br>(LIGHT GRAY REPRESENT PRE REQUISITES)</td>
-  </tr>
+<!--OUTDOORSMAN MODAL-->
+<div id="outdoorsmanModal" class="modal">
+        <p style="font-weight: bold; color: white;">PLEASE SELECT A COMBAT PROFICIENCY</p>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('archery').setAttribute('value', arch += roll(2,20)); outdoorsmanModal.style.display = 'none';" class="button">
+            ARCHERY</button></li>
+          <li><button type="button" onclick="document.getElementById('thrown').setAttribute('value', thrown += roll(2,20)); outdoorsmanModal.style.display = 'none';" class="button">
+            THROWN</button></li>
+        </ul>
+        </div>
 
-  <tr>
-    <td colspan="3">SCIENCE SKILLS</td>
-    <td colspan="3">PILOTING SKILLS</td>
-    <td colspan="2">SURVIVAL SKILLS</td>
-  </tr>
-<!--1ST ROW-->
-    <tr>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true; chemBtn.disabled = false; physicsBtn.disabled = false; " class="button" 
-        id="mathBtn" data-name="MATH">MATH</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true; bioBtnClk = true;" class="button" id="bioBtn" data-name="BIOLOGY">
-        BIOLOGY</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="botBtn" data-name="BOTANY">BOTANY</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="horseBtn" data-name="HORSEMANSHIP">HORSEMANSHIP</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="cycleBtn" data-name="MOTORCYCLE">MOTORCYCLE</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="autoBtn" data-name="AUTOMOBILE">AUTOMOBILE</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="trapsBtn" data-name="TRAPS">TRAPS</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true; firstAidBtnClk = true;" class="button" id="firstAidBtn" data-name="FIRST_AID">
-        FIRST AID</button></td>
-    </tr>   
-<!--2ND ROW-->
-    <tr>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true; chemBtnClk = true;" class="button" id="chemBtn" data-name="CHEMISTRY" 
-        disabled="true">CHEMISTRY</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="histBtn" data-name="HISTORY" disabled="true">
-        HISTORY</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="mycoBtn" data-name="MYCOLOGY">MYCOLOGY</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="boatBtn" data-name="BOATING">BOATING</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="sailBtn" data-name="SAILING">SAILING</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="jetSkiBtn" data-name="JET_SKI">JET SKI</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="trackBtn" data-name="TRACKING">TRACKING</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="pickBtn" data-name="PICKPOCKET">PICKPOCKET</button></td>
-    </tr>
-<!--3RD ROW-->
-    <tr>
-      <td style="background-color: lightgray; text-align: center;">MATH</td>
-      <td style="background-color: lightgray; text-align: center;">LITERACY</td>
-      <td style="background-color: darkgray;"></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="bikeBtn" data-name="BICYCLES">BICYCLES</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="skateBtn" data-name="SKATEBOARD">SKATEBOARD</button></td>
-      <td style="background-color: darkgray;"></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="survBtn" data-name="SURVEILLANCE">SURVEILLANCE</button></td>
-      <td style="background-color: darkgray;"></td>
-    <tr>
-<!--4TH ROW-->
-    <tr>  
-      <td colspan="3">SOCIAL SKILLS</td>
-      <td colspan="5">TECHNOLOGY SKILLS</td>
-    </tr>
-<!--5TH ROW-->
-    <tr>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true; histBtn.disabled = false; compBtn.disabled = false; lawBtn.disabled = false;
-        litBtnClk = true;" class="button" id="litBtn" data-name="LITERACY">LITERACY</button></td>
-      <td><button type="button" onclick="addSkill(this); langModal.style.display='block';" class="button" id="forLanBtn" data-name="FOREIGN_LANG">
-        FOREIGN LANG</button></td>
-      <td><button type="button" onclick="addSkill(this); litModal.style.display='block';" class="button" id="forLitBtn" data-name="FOREIGN_LIT">
-        FOREIGN LIT</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="mechBtn" data-name="MECHANICS">MECHANICS</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="electBtn" data-name="ELECTRONICS">ELECTRONICS</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true; encryptBtn.disabled = false; programBtn.disabled = false;" 
-        class="button" id="compBtn" data-name="COMPUTERS" disabled="true">COMPUTERS</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="lockBtn" data-name="LOCKPICK">LOCKPICK</button></td>
-      <td><button type="button" onclick="addSkill(this); this.disabled = true;" class="button" id="commSysBtn" data-name="COMM_SYSTEMS">COMM. SYSTEMS</button></td>
-    </tr>
-<!--6TH ROW-->
-    <tr>
-      <td colspan="5" style="background-color: darkgray;"></td>
-      <td style="background-color: lightgray; text-align: center;">LITERACY</td>
-      <td colspan="2" style="background-color: darkgray;"></td>
-    </tr>
-<!--ADVANCED SKILLS-->
-<tr>
-    <td colspan="8" style="background-color: yellow; font-weight: bold;">ADVANCED SKILLS (TWO SKILL CHOICES)</td>
-</tr>
-
-  <tr>
-    <td colspan="2">ADV. SCIENCE SKILLS</td>
-    <td colspan="2">ADV. MEDICAL SKILLS</td>
-    <td colspan="3">ADV. TECHNOLOGY SKILLS</td>
-    <td>ADV. SOCIAL SKILLS</td>
-  </tr>
-<!--ADV SKILLS 1ST ROW-->
-    <tr>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="forenBtn" data-name="FORENSICS">FORENSICS</button></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="physicsBtn" data-name="PHYSICS" 
-        disabled="true">PHYSICS</button>
-      </td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" onmouseover="docReq();" class="button" id="doctorBtn" data-name="DOCTOR" 
-        disabled="true">DOCTOR</button></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" onmouseover="medReq();" class="button" id="toxicBtn" data-name="TOXICOLOGY" 
-        disabled="true">TOXICOLOGY</button></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="strEngBtn" data-name="CONSTRUCTION">
-        CONSTRUCTION</button></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="encryptBtn" data-name="ENCRYPTION" 
-        disabled="true">ENCRYPTION</button></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="programBtn" data-name="PROGRAMMING"
-        disabled="true">PROGRAMMING</button></td>
-        <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="lawBtn" data-name="FEDERAL_LAW">FEDERAL LAW
-        </button></td>
-    </tr>
-<!--ADV SKILLS 2ND ROW-->
-    <tr>
-      <td style="background-color: darkgray;"></td>
-      <td style="background-color: lightgray; text-align: center;">MATH</td>
-      <td style="background-color: lightgray; text-align: center;">BIOLOGY<br>CHEMISTRY<br>FIRST AID<br>(hover to unlock)</td>
-      <td style="background-color: lightgray; text-align: center;">LITERACY<br>CHEMISTRY<br>BIOLOGY<br>(hover to unlock)</td>
-      <td style="background-color: darkgray;"></td>
-      <td style="background-color: lightgray; text-align: center;">COMPUTERS</td>
-      <td style="background-color: lightgray; text-align: center;">COMPUTERS</td>
-      <td style="background-color: darkgray;"></td>
-    </tr>
-
-    <tr>
-      <td colspan="8">ADV. PILOTING SKILLS</td>
-    </tr>
-
-    <tr>
-      <td style="background-color: darkgray;"></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="multiGearBtn" data-name="MULTI_GEARS">MULTI GEARED
-      </button></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="hvyEquipBtn" data-name="HEAVY_EQUIP">HEAVY EQUIPMENT
-      </button></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="treadBtn" data-name="TREADED">TREADED VEHICLES
-      </button></td>
-      <td style="background-color: darkgray;"></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="heliBtn" data-name="HELICOPTERS">HELICOPTERS</button></td>
-      <td><button type="button" onclick="addAdvSkill(this); this.disabled = true;" class="button" id="planesBtn" data-name="PLANES">AIRPLANES</button></td>
-      <td style="background-color: darkgray;"></td>
-    </tr>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('rifles').setAttribute('value', rifles += roll(2,20)); outdoorsmanModal.style.display = 'none';" class="button">
+            RIFLES</button></li>
+        </ul>
+        </div>
 
 </div>
+
+<!--THIEF MODAL-->
+<div id="thiefModal" class="modal">
+        <p style="font-weight: bold; color: white;">PLEASE SELECT A SKILL</p>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('lockpick').setAttribute('value', LOCKPICK); thiefModal.style.display = 'none'; 
+            document.getElementById('lockTrnBtn').disabled = true;" class="button">LOCKPICK</button></li>
+        </ul>
+        </div>
+
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('pickpocket').setAttribute('value', PICKPOCKET); thiefModal.style.display = 'none'; 
+            document.getElementById('pickTrnBtn').disabled = true;" class="button">PICKPOCKET</button></li>
+        </ul>
+        </div>
+
 </div>
+
+<!--MILITIA MODAL-->
+<div id="militiaModal" class="modal">
+        <p style="font-weight: bold; color: white;">PLEASE SELECT A COMBAT PROFICIENCY</p>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('short').setAttribute('value', shortW += roll(2,20)); militiaModal.style.display = 'none';" 
+            class="button">SHORT MELEE</button></li>
+        </ul>
+        </div>
+
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('long').setAttribute('value', longW += roll(2,20)); militiaModal.style.display = 'none';" 
+            class="button">LONG MELEE</button></li>
+        </ul>
+        </div>
+
+</div>
+
+<!--BANDIT MODAL-->
+<div id="banditModal" class="modal">
+        <p style="font-weight: bold; color: white;">PLEASE SELECT A COMBAT PROFICIENCY FROM EACH COLUMN</p>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="modshortW(); this.disabled = true; 
+            document.getElementById('longMMod').disabled = true; document.getElementById('twoHMMod').disabled = true; document.getElementById('chainMMod').disabled = true;  
+            if(modChoice == 2){ banditModal.style.display = 'none'; }" id="shortMMod" class="button">SHORT MELEE</button></li>
+          <li><button type="button" onclick="modlongW(); this.disabled = true; 
+            document.getElementById('shortMMod').disabled = true; document.getElementById('twoHMMod').disabled = true; document.getElementById('chainMMod').disabled = true;
+            if(modChoice == 2){ banditModal.style.display = 'none'; }" id="longMMod" class="button">LONG MELEE</button></li>
+          <li><button type="button" onclick="modtwoH(); this.disabled = true; 
+            document.getElementById('longMMod').disabled = true; document.getElementById('shortMMod').disabled = true; document.getElementById('chainMMod').disabled = true;
+            if(modChoice == 2){ banditModal.style.display = 'none'; }" id="twoHMMod" class="button">2 HAND MELEE</button></li>
+          <li><button type="button" onclick="modchain(); this.disabled = true; 
+            document.getElementById('longMMod').disabled = true; document.getElementById('twoHMMod').disabled = true; document.getElementById('shortMMod').disabled = true;
+            if(modChoice == 2){ banditModal.style.display = 'none'; }" id="chainMMod"
+            class="button">CHAIN MELEE</button>
+          </li>
+        </ul>
+        </div>
+
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="modthrown(); this.disabled = true; 
+            document.getElementById('archMod').disabled = true; document.getElementById('pistolMod').disabled = true; document.getElementById('rifleMod').disabled = true;
+            if(modChoice == 2){ banditModal.style.display = 'none'; }" id="thrownMod" class="button">THROWN</button></li>
+            <li><button type="button" onclick="modarch(); this.disabled = true; 
+            document.getElementById('thrownMod').disabled = true; document.getElementById('pistolMod').disabled = true; document.getElementById('rifleMod').disabled = true;
+            if(modChoice == 2){ banditModal.style.display = 'none'; }" id="archMod" class="button">ARCHERY</button></li>
+          <li><button type="button" onclick="modpistols(); this.disabled = true; 
+            document.getElementById('archMod').disabled = true; document.getElementById('thrownMod').disabled = true; document.getElementById('rifleMod').disabled = true; 
+            if(modChoice == 2){ banditModal.style.display = 'none'; }" id="pistolMod" class="button">PISTOLS</button></li>
+          <li><button type="button" onclick="modrifles(); this.disabled = true; 
+            document.getElementById('archMod').disabled = true; document.getElementById('pistolMod').disabled = true; document.getElementById('thrownMod').disabled = true; 
+            if(modChoice == 2){ gbanditModal.style.display = 'none'; }" id="rifleMod" class="button">RIFLES</button></li>
+        </ul>
+        </div>
+</div>
+
+<!--GANG MODAL-->
+<div id="gangModal" class="modal">
+        <p style="font-weight: bold; color: white;">PLEASE SELECT TWO COMBAT PROFICIENCIES</p>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="modunarm(); this.disabled = true; if(modChoice == 2){ gangModal.style.display = 'none'; }" class="button">UNARMED</button></li>
+          <li><button type="button" onclick="modshortW(); this.disabled = true; if(modChoice == 2){ gangModal.style.display = 'none'; }" class="button">SHORT MELEE</button></li>
+          <li><button type="button" onclick="modlongW(); this.disabled = true; if(modChoice == 2){ gangModal.style.display = 'none'; }" class="button">LONG MELEE</button></li>
+        </ul>
+        </div>
+
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="modgrap(); this.disabled = true; if(modChoice == 2){ gangModal.style.display = 'none'; }" class="button">GRAPPLING</button></li>
+          <li><button type="button" onclick="modtwoH(); this.disabled = true; if(modChoice == 2){ gangModal.style.display = 'none'; }" class="button">2 HAND MELEE</button></li>
+          <li><button type="button" onclick="modchain(); this.disabled = true; if(modChoice == 2){ gangModal.style.display = 'none'; }" class="button">CHAIN MELEE</button></li>
+        </ul>
+        </div>
+</div>
+
+<!--SECURITY MODAL-->
+<div id="securityModal" class="modal">
+        <p style="font-weight: bold; color: white;">PLEASE SELECT TWO COMBAT PROFICIENCIES</p>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="modunarm(); this.disabled = true; if(modChoice == 2){ securityModal.style.display = 'none'; }" class="button">UNARMED</button></li>
+          <li><button type="button" onclick="modlongW(); if(modChoice == 2){ securityModal.style.display = 'none'; }" class="button">LONG MELEE</button></li>
+        </ul>
+        </div>
+
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="modgrap(); this.disabled = true; if(modChoice == 2){ securityModal.style.display = 'none'; }" class="button">GRAPPLING</button></li>
+          <li><button type="button" onclick="modtwoH(); if(modChoice == 2){ securityModal.style.display = 'none'; }" class="button">2 HAND MELEE</button></li>
+        </ul>
+        </div>
+</div>
+
+<!--MARINER MODAL-->
+<div id="marinerModal" class="modal">
+        <p style="font-weight: bold; color: white;">PLEASE SELECT A TRANSPORTATION SKILL</p>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('sailing').setAttribute('value', SAILING); document.getElementById('sailTrnBtn').disabled = true;
+            marinerModal.style.display = 'none';" class="button">SAILING</button></li>
+        </ul>
+        </div>
+
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('boating').setAttribute('value', BOATING); document.getElementById('boatTrnBtn').disabled = true; 
+            marinerModal.style.display = 'none';" class="button">BOATING</button></li>
+        </ul>
+        </div>
+</div>
+
+<!--MECHANIC MODAL-->
+<div id="mechanicModal" class="modal">
+        <p style="font-weight: bold; color: white;">PLEASE SELECT A TRANSPORTATION SKILL</p>
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('motorcycle').setAttribute('value', MOTORCYCLE); document.getElementById('motorcycleTrnBtn').disabled = true;
+            mechanicModal.style.display = 'none';" class="button">MOTORCYCLE</button></li>
+        </ul>
+        </div>
+
+        <div style="width: 50%; float: left;">
+        <ul>
+          <li><button type="button" onclick="document.getElementById('automobile').setAttribute('value', AUTOMOBILE); document.getElementById('autoTrnBtn').disabled = true; 
+            mechanicModal.style.display = 'none';" class="button">AUTOMOBILE</button></li>
+        </ul>
+        </div>
+</div>
+
+<script>
+  document.getElementById("mem").setAttribute('value', Number(sessionStorage.getItem('MEM')));  
+  document.getElementById("str").setAttribute('value', Number(sessionStorage.getItem('STR')));  
+  document.getElementById("log").setAttribute('value', Number(sessionStorage.getItem('LOG')));  
+  document.getElementById("end").setAttribute('value', Number(sessionStorage.getItem('END')));
+  document.getElementById("per").setAttribute('value', Number(sessionStorage.getItem('PER')));  
+  document.getElementById("dex").setAttribute('value', Number(sessionStorage.getItem('DEX')));
+  document.getElementById("will").setAttribute('value', Number(sessionStorage.getItem('WILL')));  
+  document.getElementById("spd").setAttribute('value', Number(sessionStorage.getItem('SPD')));
+  document.getElementById("cha").setAttribute('value', Number(sessionStorage.getItem('CHA')));  
+  document.getElementById("bty").setAttribute('value', Number(sessionStorage.getItem('BTY')));
+
+  document.getElementById("actions").setAttribute('value', act);  
+  document.getElementById("sequence").setAttribute('value', seq);  
+  document.getElementById("block").setAttribute('value', block);  
+  document.getElementById("dodge").setAttribute('value', dodge);
+  document.getElementById("gambling").setAttribute('value', gambling);   
+   
+  document.getElementById("unarmed").setAttribute('value', unarm);  
+  document.getElementById("thrown").setAttribute('value', thrown);  
+  document.getElementById("grappling").setAttribute('value', grap);  
+  document.getElementById("archery").setAttribute('value', arch);  
+  document.getElementById("off").setAttribute('value', off);  
+  document.getElementById("pistols").setAttribute('value', pistols);      
+  document.getElementById("short").setAttribute('value', shortW);  
+  document.getElementById("rifles").setAttribute('value', rifles);      
+  document.getElementById("long").setAttribute('value', longW);  
+  document.getElementById("burst").setAttribute('value', burst);     
+  document.getElementById("THM").setAttribute('value', twoH);  
+  document.getElementById("special").setAttribute('value', special); 
+  document.getElementById("chain").setAttribute('value', chain);  
+  document.getElementById("weaponSys").setAttribute('value', wsys);  
+
+  document.getElementById("envAware").setAttribute('value', ENVAWARE);
+  document.getElementById("firstAid").setAttribute('value', FIRSTAID);
+  document.getElementById("navigation").setAttribute('value', NAVIG);
+  document.getElementById("stealth").setAttribute('value', STEALTH);
+  document.getElementById("crafting").setAttribute('value', CRAFTING);
+  document.getElementById("literacy").setAttribute('value', LITERACY);
+  document.getElementById("math").setAttribute('value', MATH);
+  document.getElementById("history").setAttribute('value', HISTORY);
+  document.getElementById("negotiation").setAttribute('value', NEGOT);
+</script>
+
+</form>
+</div>
+
 </body>
 </html>

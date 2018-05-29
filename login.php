@@ -18,39 +18,29 @@
   </head>
 <body>
 
-<!--ceiling--> 
-<div class="row ceiling">
-<div class="large-2 columns"><a href="login.php" class="button">LOGIN</a></div>
-<form id="logout" action="inc/logout.php" method="post">
-<div class="large-2 columns"><input type="submit" value="LOG OUT" class="button" style="font-family: impact;" /></div>
-</form>
-<div class="large-2 columns"><a href="signup.php" class="button">JOIN</a></div>
+<?php include("header.php"); ?>
+
+<div class="row metal">
+  <div class="small-12 columns" style="height: 10vh;">&nbsp;</div>
 </div>
 
-<!--banner-->
 <div class="row banner">
-<div class="large-12 columns"><a href="index.php"><img src="img/banners/aftermathcity.jpg" style="margin: 0 auto; max-height: 15vh;" /></a></div>
+  <form id="login" method="post" action="inc/confirmLI.php">
+  
+  <div class="small-1 columns">&nbsp;</div>
+  <div class="small-2 columns"><img src="img/graffiti/username.png" class="enter" /></div>
+  <div class="small-2 columns noPad"><input type="text" class="full" name="username" placeholder="ENTER USERNAME" /></div>  
+
+  <div class="small-2 columns"><img src="img/graffiti/password.png" class="enter" /></div>
+  <div class="small-2 columns noPad"><input type="password" class="full" name="password" placeholder="ENTER PASSWORD" /></div>
+
+  <div class="small-1 columns">&nbsp;</div>
+  <div class="small-2 columns"><input type="submit" value="SUBMIT" class="navbutton"/></div>
+
 </div>
 
-<form id="login" method="post" action="inc/confirmLI.php">
 <div class="row content">
-<div class="large-3 columns">&nbsp;</div>
-
-<div class="large-2 columns">
-<label style="font-family: impact;">USERNAME:<input type="text" name="username" placeholder="ENTER USERNAME" /></label>  
-</div>
-
-<div class="large-2 columns">
-<label style="font-family: impact;">PASSWORD:<input type="password" name="password" placeholder="ENTER PASSWORD" /></label> 
-</div>
-
-<div class="large-2 columns">&nbsp;</div>
-<div class="large-2 columns"><br><input type="submit" value="SUBMIT" class="button"/>
-</div>
-
-</div>
-<div class="row content">
-<div class="large-12 columns">
+<div class="small-12 columns">
 <?php
     $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     if (strpos($url, 'error=fail')){
@@ -59,7 +49,9 @@
 ?>
 </div>
 </div>
-
 </form>
+
+<?php include("footer.php"); ?>
+
 </body>
 </html>
